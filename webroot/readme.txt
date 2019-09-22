@@ -1,0 +1,1 @@
+the dir of web root, which contains the static resource of tomcat server

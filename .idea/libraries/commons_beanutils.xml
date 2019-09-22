@@ -1,0 +1,38 @@
+<component name="libraryTable">
+  <library name="commons-beanutils">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/commons-beanutils.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/commons-codec-1.11.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/commons-collections.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/commons-daemon.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/commons-digester.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/commons-logging-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/commons-logging.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/commons-modeler.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/fluent-hc-4.5.10.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/httpclient-4.5.10.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/httpclient-cache-4.5.10.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/httpclient-osgi-4.5.10.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/httpclient-win-4.5.10.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/httpcore-4.4.12.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/httpmime-4.5.10.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jaas.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jakarta-regexp-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jcert.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jna-4.5.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jna-platform-4.5.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jnet.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jsse.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/mx4j.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/naming-common.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/naming-factory.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/naming-resources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/servlet.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/tomcat-util.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/xercesImpl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/xmlParserAPIs.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

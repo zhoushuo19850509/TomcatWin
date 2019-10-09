@@ -1,5 +1,6 @@
 package com.nbcb.mytomcat.chap4;
 
+import com.nbcb.mytomcat.util.Constants;
 import org.apache.catalina.*;
 import org.apache.catalina.net.ServerSocketFactory;
 
@@ -96,8 +97,7 @@ public class HttpConnector implements Connector,Runnable{
 
         /**
          * 对线程池进行初始化
-         * 直到线程池中HttpProcessor实例的数量达到了minProcessors
-         *
+         * 直到线程池中HttpProcessor实例的数量达到了minProcessors         *
          */
         while(currProccessors < minProcessors){
             /**
@@ -116,8 +116,8 @@ public class HttpConnector implements Connector,Runnable{
             HttpProcessor processor = newProcessor();
             recycle(processor);
         }
-        System.out.println("A thread is initialized ,the number of " +
-                " current Proccessor is : " + currProccessors);
+//        System.out.println("A thread is initialized ,the number of " +
+//                " current Proccessor is : " + currProccessors);
 
     }
 
@@ -179,13 +179,33 @@ public class HttpConnector implements Connector,Runnable{
              */
             try {
 
-                System.out.println("HttpConnector accept the incoming client");
+//                System.out.println("HttpConnector accept the incoming client");
                 socket = serverSocket.accept();
+
+
+                /**
+                 * 设置socket连接超时时间
+                 */
+                socket.setSoTimeout(Constants.DEFAULT_CONNECTION_TIMEOUT);
+                socket.setTcpNoDelay(true);
+
+
 
                 /**
                  * 然后从线程池中取出一个HttpProcessor对象，处理客户端请求
                  */
                 HttpProcessor processor = createProcess();
+
+                /**
+                 * 把processor设置为null主要是为了验证服务端关闭socket连接
+                 * 返回异常给客户端的场景
+                 */
+//                HttpProcessor processor = null;
+
+                /**
+                 * 每次分配一个HttpProcessor线程资源之后，都打印一下当前线程池的状态
+                 */
+                printThreadPoolInfo();
 
                 /**
                  * 如果线程池中的资源已经耗尽，socket赶紧关闭了吧
@@ -224,6 +244,25 @@ public class HttpConnector implements Connector,Runnable{
         thread.start();
     }
 
+    public void printThreadPoolInfo(){
+        /**
+         *  当前prossors这个stack的大小
+         *  也就是当前可用的线程资源
+         */
+        System.out.println("current Proccessor  stack no: " + processors.size());
+
+        /**
+         *  当前有多少HttpProcessor线程对象被创建出来
+         *  一般来说，currProccessors肯定是大于等于processors.size()的，
+         *  多出来的数量其实就是目前正在处理客户端socket servlet请求的
+         */
+        System.out.println("current HttpProccessor  no: " + currProccessors);
+
+        /**
+         * 打印各个线程使用次数
+         */
+
+    }
 
     /**
      * 这个方法主要功能就是返回HttpProcessor对象
@@ -235,23 +274,26 @@ public class HttpConnector implements Connector,Runnable{
     public HttpProcessor createProcess(){
         HttpProcessor processor = null;
 
-        /**
-         * 如果线程池不为空
-         * 直接从线程池中获取一个HttpProcessor对象实例
-         */
-        if(!processors.empty()){
-            return processor = (HttpProcessor) processors.pop();
+        synchronized (processors){
+            /**
+             * 如果线程池不为空
+             * 直接从线程池中获取一个HttpProcessor对象实例
+             */
+            if(!processors.empty()){
+                return (HttpProcessor) processors.pop();
+            }
+
+            if((maxProcessors > 0) && (currProccessors < maxProcessors)) {
+                return newProcessor();
+            }
+
+
+//        System.out.println("fetch a thread from the thread pool : " + processor.toString() );
+            return processor;
+
         }
 
-        if((maxProcessors > 0) && (currProccessors < maxProcessors)) {
-            return newProcessor();
-        }
-
-
-        System.out.println("fetch a thread from the thread pool : " + processor.toString() );
-        return processor;
     }
-
 
     /**
      * 这个方法用来创建一个新的HttpProcessor实例
@@ -263,7 +305,7 @@ public class HttpConnector implements Connector,Runnable{
 
         processor.start();
 
-        System.out.println("a new thread(HttpProcessor) is created! thread info: " + processor.hashCode() );
+//        System.out.println("a new thread(HttpProcessor) is created! thread info: " + processor.hashCode() );
         return processor;
     }
 

@@ -88,7 +88,7 @@ public class HttpProcessor implements Runnable{
     /**
      * constructor
      * @param connector Default connector
-     * @param currProccessNum the current process number用来标识当前线程的threadId
+     * @param currProccessNum the current process number用来标识活跃线程数
      */
     public HttpProcessor(HttpConnector connector, int currProccessNum){
         this.connector = connector;
@@ -173,7 +173,7 @@ public class HttpProcessor implements Runnable{
     @Override
     public void run() {
 
-        System.out.println("HttpProcessor start listening from client' connection " + this.hashCode());
+//        System.out.println("HttpProcessor start listening from client' connection " + this.hashCode());
         /**
          * 只要Default connector没有关闭，
          * 当前HttpProcessor线程就要不停工作
@@ -222,7 +222,7 @@ public class HttpProcessor implements Runnable{
      * @param socket
      */
     public void process(Socket socket){
-        System.out.println("HttpProcessor start process the client's socket: " + this.hashCode());
+//        System.out.println("HttpProcessor start process the client's socket: " + this.hashCode());
         SocketInputStream input = null;
         OutputStream output = null;
         boolean ok = true;
@@ -291,7 +291,7 @@ public class HttpProcessor implements Runnable{
                  * 为了模拟线程池的机制，servlet调用结束后
                  * 在这里sleep一段时间
                  */
-                System.out.println("HttpProcessor finish invoke the Servlet: " + this.hashCode());
+//                System.out.println("HttpProcessor finish invoke the Servlet: " + this.hashCode());
 
             }else{
                 StaticResourceProcessor processor = new StaticResourceProcessor();

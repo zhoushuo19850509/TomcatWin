@@ -66,3 +66,19 @@ Caused by: org.apache.http.ProtocolException:
 1.多线程模型，并发访问Tomcat服务端
 2.支持http persistent connection
 
+20190922
+解决问题：Httpclient并发访问Tomcat失败的问题- Permission denied
+
+20190924
+优化客户端调用程序HttpClientThread，提升了客户端访问的效率
+
+20190925
+优化客户端调用程序，加入了httpclient重传机制
+
+
+20191009
+之前国庆休假，没有继续学习，罪过罪过。
+今天开始投入。
+
+
+

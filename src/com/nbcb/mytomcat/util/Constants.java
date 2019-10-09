@@ -18,5 +18,10 @@ public class Constants {
             File.separator +"webroot";
 
 
+    /**
+     * socket连接的超时时间
+     * 单位ms
+     */
+    public static final int DEFAULT_CONNECTION_TIMEOUT = 5000;
 
 }

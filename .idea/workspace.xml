@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79e8e96c-c2d0-44b2-a537-270262bcf50c" name="Default Changelist" comment="" />
+    <list default="true" id="79e8e96c-c2d0-44b2-a537-270262bcf50c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TomcatWin/com/nbcb/mytomcat/chap4/HttpConnector.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TomcatWin/com/nbcb/mytomcat/chap4/HttpConnector.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TomcatWin/com/nbcb/mytomcat/chap4/HttpProcessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TomcatWin/com/nbcb/mytomcat/chap4/HttpProcessor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TomcatWin/com/nbcb/mytomcat/chap4/client/HttpClientTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TomcatWin/com/nbcb/mytomcat/chap4/client/HttpClientTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TomcatWin/com/nbcb/mytomcat/chap4/client/HttpClientThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TomcatWin/com/nbcb/mytomcat/chap4/client/HttpClientThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TomcatWin/com/nbcb/mytomcat/chap4/client/StartBatch.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TomcatWin/com/nbcb/mytomcat/chap4/client/StartBatch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TomcatWin/com/nbcb/mytomcat/chap4/doc/readme_progress.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TomcatWin/com/nbcb/mytomcat/chap4/doc/readme_progress.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TomcatWin/com/nbcb/mytomcat/util/Constants.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TomcatWin/com/nbcb/mytomcat/util/Constants.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/nbcb/mytomcat/chap4/HttpConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/nbcb/mytomcat/chap4/HttpConnector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/nbcb/mytomcat/chap4/HttpProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/nbcb/mytomcat/chap4/HttpProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/nbcb/mytomcat/chap4/client/HttpClientTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/nbcb/mytomcat/chap4/client/HttpClientTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/nbcb/mytomcat/chap4/client/HttpClientThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/nbcb/mytomcat/chap4/client/HttpClientThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/nbcb/mytomcat/chap4/client/StartBatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/nbcb/mytomcat/chap4/client/StartBatch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/nbcb/mytomcat/chap4/doc/readme_progress.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/nbcb/mytomcat/chap4/doc/readme_progress.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/nbcb/mytomcat/util/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/nbcb/mytomcat/util/Constants.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,8 +30,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/nbcb/mytomcat/chap4/BootStrap.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="81">
-              <caret line="11" column="46" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
+            <state relative-caret-position="297">
+              <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -23,17 +39,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/nbcb/mytomcat/chap4/HttpProcessor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
-              <caret line="306" column="9" selection-start-line="306" selection-start-column="9" selection-end-line="306" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/nbcb/mytomcat/chap4/doc/readme_progress.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="53" column="8" lean-forward="true" selection-start-line="53" selection-start-column="8" selection-end-line="53" selection-end-column="8" />
+            <state relative-caret-position="1296">
+              <caret line="62" selection-start-line="62" selection-end-line="62" />
             </state>
           </provider>
         </entry>
@@ -41,39 +48,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/nbcb/mytomcat/chap4/client/StartBatch.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="107">
-              <caret line="24" column="25" lean-forward="true" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
+            <state relative-caret-position="211">
+              <caret line="20" column="28" lean-forward="true" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/nbcb/mytomcat/chap4/client/HttpClientThread.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="1620">
+              <caret line="63" column="13" selection-start-line="63" selection-start-column="13" selection-end-line="63" selection-end-column="13" />
               <folding>
-                <element signature="e#193#194#0" expanded="true" />
-                <element signature="e#235#236#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/apache/catalina/connector/HttpRequestBase.java">
+        <entry file="file://$PROJECT_DIR$/src/org/apache/catalina/connector/ResponseStream.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="369" column="34" lean-forward="true" selection-start-line="369" selection-start-column="34" selection-end-line="369" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/apache/catalina/connector/HttpResponseBase.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="293" column="16" lean-forward="true" selection-start-line="293" selection-start-column="16" selection-end-line="293" selection-end-column="16" />
+            <state relative-caret-position="4482">
+              <caret line="170" column="44" selection-start-line="170" selection-start-column="44" selection-end-line="170" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -81,8 +78,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/apache/catalina/connector/ResponseBase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="496" column="16" lean-forward="true" selection-start-line="496" selection-start-column="16" selection-end-line="496" selection-end-column="16" />
+            <state relative-caret-position="16092">
+              <caret line="609" selection-start-line="609" selection-end-line="609" />
               <folding>
                 <element signature="e#14883#14884#0" expanded="true" />
                 <element signature="e#14916#14917#0" expanded="true" />
@@ -92,24 +89,28 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/nbcb/mytomcat/chap4/HttpConnector.java">
+        <entry file="file://$PROJECT_DIR$/src/com/nbcb/mytomcat/chap4/client/HttpClientTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
-              <caret line="363" column="35" lean-forward="true" selection-start-line="363" selection-start-column="35" selection-end-line="363" selection-end-column="35" />
+            <state relative-caret-position="702">
+              <caret line="39" column="16" selection-start-line="39" selection-start-column="16" selection-end-line="39" selection-end-column="16" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/nbcb/mytomcat/chap4/client/HttpClientTest.java">
+        <entry file="file://$PROJECT_DIR$/src/com/nbcb/mytomcat/chap4/HttpConnector.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="20" column="27" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="27" />
-              <folding>
-                <element signature="e#1356#1436#0" />
-                <element signature="e#2378#2379#0" expanded="true" />
-                <element signature="e#2428#2429#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="5076">
+              <caret line="197" selection-start-line="197" selection-end-line="197" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/nbcb/mytomcat/chap4/doc/readme_progress.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="400">
+              <caret line="80" column="7" selection-start-line="80" selection-start-column="7" selection-end-line="80" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -141,22 +142,32 @@
       <find>resetBuffer</find>
       <find>process</find>
       <find>process(</find>
+      <find>System.out</find>
+      <find>A thread is initialized</find>
+      <find>HttpProcessor start</find>
+      <find>Httpclient</find>
+      <find>printThreadPoolInfo</find>
+      <find>Httpclient response</find>
     </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/doc/thinking.txt" />
         <option value="$PROJECT_DIR$/src/com/nbcb/mytomcat/chap4/SimpleContainer.java" />
-        <option value="$PROJECT_DIR$/src/com/nbcb/mytomcat/chap4/HttpConnector.java" />
         <option value="$PROJECT_DIR$/src/com/nbcb/mytomcat/chap4/doc/readme_problems.txt" />
         <option value="$PROJECT_DIR$/src/org/apache/catalina/connector/ResponseBase.java" />
         <option value="$PROJECT_DIR$/src/org/apache/catalina/connector/HttpResponseBase.java" />
         <option value="$PROJECT_DIR$/src/com/nbcb/mytomcat/chap4/HttpProcessor.java" />
-        <option value="$PROJECT_DIR$/src/com/nbcb/mytomcat/chap4/doc/readme_progress.txt" />
-        <option value="$PROJECT_DIR$/src/com/nbcb/mytomcat/chap4/client/HttpClientTest.java" />
-        <option value="$PROJECT_DIR$/src/com/nbcb/mytomcat/chap4/client/HttpClientThread.java" />
+        <option value="$PROJECT_DIR$/src/com/nbcb/mytomcat/util/Constants.java" />
         <option value="$PROJECT_DIR$/src/com/nbcb/mytomcat/chap4/client/StartBatch.java" />
+        <option value="$PROJECT_DIR$/src/com/nbcb/mytomcat/chap4/client/HttpClientThread.java" />
+        <option value="$PROJECT_DIR$/src/com/nbcb/mytomcat/chap4/HttpConnector.java" />
+        <option value="$PROJECT_DIR$/src/com/nbcb/mytomcat/chap4/client/HttpClientTest.java" />
+        <option value="$PROJECT_DIR$/src/com/nbcb/mytomcat/chap4/doc/readme_progress.txt" />
       </list>
     </option>
   </component>
@@ -166,11 +177,13 @@
     <option name="width" value="1260" />
     <option name="height" value="720" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -221,7 +234,7 @@
               <item name="nbcb" type="462c0819:PsiDirectoryNode" />
               <item name="mytomcat" type="462c0819:PsiDirectoryNode" />
               <item name="chap4" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="doc" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TomcatWin" type="b2602c69:ProjectViewProjectNode" />
@@ -230,8 +243,7 @@
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="nbcb" type="462c0819:PsiDirectoryNode" />
               <item name="mytomcat" type="462c0819:PsiDirectoryNode" />
-              <item name="chap4" type="462c0819:PsiDirectoryNode" />
-              <item name="doc" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TomcatWin" type="b2602c69:ProjectViewProjectNode" />
@@ -241,15 +253,14 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="process(&#9;null&#9;null" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1569120427454" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1569423718608" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/xmlParserAPIs.jar!/" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
@@ -303,6 +314,7 @@
     <configuration name="StartBatch" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.nbcb.mytomcat.chap4.client.StartBatch" />
       <module name="TomcatWin" />
+      <option name="VM_PARAMETERS" value="-Djava.net.preferIPv4Stack=true" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.nbcb.mytomcat.chap4.client.*" />
@@ -322,8 +334,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.StartBatch" />
-        <item itemvalue="Application.HttpClientTest" />
         <item itemvalue="Application.BootStrap" />
+        <item itemvalue="Application.HttpClientTest" />
         <item itemvalue="Application.HelloWorld" />
       </list>
     </recent_temporary>
@@ -354,7 +366,7 @@
     <frame x="-8" y="-8" width="1296" height="776" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.23786408" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -363,15 +375,15 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32970452" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.44790047" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39968896" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.34579438" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39719626" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32970452" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32970452" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32866043" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -389,40 +401,16 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/nbcb/mytomcat/chap4/HttpConnector.java</url>
-          <line>196</line>
-          <properties />
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/org/apache/catalina/connector/ResponseBase.java</url>
           <line>526</line>
           <properties />
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/org/apache/catalina/connector/ResponseStream.java</url>
-          <line>180</line>
-          <properties />
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/org/apache/catalina/connector/ResponseBase.java</url>
           <line>585</line>
           <properties />
           <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/org/apache/catalina/connector/ResponseStream.java</url>
-          <line>160</line>
-          <properties />
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/org/apache/catalina/connector/ResponseBase.java</url>
-          <line>609</line>
-          <properties />
-          <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -601,38 +589,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/chap4/HttpProcessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="2" column="28" lean-forward="true" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/chap4/HttpProcessor.java" />
     <entry file="file://$PROJECT_DIR$/src/ModernServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="421">
           <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/apache/catalina/connector/ResponseStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="159" lean-forward="true" selection-start-line="159" selection-end-line="159" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/nbcb/mytomcat/chap4/HttpConnector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="363" column="35" lean-forward="true" selection-start-line="363" selection-start-column="35" selection-end-line="363" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/nbcb/mytomcat/chap4/BootStrap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="11" column="46" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
         </state>
       </provider>
     </entry>
@@ -643,24 +604,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/apache/catalina/connector/ResponseBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="496" column="16" lean-forward="true" selection-start-line="496" selection-start-column="16" selection-end-line="496" selection-end-column="16" />
-          <folding>
-            <element signature="e#14883#14884#0" expanded="true" />
-            <element signature="e#14916#14917#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/nbcb/mytomcat/chap4/HttpProcessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="306" column="9" selection-start-line="306" selection-start-column="9" selection-end-line="306" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/apache/catalina/connector/HttpRequestBase.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="232">
@@ -668,40 +611,101 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/nbcb/mytomcat/chap4/doc/readme_progress.txt">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/src.zip!/java/lang/Thread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="53" column="8" lean-forward="true" selection-start-line="53" selection-start-column="8" selection-end-line="53" selection-end-column="8" />
+        <state relative-caret-position="205">
+          <caret line="695" column="29" selection-start-line="695" selection-start-column="29" selection-end-line="695" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/nbcb/mytomcat/chap4/client/HttpClientTest.java">
+    <entry file="file://$PROJECT_DIR$/src/org/apache/catalina/ssi/SSIPrintenv.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="20" column="27" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="27" />
-          <folding>
-            <element signature="e#1356#1436#0" />
-            <element signature="e#2378#2379#0" expanded="true" />
-            <element signature="e#2428#2429#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="205">
+          <caret line="76" column="13" selection-start-line="76" selection-start-column="13" selection-end-line="76" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/nbcb/mytomcat/chap4/client/StartBatch.java">
+    <entry file="file://$PROJECT_DIR$/src/com/nbcb/mytomcat/util/Constants.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="24" column="25" lean-forward="true" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
+        <state relative-caret-position="133">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/httpclient-4.5.10.jar!/org/apache/http/impl/client/HttpClientBuilder.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="482" column="30" selection-start-line="482" selection-start-column="11" selection-end-line="482" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/nbcb/mytomcat/chap4/BootStrap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/nbcb/mytomcat/chap4/HttpProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1296">
+          <caret line="62" selection-start-line="62" selection-end-line="62" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/nbcb/mytomcat/chap4/client/HttpClientThread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        <state relative-caret-position="1620">
+          <caret line="63" column="13" selection-start-line="63" selection-start-column="13" selection-end-line="63" selection-end-column="13" />
           <folding>
-            <element signature="e#193#194#0" expanded="true" />
-            <element signature="e#235#236#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/apache/catalina/connector/ResponseStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4482">
+          <caret line="170" column="44" selection-start-line="170" selection-start-column="44" selection-end-line="170" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/apache/catalina/connector/ResponseBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16092">
+          <caret line="609" selection-start-line="609" selection-end-line="609" />
+          <folding>
+            <element signature="e#14883#14884#0" expanded="true" />
+            <element signature="e#14916#14917#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/nbcb/mytomcat/chap4/client/HttpClientTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="702">
+          <caret line="39" column="16" selection-start-line="39" selection-start-column="16" selection-end-line="39" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/nbcb/mytomcat/chap4/HttpConnector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5076">
+          <caret line="197" selection-start-line="197" selection-end-line="197" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/nbcb/mytomcat/chap4/client/StartBatch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="20" column="28" lean-forward="true" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/nbcb/mytomcat/chap4/doc/readme_progress.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="80" column="7" selection-start-line="80" selection-start-column="7" selection-end-line="80" selection-end-column="7" />
         </state>
       </provider>
     </entry>

@@ -13,16 +13,17 @@ public class StartBatch {
         /**
          * 并发线程数
          */
-        int threadCount = 5;
+        int threadCount = 50;
 
         /**
          * 每个线程循环发起多少次请求
          */
-        int loopCount = 2;
+        int loopCount = 100;
 
         for(int i = 0 ; i < threadCount ; i++){
-            Thread thread = new HttpClientThread(loopCount);
-            thread.run();
+//            Thread thread = new HttpClientThread(loopCount,i);
+            new Thread(new HttpClientThread(loopCount,i)).start();
+
         }
 
     }

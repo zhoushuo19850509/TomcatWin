@@ -60,7 +60,6 @@ public class HttpClientTest {
          * 本地nginx service
          */
 //        String url = "http://127.0.0.1/";
-//        String url = "http://www.baidu.com";
         HttpGet httpGet = new HttpGet(url);
 
         /**
@@ -94,37 +93,53 @@ public class HttpClientTest {
 
         CloseableHttpResponse response = null;
         String content = null;
+
+        /**
+         * 调用httpclient访问tomcat服务是否成功
+         */
+        boolean isSucc = false;
+
+        /**
+         * 如果调用httpclient访问tomcat服务失败，那么重传3次
+         * count代表重传次数
+         */
+        int count = 0;
+
+        do{
+            try {
+                response = httpclient.execute(httpGet);
+                HttpEntity httpEntity = response.getEntity();
+                content = EntityUtils.toString(httpEntity);
+
+                /**
+                 * 程序能够运行到这里而不报错，说明访问tomcat成功
+                 */
+                isSucc = true;
+//                System.out.println("第" + (count + 1) + "次访问tomcat成功！" );
+            } catch (IOException e) {
+//                System.out.println("catch error msg: " + e.getMessage());
+//                e.printStackTrace();
+                System.out.println("第" + (count + 1) + "次 fail to access tomcat！" );
+            }
+
+        }while(!isSucc && (++count < 3) );
+
+        /**
+         * 最后，校验一下返回结果
+         * 如果content为空，或者content没有包含我们想要的结果，都要报错
+         */
+        if(null == content || !content.contains("zhoushuo")) {
+            System.out.println("Httpclient response return error finally===============>");
+        }
         try {
-
-            response = httpclient.execute(httpGet);
-
-//            System.out.println("http response status info: ");
-//            System.out.println(response.getStatusLine());
-
-            HttpEntity httpEntity = response.getEntity();
-            content = EntityUtils.toString(httpEntity);
-//            System.out.println("http response content entity info: ");
-//            System.out.println(content);
-
+            if(response != null){
+                response.close();
+            }
         } catch (IOException e) {
             e.printStackTrace();
-        }finally{
-
-            /**
-             * finally，校验一下返回结果
-             * 如果content为空，或者content没有包含我们想要的结果，都要报错
-             */
-            if(null == content || !content.contains("zhoushuo")){
-                System.out.println("Httpclient response return error===============>");
-            }
-            try {
-                if(response != null){
-                    response.close();
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
         }
+
+
     }
     public static void main(String[] args){
         HttpClientTest client = new HttpClientTest();

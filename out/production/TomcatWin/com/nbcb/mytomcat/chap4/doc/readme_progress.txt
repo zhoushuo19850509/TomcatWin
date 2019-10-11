@@ -76,7 +76,13 @@ Caused by: org.apache.http.ProtocolException:
 优化客户端调用程序，加入了httpclient重传机制
 
 
+20191009
+之前国庆休假，没有继续学习，罪过罪过。
+今天开始投入。熟悉之前的代码
 
+20191010
+今天实现了在应用层，进行httpclient重传
+效果非常好
 
 
 

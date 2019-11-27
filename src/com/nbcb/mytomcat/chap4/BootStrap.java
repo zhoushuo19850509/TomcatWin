@@ -9,6 +9,10 @@ public class BootStrap {
 
     public static void main(String[] args){
         HttpConnector connector = new HttpConnector();
+
+        /**
+         * SimpleContainer主要是用来处理Servlet的
+         */
         SimpleContainer container = new SimpleContainer();
 
         connector.setContainer(container);

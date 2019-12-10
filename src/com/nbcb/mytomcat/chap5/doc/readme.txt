@@ -36,24 +36,10 @@ Context也作为一种容器，相当于WAS中的application，包含多个Wrapper(Servlet)
 ==================思考：为啥要建立这样一套架构
 为啥要发明这么多概念呢？
 
-==================本章代码说明
 
-BootStrap1.java  // 启动代码示例1 演示了Wrapper(Servlet)/Pipeline/vavle/的使用方法
-
-SimpleWrapper    //an Implementation of Wrapper Interface
-SimpleContext    // Context可以加载多个(子)Wrapper
-
-SimplePipeline   //an Implementation of pipeline
-SimpleWrapperValve  //
-SimpleLoader     // 加载本地Servlet实例
-SimpleContextMapper  // Mapper什么意思懂吧？就是我们之前定义在web.xml中的url中servlet名称和我们本地工程Servlet的对应关系
-
-ClientIPLoggerValve // valve that print the client's ip
-HeaderLoggerValve   // valve that print the client's http header
-
-
-BootStrap2.java  // 启动代码示例2 演示了一个Context如何处理多个Servlet(Wrapper)
-
+==========================client url
+http://127.0.0.1:8080/servlet/ModernServlet?name=zhoushuo&company=nbcb
+http://127.0.0.1:8080/servlet/PrimitiveServlet?name=zhoushuo&company=nbcb
 
 
 

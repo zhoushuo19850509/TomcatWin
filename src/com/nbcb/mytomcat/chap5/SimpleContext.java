@@ -9,12 +9,125 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import java.beans.PropertyChangeListener;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * SimpleContext类似于Application
  * 包含一个或者多个Wrapper(Servlet)
  */
-public class SimpleContext implements Context {
+public class SimpleContext implements Context,Pipeline {
+
+    /**
+     * the pipeline of the context
+     */
+    private SimplePipeline pipeline = new SimplePipeline(this);
+
+    /**
+     * The (Servlet) loader of this Wrapper
+     */
+    private Loader  loader;
+
+    private Mapper mapper = null;
+
+    /**
+     * 映射关系：
+     * client's serlvet url(/Modern)和Wrapper名字的映射关系
+     */
+    Map<String,String> servletMap = new HashMap<String,String >();
+
+    /**
+     * save the child of this context
+     * 对于SimpleContext来说，child就是挂载在这个context下的Wrapper(s)
+     */
+    Map<String, Container> childs = new HashMap<String ,Container>();
+
+
+    /**
+     * constructor
+     */
+        public SimpleContext(){
+        pipeline.setBasic(new SimpleContextValve());
+    }
+
+    @Override
+    public Loader getLoader() {
+        if(this.loader != null){
+            return loader;
+        }
+        return null;
+    }
+
+    @Override
+    public void invoke(Request request, Response response) throws IOException, ServletException {
+        pipeline.invoke(request,response);
+    }
+
+    @Override
+    public void setLoader(Loader loader) {
+        this.loader = loader;
+    }
+
+    @Override
+    public void addValve(Valve valve) {
+        pipeline.addValve(valve);
+    }
+
+    /**
+     * 添加映射关系
+     * client's serlvet url(/Modern)和Wrapper名字的映射关系
+     * @param pattern URL pattern to be mapped
+     * @param name Name of the corresponding servlet to execute
+     */
+    @Override
+    public void addServletMapping(String pattern, String name) {
+        servletMap.put(pattern,name);
+    }
+
+    /**
+     * 根据client's serlvet url(/Modern)，获取Wrapper名字(Modern)
+     * @param pattern Pattern for which a mapping is requested
+     * @return
+     */
+    @Override
+    public String findServletMapping(String pattern) {
+        return servletMap.get(pattern);
+    }
+
+    @Override
+    public void addChild(Container child) {
+        child.setParent((Container) this);
+        childs.put(child.getName(),child);
+    }
+
+    @Override
+    public Container findChild(String name) {
+        return childs.get(name);
+    }
+
+    @Override
+    public Valve getBasic() {
+        return null;
+    }
+
+    @Override
+    public void setBasic(Valve valve) {
+
+    }
+
+
+
+    @Override
+    public Valve[] getValves() {
+        return new Valve[0];
+    }
+
+
+    @Override
+    public void removeValve(Valve valve) {
+
+    }
+
     @Override
     public Object[] getApplicationListeners() {
         return new Object[0];
@@ -285,10 +398,6 @@ public class SimpleContext implements Context {
 
     }
 
-    @Override
-    public void addServletMapping(String pattern, String name) {
-
-    }
 
     @Override
     public void addTaglib(String uri, String location) {
@@ -461,11 +570,6 @@ public class SimpleContext implements Context {
     }
 
     @Override
-    public String findServletMapping(String pattern) {
-        return null;
-    }
-
-    @Override
     public String[] findServletMappings() {
         return new String[0];
     }
@@ -631,16 +735,6 @@ public class SimpleContext implements Context {
     }
 
     @Override
-    public Loader getLoader() {
-        return null;
-    }
-
-    @Override
-    public void setLoader(Loader loader) {
-
-    }
-
-    @Override
     public Logger getLogger() {
         return null;
     }
@@ -721,28 +815,20 @@ public class SimpleContext implements Context {
     }
 
     @Override
-    public void addChild(Container child) {
-
-    }
-
-    @Override
     public void addContainerListener(ContainerListener listener) {
 
     }
 
     @Override
     public void addMapper(Mapper mapper) {
-
+        mapper.setContainer((Container) this);
+        this.mapper = mapper;
+        int i = 0 ;
     }
 
     @Override
     public void addPropertyChangeListener(PropertyChangeListener listener) {
 
-    }
-
-    @Override
-    public Container findChild(String name) {
-        return null;
     }
 
     @Override
@@ -765,14 +851,10 @@ public class SimpleContext implements Context {
         return new Mapper[0];
     }
 
-    @Override
-    public void invoke(Request request, Response response) throws IOException, ServletException {
-
-    }
 
     @Override
     public Container map(Request request, boolean update) {
-        return null;
+        return mapper.map(request,update);
     }
 
     @Override

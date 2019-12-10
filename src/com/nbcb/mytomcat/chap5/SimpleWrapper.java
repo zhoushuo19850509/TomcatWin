@@ -23,7 +23,8 @@ import java.net.URLClassLoader;
 public class SimpleWrapper implements Wrapper,Pipeline {
 
     /**
-     * 当前SimpleWrapper要加载的Servlet的名称
+     * 当前SimpleWrapper要加载的Servlet实例的名称
+     * (我想其实应该包含Servlet的package路径吧)
      */
     private String servletClass;
 
@@ -45,7 +46,13 @@ public class SimpleWrapper implements Wrapper,Pipeline {
     /**
      * The parent Container of this Wrapper(Container)
      */
-    protected Container parent;
+    protected Container parent = null;
+
+    /**
+     * Wrapper's name
+     */
+    private String name;
+
 
     /**
      * constructor
@@ -187,6 +194,16 @@ public class SimpleWrapper implements Wrapper,Pipeline {
     @Override
     public void invoke(Request request, Response response) throws IOException, ServletException {
         pipeline.invoke(request,response);
+    }
+
+    @Override
+    public String getName() {
+        return this.name;
+    }
+
+    @Override
+    public void setName(String name) {
+        this.name = name;
     }
 
 
@@ -350,24 +367,16 @@ public class SimpleWrapper implements Wrapper,Pipeline {
 
     }
 
-    @Override
-    public String getName() {
-        return null;
-    }
-
-    @Override
-    public void setName(String name) {
-
-    }
 
     @Override
     public Container getParent() {
-        return null;
+        return this.parent;
     }
+
 
     @Override
     public void setParent(Container container) {
-
+        this.parent = container;
     }
 
     @Override

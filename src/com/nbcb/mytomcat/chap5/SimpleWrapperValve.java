@@ -67,6 +67,11 @@ public class SimpleWrapperValve implements Valve, Contained {
             hsres = (HttpServletResponse) sres;
         }
 
+        /**
+         * 在BootStrap1中，SimpleWrapper会根据
+         * BootStrap1中设置的servlet name直接拿到Servlet类实例的。
+         *
+         */
         Servlet servlet = wrapper.allocate();
         if(hsreq != null && hsres != null){
             servlet.service(hsreq,hsres);

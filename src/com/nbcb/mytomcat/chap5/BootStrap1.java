@@ -12,7 +12,7 @@ import java.io.IOException;
  * TomcatWin\doc\Tomcat整体架构图.vsd\Chap5 整体框架
  */
 public class BootStrap1 {
-    public static void main(){
+    public static void main(String[] args){
         /**
          * 调用Chap4的HttpConnector启动ServerSocket，处理来自客户端的请求
          */
@@ -48,7 +48,7 @@ public class BootStrap1 {
          * 疑问：这个ServletName难道不是从request url中获取吗？？
          * 这个后续当然是要优化的
          */
-        wrapper.setServletClass("");
+        wrapper.setServletClass("ModernServlet");
 
         /**
          * 把我们之前定义的这两个Valve设置到wrapper流水线中
@@ -57,7 +57,7 @@ public class BootStrap1 {
         ((Pipeline)wrapper).addValve(valve2);
 
         /**
-         * 这个方法很关键，就是把wrapper设置为connector
+         * 这个方法很关键，就是把wrapper设置给connector
          * 后续connector解析完客户端http请求之后，就会调用wrapper.invoke()方法
          * 具体请参考chap4/HttpProcessor.process(): container.invoke(request,response);
          */

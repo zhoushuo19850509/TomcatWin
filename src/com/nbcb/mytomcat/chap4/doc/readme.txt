@@ -8,12 +8,18 @@ Chapter4 Tomcat Default Connector
 参考这本书， 做一个“自己”的tomcat，当然是很有乐趣的事情。
 但是什么样的tomcat才是“自己”的呢？这章开始，就给出了一个规范：
 引入了org.apache.catalina这个package
-这个package
+这个package里有很多接口，这些接口就是tomcat的规范
+所谓的“自己”的tomcat，就是遵循这些接口规范，写自己的实现类。
+随便举一个例子，chap4中引入了概念就是HttpConnector，
+这个connector就是实现了org.apache.catalina.Connector接口，实现了Connector接口
+的一些方法，比如initialize()/run()等
 
 2.关于代码分层的讨论
 代码为啥要分层？
 为啥不能把所有的逻辑糅合在一个类之中？
 因为我们要在特定的层中，实现一个特定的功能。
+而且所有的逻辑糅合在一个类中，代码会非常混乱，可读性/可维护性/扩展性就会非常差。
+尤其是对于tomcat这类大型软件来说，是不可接受的。
 以我们的BootStrap.java为例:
 【待补充】
 

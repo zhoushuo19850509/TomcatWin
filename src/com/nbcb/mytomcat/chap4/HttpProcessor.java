@@ -252,6 +252,11 @@ public class HttpProcessor implements Runnable{
             parseRequest(input,output);
 
             /**
+             * 设置客户端IP
+             */
+            setRemoteAddr(socket);
+
+            /**
              * 解析http header
              */
             parseHeaders(input);
@@ -328,6 +333,9 @@ public class HttpProcessor implements Runnable{
 
     }
 
+
+
+
     private static final byte[] ack =
             (new String("HTTP/1.1 100 Continue\r\n\r\n")).getBytes();
 
@@ -387,6 +395,20 @@ public class HttpProcessor implements Runnable{
                     }
                 }
             }
+        }
+    }
+
+    /**
+     * 根据客户端的socket连接
+     * 获取客户端的IP
+     * 然后把客户端IP设置到Request对象中
+     * 后续Servlet会通过调用request.getRemoteAddr()方法获取客户端的IP
+     * @param socket
+     */
+    public void setRemoteAddr(Socket socket){
+        String clientIP = socket.getLocalAddress().getHostAddress();
+        if(clientIP != null){
+            request.setRemoteAddr(clientIP);
         }
     }
 

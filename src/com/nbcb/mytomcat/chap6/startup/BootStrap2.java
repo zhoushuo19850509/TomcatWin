@@ -1,10 +1,14 @@
-package com.nbcb.mytomcat.chap5;
+package com.nbcb.mytomcat.chap6.startup;
 
 import com.nbcb.mytomcat.chap4.HttpConnector;
+import com.nbcb.mytomcat.chap6.*;
 import org.apache.catalina.*;
 
 import java.io.IOException;
 
+/**
+ * 这个BootStrap主要为了验证我们的Lifecyle功能
+ */
 public class BootStrap2 {
 
     public static void main(String[] args){
@@ -25,6 +29,10 @@ public class BootStrap2 {
         wrapper2.setName("Modern");
         wrapper2.setServletClass("ModernServlet");
 
+        LifecycleListener wrapperListener = new SimpleWrapperLifecycleListener();
+        ((SimpleWrapper) wrapper1).addLifecycleListener(wrapperListener);
+        ((SimpleWrapper) wrapper2).addLifecycleListener(wrapperListener);
+
         Context context = new SimpleContext();
         context.addChild(wrapper1);
         context.addChild(wrapper2);
@@ -36,14 +44,7 @@ public class BootStrap2 {
         Loader loader = new SimpleLoader();
         context.setLoader(loader);
 
-        /**
-         * new 两个Valve对象
-         * 后续我们Wrapper处理Servlet的时候，会调用这两个流水线节点
-         */
-        Valve valve1 = new HeaderLoggerValve();
-        Valve valve2 = new ClientIPLoggerValve();
-
-        Mapper mapper = new SimpleContextMapper();
+        Mapper mapper = new com.nbcb.mytomcat.chap6.SimpleContextMapper();
         mapper.setProtocol("http");
         context.addMapper(mapper);
 
@@ -55,11 +56,10 @@ public class BootStrap2 {
         context.addServletMapping("/PrimitiveServlet","Primitive");
 
         /**
-         * 把我们之前定义的这两个Valve设置到SimpleContext流水线中
+         * 定义一个Listener，专门是用于监听SimpleContext的
          */
-        ((Pipeline)context).addValve(valve1);
-        ((Pipeline)context).addValve(valve2);
-
+        LifecycleListener listener = new SimpleContextLifecycleListener();
+        ((SimpleContext) context).addLifecycleListener(listener);
         /**
          * 这个方法很关键，就是把context设置给connector
          * 后续connector解析完客户端http请求之后，就会调用context.invoke()方法
@@ -71,11 +71,17 @@ public class BootStrap2 {
             connector.start();
 
 
-
+            /**
+             * 因为SimpleContext实现了Lifecycle接口
+             * 所以可以直接调用start()接口
+             */
+            ((Lifecycle)context).start();
             /**
              * wait until we press any key
              */
             System.in.read();
+
+            ((Lifecycle)context).stop();
 
         } catch (LifecycleException e) {
             e.printStackTrace();

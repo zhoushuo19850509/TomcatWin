@@ -1,5 +1,7 @@
 package com.nbcb.mytomcat.chap6;
 
+import com.nbcb.mytomcat.chap6.SimpleContextValve;
+import com.nbcb.mytomcat.chap6.SimplePipeline;
 import org.apache.catalina.*;
 import org.apache.catalina.deploy.*;
 import org.apache.catalina.util.CharsetMapper;
@@ -45,11 +47,15 @@ public class SimpleContext implements Context,Pipeline,Lifecycle {
 
     protected LifecycleSupport lifecycle = new LifecycleSupport(this);
 
+    /**
+     * SimpleContext的FileLogger对象
+     */
+    private Logger logger = null;
 
     /**
      * constructor
      */
-        public SimpleContext(){
+    public SimpleContext(){
         pipeline.setBasic(new SimpleContextValve());
     }
 
@@ -737,14 +743,30 @@ public class SimpleContext implements Context,Pipeline,Lifecycle {
         return null;
     }
 
+    /**
+     * getLogger()/setLogger()方法，是实现了Container接口中的方法
+     * @return
+     */
     @Override
     public Logger getLogger() {
-        return null;
+        return this.logger;
     }
+
 
     @Override
     public void setLogger(Logger logger) {
+        this.logger = logger;
+    }
 
+    /**
+     * Context对象打印日志的实际方法
+     * @param message
+     */
+    private void log(String message){
+        Logger logger = this.getLogger();
+        if(null != logger){
+            logger.log(message);
+        }
     }
 
     @Override
@@ -915,6 +937,7 @@ public class SimpleContext implements Context,Pipeline,Lifecycle {
      */
     @Override
     public void start() throws LifecycleException {
+        log("Simple Context is now starting!");
 
         if(started){
             throw new LifecycleException("SimpleContext has already started");
@@ -948,7 +971,7 @@ public class SimpleContext implements Context,Pipeline,Lifecycle {
 
         lifecycle.fireLifecycleEvent(START_EVENT,null);
 
-
+        log("Simple Context has started!");
     }
 
     /**
@@ -960,6 +983,7 @@ public class SimpleContext implements Context,Pipeline,Lifecycle {
      */
     @Override
     public void stop() throws LifecycleException {
+        log("Simple Context is now stopping!");
         lifecycle.fireLifecycleEvent(BEFORE_STOP_EVENT,null);
         lifecycle.fireLifecycleEvent(STOP_EVENT,null);
 
@@ -986,6 +1010,8 @@ public class SimpleContext implements Context,Pipeline,Lifecycle {
         if((loader != null) && (loader instanceof Lifecycle) ){
             ((Lifecycle) loader).stop();
         }
+
+        log("Simple Context is stopped!");
 
     }
 }

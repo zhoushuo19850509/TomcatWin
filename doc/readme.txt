@@ -10,53 +10,31 @@ Tomcat其实就是Java容器，所谓的Java容器，和web server不一样的�
 Servlet就是定义在服务端的Java类，这个Java类只要实现了javax.servlet.Servlet接口
 客户端就能够直接通过HTTP服务来调用这个Servlet，服务端能够把这个Servlet的执行结果返回给客户端
 
-============================================源码示例1
-中文译者的gitHub地址
-https://github.com/Aresyi/HowTomcatWorks
-
-我已经clone到本地了
-/home/zhoushuo/Documents/testGit/HowTomcatWorks
-
-============================================源码示例2
-《How Tomcat Works》原版书也有源码：
-https://www.brainysoftware.com/book/9780975212806;jsessionid=0DE37520BC120ACCD65D7F8D5348EB59
-
-我也下载了放到本地了：
-/home/zhoushuo/Documents/Tech/tomcat/HowTomcatWorks
-
-============================================源码示例3
-Tomcat各个版本的代码，下载到本地：
-/home/zhoushuo/Documents/Tech/tomcat/TomcatCode
 
 
-
-============================================我自己代码的gitHub地址
-https://github.com/zhoushuo19850509/TomcatTest
+============================================doc下各个readme_XXX.txt的分类
 
 
-============================================代码说明
-主入口:
-HttpServer.java
+readme.txt   // 总体说明
 
-chap1 A Simple Web Server
-就像题目说的一样，这章主要是创建了一个简单的web server
-我们启动HttpServer.java之后，客户端能够通过如下url:
-http://localhost:8080/index.html
-获取到一个静态页面
+已添加
+readme_prepare.txt  // 在开发tomcat之前要做的准备工作
+readme_tomcat_version.txt  // 各个版本的tomcat
+readme_related_libs.txt  // tomcat依赖的lib包
+readme_code.txt   // 源码说明
+readme_tomcat_version.txt  // tomcat相关的版本，主要是特定版本的tomcat需要搭配特定版本的JDK/Servlet
+readme_summary.txt   // 相关总结
+readme_autoDeploy.txt    // 自动编译出可用的binary
+thinking.txt  // 胡思乱想
+readme_WhyTomcat.txt     // 总结一下为啥要学习Tomcat，学习tomcat的理由(有哪些收获)
+readme_enhancement.txt   // 后续要加强的Java知识
+readme_autoTest.txt      // 自动测试当前版本tomcat的功能
+readme_futurePlan.txt    // 未来要做的一些事情
+
+待添加
+readme_contribution.txt  // 如何为社区贡献
 
 
-============================================关于自动编译
-为啥要自动编译呢？
-因为我们在实际运行中发现，要部署某个servlet比较麻烦。
-
-ant需要做的事情是：
-1.自动将整个工程进行编译
-
-2.将工程中各个Servlet的编译结果放到webroot中去
-这样客户端访问Servlet服务的时候，就能访问到了
-
-3.自动启动我们指定的Servlet服务
-一般是BootStrap.java
 
 
 

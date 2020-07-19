@@ -20,11 +20,20 @@ WebappClassLoader
   参考WebappLoader.createClassLoader()
 
 2.setRepositories
-设置Servlet类存放的路径，比如我们当前工程的Servlet路径为：
+设置Servlet类存放的路径，比如之前SimpleLoader设置的Servlet路径为：
 /Users/zhoushuo/Documents/workspace/TomcatWin/webroot/
 
 当然，具体逻辑要比原来SimpleLoader要复杂，具体参考：
 org.apache.catalina.loader.WebappLoader.setRepositories()
+
+总体来说，这次setRepository要设置两个地址：
+(1)servlet类存放的路径
+WEB-INF/classes
+
+(2)servlete需要引用的jar包路径
+WEB-INF/lib
+
+
 
 3.set class path
 这个主要是为了设置JSP编译器的，这里暂时先不讨论

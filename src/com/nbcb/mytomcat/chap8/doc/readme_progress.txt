@@ -90,9 +90,16 @@
 后续要特别重视，持久保持状态。血的教训啊
 
 20200719
-既然SimpleLoader功能已经调试通了，就可以开始
+既然SimpleLoader功能已经调试通了，就可以开始本章Loader的新功能了
+WebappLoader.setRepositories() 调试成功
+这个方法采用createClassLoader()方法来创建WebappClassLoader实例，
+能够通过setRepositories()方法设置WEB-INF/classes和WEB-INF/lib
+比之前dcreateSimpleClassLoader()功能丰富了很多
 
-
+为了验证我们的成果，可以把原来的webroot目录下的servlet类删除：
+cd /Users/zhoushuo/Documents/workspace/TomcatWin/webroot
+mv ModernServlet.class ModernServlet.class_bak
+mv PrimitiveServlet.class PrimitiveServlet.class_bak
 
 
 

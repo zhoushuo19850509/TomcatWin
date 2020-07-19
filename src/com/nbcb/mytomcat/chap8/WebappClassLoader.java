@@ -9,6 +9,7 @@ import org.apache.catalina.loader.ResourceEntry;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.net.URLStreamHandler;
@@ -16,6 +17,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class WebappClassLoader extends URLClassLoader implements Reloader , Lifecycle {
+
+    /**
+     * servlet要引用的jar包的路径：
+     * WEB-INF/lib
+     */
+    protected String jarPath = null;
 
 
     /**
@@ -45,6 +52,15 @@ public class WebappClassLoader extends URLClassLoader implements Reloader , Life
 
     @Override
     public void addRepository(String repository) {
+        try {
+            repository = (new URL("file",null,
+                    repository + File.separator)).toString();
+            URLStreamHandler streamHandler = null;
+            URL url = new URL(null, repository, streamHandler);
+            super.addURL(url);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
 
     }
 
@@ -97,5 +113,18 @@ public class WebappClassLoader extends URLClassLoader implements Reloader , Life
     @Override
     public void stop() throws LifecycleException {
 
+    }
+
+
+    /**
+     * getter()/setter() of jar path
+     * @return
+     */
+    public String getJarPath() {
+        return jarPath;
+    }
+
+    public void setJarPath(String jarPath) {
+        this.jarPath = jarPath;
     }
 }

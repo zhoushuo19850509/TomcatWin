@@ -213,9 +213,6 @@ public class WebappLoader implements Loader, Runnable, Lifecycle {
         }
     }
 
-
-
-
     /**
      * 这个私有方法，主要是通过反射的方式，创建WebappClassLoader实例对象
      * @return
@@ -261,6 +258,7 @@ public class WebappLoader implements Loader, Runnable, Lifecycle {
              * 地址形式主要是按照file协议访问WEB_ROOT下编译好的servlet class，比如：
              * file:/home/zhoushuo/Documents/testGit/TomcatTest/webroot/
              */
+
 //            System.out.println("repository: " + repository);
             urls[0] = new URL(null,repository,streamHandler);
         } catch (IOException e) {
@@ -307,10 +305,17 @@ public class WebappLoader implements Loader, Runnable, Lifecycle {
         lifecycle.fireLifecycleEvent(START_EVENT,null);
         started = true;
 
+
+        /**
+         * 这里为了调试，先尝试创建一个SimpleLoader(参考chap5/SimpleLoader.java)
+         */
+//        classLoader = createSimpleClassLoader();
+
         /**
          * 调用本地的私有方法，创建一个WebappClassLoader实例
          */
-        classLoader = createSimpleClassLoader();
+        classLoader = createClassLoader();
+
 
         /**
          * 配置repository
@@ -335,6 +340,10 @@ public class WebappLoader implements Loader, Runnable, Lifecycle {
          * 启动当前WebappLoader的异步线程，开始检测servlet是否有reload
          */
         threadStart();
+
+
+        System.out.println("WebappLoader started! The repository of the new web app class loader is : " +
+                classLoader.getURLs()[0]);
 
     }
 
@@ -371,7 +380,12 @@ public class WebappLoader implements Loader, Runnable, Lifecycle {
      *   servlet需要用到的jar包目录
      */
     private void setRepositories(){
+        String classRepository = System.getProperty("user.dir") + "/WEB-INF/classes";
 
+        this.classLoader.addRepository(classRepository);
+
+        String jarPath = "/WEB-INF/lib";
+        this.classLoader.setJarPath(jarPath);
     }
 
     /**

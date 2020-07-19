@@ -10,8 +10,12 @@
 (1)启动本地tomcat工程： BootStrap.java
 (2)输入URL访问本地tomcat servlet服务
 http://localhost:8080/servlet/PrimitiveServlet
+http://localhost:8080/servlet/ModernServlet
+
 
 2.验证自动reload功能
+
+
 
 
 3.验证cache功能

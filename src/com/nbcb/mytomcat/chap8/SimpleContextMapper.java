@@ -1,6 +1,10 @@
-package com.nbcb.mytomcat.chap6;
+package com.nbcb.mytomcat.chap8;
 
-import org.apache.catalina.*;
+import com.nbcb.mytomcat.chap6.SimpleContext;
+import org.apache.catalina.Container;
+import org.apache.catalina.Mapper;
+import org.apache.catalina.Request;
+import org.apache.catalina.Wrapper;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -10,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
  */
 public class SimpleContextMapper implements Mapper {
 
-    private SimpleContext context = null;
+    private StandardContext context = null;
     private String protocol = "";
 
     @Override
@@ -20,10 +24,10 @@ public class SimpleContextMapper implements Mapper {
 
     @Override
     public void setContainer(Container container) {
-        if(!(container instanceof SimpleContext)){
+        if(!(container instanceof StandardContext)){
             throw new IllegalArgumentException("illegal type of container");
         }
-        this.context = (SimpleContext) container;
+        this.context = (StandardContext) container;
     }
 
     @Override

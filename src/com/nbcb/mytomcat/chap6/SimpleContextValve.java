@@ -45,7 +45,7 @@ public class SimpleContextValve implements Valve, Contained {
         /**
          * 首先获取当前Valve挂靠在哪个container下
          */
-        SimpleContext context = (SimpleContext) getContainer();
+        Context context = (Context) getContainer();
 
         ServletRequest sreq = request.getRequest();
         ServletResponse sres = response.getResponse();

@@ -1,7 +1,8 @@
-package com.nbcb.mytomcat.chap6;
+package com.nbcb.mytomcat.chap8;
 
 import com.nbcb.mytomcat.chap6.SimpleContextValve;
 import com.nbcb.mytomcat.chap6.SimplePipeline;
+import com.nbcb.mytomcat.chap6.SimpleWrapper;
 import org.apache.catalina.*;
 import org.apache.catalina.deploy.*;
 import org.apache.catalina.util.CharsetMapper;
@@ -13,13 +14,16 @@ import javax.servlet.ServletException;
 import java.beans.PropertyChangeListener;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
- * SimpleContext类似于Application
+ * StandardContext类似于Application
  * 包含一个或者多个Wrapper(Servlet)
+ * StandardContext和之前的SimpleContext不同之处在于，加入了reload功能
+ * 能够重启整个Application，从而使得最新的servlet生效
  */
-public class SimpleContext implements Context,Pipeline,Lifecycle {
+public class StandardContext implements Context, Pipeline, Lifecycle {
 
     /**
      * the pipeline of the context
@@ -29,7 +33,7 @@ public class SimpleContext implements Context,Pipeline,Lifecycle {
     /**
      * The (Servlet) loader of this Wrapper
      */
-    private Loader  loader;
+    private Loader loader;
 
     private Mapper mapper = null;
 
@@ -55,7 +59,7 @@ public class SimpleContext implements Context,Pipeline,Lifecycle {
     /**
      * constructor
      */
-    public SimpleContext(){
+    public StandardContext(){
         pipeline.setBasic(new SimpleContextValve());
     }
 
@@ -623,9 +627,70 @@ public class SimpleContext implements Context,Pipeline,Lifecycle {
         return new String[0];
     }
 
+    /**
+     * 能够重启整个Application，从而使得最新的servlet生效
+     */
     @Override
-    public void reload() {
+    public synchronized void reload() {
 
+
+        /**
+         * Step1 停止Wrappers
+         * 停止当前context下所有的Wrapper，其实就是停止当前所有的servlet服务
+         */
+        for(String name: childs.keySet()){
+            SimpleWrapper child = (SimpleWrapper)childs.get(name);
+            if(child instanceof Lifecycle){
+                try {
+                    ((Lifecycle)child).stop();
+                } catch (LifecycleException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+
+        /**
+         * Step2 停止Loader
+         * 停止Context对应的loader
+         */
+
+        if(loader != null && loader instanceof Lifecycle){
+            try {
+                ((Lifecycle)loader).stop();
+            } catch (LifecycleException e) {
+                e.printStackTrace();
+            }
+        }
+
+        /**
+         * Step3 启动Loader
+         */
+        if(loader != null && loader instanceof Lifecycle){
+            try {
+                ((Lifecycle)loader).start();
+            } catch (LifecycleException e) {
+                e.printStackTrace();
+            }
+        }
+
+        /**
+         * Step4 启动Wrappers
+         */
+        for(String name: childs.keySet()){
+            SimpleWrapper child = (SimpleWrapper)childs.get(name);
+            if(child instanceof Lifecycle){
+                try {
+                    ((Lifecycle)child).start();
+                } catch (LifecycleException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        /**
+         * Step5 触发reload事件
+         */
     }
 
     @Override
@@ -791,7 +856,7 @@ public class SimpleContext implements Context,Pipeline,Lifecycle {
 
     @Override
     public String getName() {
-        return "SimpleContext";
+        return null;
     }
 
     @Override
@@ -859,6 +924,10 @@ public class SimpleContext implements Context,Pipeline,Lifecycle {
     @Override
     public Container[] findChildren() {
         return new Container[0];
+    }
+
+    public Map<String,Container> findChildrenList() {
+        return childs;
     }
 
     @Override

@@ -144,7 +144,7 @@ public class SimpleWrapper implements Wrapper,Pipeline,Lifecycle {
             myClass =    classLoader.loadClass(servletName);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
-        }
+    }
 
         Servlet servlet = null;
 

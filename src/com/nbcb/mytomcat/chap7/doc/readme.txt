@@ -14,15 +14,13 @@ Logger体系比较简单。
 =====================Logger体系
 Logger体系的核心当然是FileLogger啦，因为比较简单，这里没有重写这个代码
 直接就调用catalina中自带的FileLogger 对象了
-后续可以仔细看看FileLogger 代码，看看日志打印的原理
+后续可以仔细看看FileLogger 代码，看看日志打印的原理。
+有时间要重写一遍FileLogger
 
 ======================FileLogger用法
 用法和我们在log4j中稍微有点不一样。
-log4j中是这样的：
-Logger log = new Logger.getLogger(this);
-log.error("Exception occur here...");
 
-这里的FileLogger的用法是这样的
+FileLogger的用法是这样的
 1.实例化FileLogger对象
 FileLogger logger = new FileLogger();
 
@@ -37,6 +35,21 @@ context.setLogger(logger);
 4.最后，在各个对象中使用FileLogger对象打印日志
 logger.log("write sth here...");
 
+
+log4j中是这样的：
+Logger log = new Logger.getLogger(this);
+log.error("Exception occur here...");
+
+
+很显然，log4j的用法更加先进，在实际要用到日志功能的类中，无需设置setLogger()/getLogger()/log()方法
+这几个方法是模板方法，log4j的做法显然简化了代码。后续读一下代码，看看log4j是怎么做到的。
+======================代码说明
+1.代码入口
+BootStrap
+入口代码定义了FileLogger对象
+
+2.SimpleContext
+修改了setLogger()/getLogger()方法，使得SimpleContext对象能够使用到日志功能
 
 ======================后续1
 比较log4j和Catalina FileLogger的异同点

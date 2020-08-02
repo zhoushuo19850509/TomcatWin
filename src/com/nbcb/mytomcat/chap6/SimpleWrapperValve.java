@@ -78,6 +78,7 @@ public class SimpleWrapperValve implements Valve, Contained {
         }else{
             servlet.service(sreq,sres);
         }
+        System.out.println("finish invoke the servlet instance");
 
     }
 }

@@ -101,5 +101,55 @@ cd /Users/zhoushuo/Documents/workspace/TomcatWin/webroot
 mv ModernServlet.class ModernServlet.class_bak
 mv PrimitiveServlet.class PrimitiveServlet.class_bak
 
+接下来，就可以开始研究reload了
+
+20200726
+今天开始研究reload
+今天把reload代码搞定了，很久成就感！
+但是碰到一个问题，就是我们开发的tomcat，加载的servlet貌似有点问题，好像不是从WEB-INF/classes目录下取的
+
+20200730
+今天继续定位class类的问题，怎么解决呢？
+这个没啥好说的，就是单步调试呗
+大致问题应该找到了，其实就只要看一下我们加载的servlet类的类路径就行了：
+日志：
+class resource of the servlet instance: file:/Users/zhoushuo/Documents/workspace/TomcatWin/out/production/TomcatWin/
+
+相关代码：
+SimpleWrapper.loadServlet()
+
+这个问题可能由来已久，之前我们用SimpleLoader加载Servlet的时候，问题就已经在了。
+问题根源还是反射的基础不够扎实。
+我们就单独就反射这块，补强一下，
+搞一个测试类验证一下class文件的加载
+
+
+20200801
+测试类为：ClassLoaderTest.java
+这个测试类加载jar包中的class文件和普通文件路径下的class文件都成功了
+
+接下来可以尝试通过一个测试程序模拟
+WebappLoader.createClassLoader()创建WebappClassLoader实例的代码，看看实际的Loader效果如何
+
+目前我们的问题是，
+我们加载的servlet Class ，getResource()的结果为：
+file:/Users/zhoushuo/Documents/workspace/TomcatWin/out/production/TomcatWin/
+执行结果也是和这个getResource()结果一样，都是执行这个out目录下的class类:ModernServlet.class
+
+这显然和我们的预期不符
+我们的预期是，
+我们加载的servlet Class ，getResource()的结果为：
+file:/Users/zhoushuo/Documents/workspace/TomcatWin/WEB-INF/classes/
+要执行这个目录下的class类:ModernServlet.class
+
+
+哈哈，问题解决了！
+同时，也解决了reload测试的问题。
+开心开心开心！
+虽然之前重启tomcat的过程很痛苦，但是重新上手之后，还是很有收获的！
+尤其是这个Loader问题的解决，学习了java load的原理，非常开心！
+
+
+趁热好好总结一下。
 
 

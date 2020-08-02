@@ -45,7 +45,8 @@ WEB-INF/lib
 
 
 5.通过异步线程实现servlet reload功能
-  参考WebappLoader.run()
+  代码请参考：WebappLoader.run()
+  文档请参考：readme_reload.txt
   当然，reload的流程可以再通过UML好好梳理一下
 
 =============================WebappClassLoader
@@ -79,6 +80,16 @@ org.apache.catalina.loader.WebappClassLoader.loadClass(servletName)
 3.检测servlet类有没有更新
 这个功能主要是通过实现Reloader.modified()方法实现的
 具体实现逻辑参考：org.apache.catalina.loader.WebappClassLoader.modified()方法
+
+modified()方法的逻辑总结如下:
+(1)WebappLoader启动的时候，先调用WebappClassLoader.setLastModifieds();方法，
+   把repository(/WEB-INF/classes)下所有文件的lastModified字段
+   收集起来，放到WebappClassLoader一个数据结构中去；
+(2)后续WebappLoader会有异步线程，调用WebappClassLoader.modified()方法，
+   检查repository(/WEB-INF/classes)下的文件，lastModified字段是否有修改；
+(3)
+
+
 
 4.提升安全性
 就是限制某些类(某些package下的类)被加载

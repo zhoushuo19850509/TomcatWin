@@ -155,6 +155,7 @@ public class WebappLoader implements Loader, Runnable, Lifecycle {
             /**
              * 如果servlet类没有修改，就跳过这次reload
              */
+            System.out.println("the result of lastModified check : " + classLoader.modified());
             if(!classLoader.modified()){
                 continue;
             }
@@ -174,7 +175,7 @@ public class WebappLoader implements Loader, Runnable, Lifecycle {
      * 每隔多少时间，去检查一下servlet class是否modified
      * 默认是15秒，可以通过配置文件修改
      */
-    private int checkInterVal = 15;
+    private int checkInterVal = 10;
 
     /**
      * reload 线程休眠一会儿
@@ -315,16 +316,23 @@ public class WebappLoader implements Loader, Runnable, Lifecycle {
          * 调用本地的私有方法，创建一个WebappClassLoader实例
          */
         classLoader = createClassLoader();
-
+        System.out.println("finish create class loader");
 
         /**
          * 配置repository
          */
         setRepositories();
+        System.out.println("finish set repository");
 
         setClassPath();
 
         setPermissions();
+
+        /**
+         * 在Loader启动的时候，先获取一遍WEB-INF/classes下所有class类的lastModified字段
+         * 用于后续reload()
+         */
+        classLoader.setLastModifieds();
 
 
         /**

@@ -47,7 +47,7 @@ public class ModernServlet extends HttpServlet {
         writer.println("<title>Modern Servlet</title>");
         writer.println("</head>");
         writer.println("<body>");
-        writer.println("<h2>Headers</h2>");
+        writer.println("<h2>Headers of WEB-INF new2</h2>");
 
 
         /**
@@ -81,6 +81,10 @@ public class ModernServlet extends HttpServlet {
         writer.println("<br>" + request.getRequestURI() + "</br>");
         writer.println("</body>");
         writer.println("</html>");
+    }
+
+    public void sayHello(){
+        System.out.println("hello from ModernServlet file");
     }
 }
 

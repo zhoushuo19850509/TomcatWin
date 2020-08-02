@@ -42,7 +42,10 @@ org.apache.catalina.core.StandardContext.java / StandardContext.reload()
 Loader重新启动，其实就是调用WebappLoader.stop()/start()方法
 所以，真正的reload任务其实是在WebappLoader.stop()/start()方法中完成的。
 
-
+特别注意：我们观察StandardContext.reload()方法，可以看到，真正实现我们servlet class reload功能的，
+其实是在reload()中对Context下挂的那些Wrapper进行了重启(SimpleWrapper)，一旦SimpleWrapper进行了重启，
+之前SimpleWrapper实例中保存的Servlet instance，也就进行了销毁
+后续我们访问Servlet instance，就是更新后的Servlet instance。
 ================================reload的几个问题
 问题1 既然reload()的动作是由WebappLoader这个异步线程来完成的。
 那么，WebappLoader这个异步究竟是怎么启动的呢？

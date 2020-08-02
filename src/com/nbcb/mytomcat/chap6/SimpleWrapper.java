@@ -141,7 +141,9 @@ public class SimpleWrapper implements Wrapper,Pipeline,Lifecycle {
 
         Class myClass = null;
         try {
+            System.out.println("print the current of classloader" + classLoader.toString());
             myClass =    classLoader.loadClass(servletName);
+            System.out.println("class resource of the servlet instance: " + myClass.getResource("/"));
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
     }
@@ -522,6 +524,18 @@ public class SimpleWrapper implements Wrapper,Pipeline,Lifecycle {
     @Override
     public void stop() throws LifecycleException {
         lifecycle.fireLifecycleEvent(BEFORE_STOP_EVENT,null);
+
+        /**
+         * SimpleWrapper关闭的时候，要把对应的servlet instance也要销毁
+         * 这样才能配合后续的Loader的reload()操作：
+         * 一旦Loader发现servlet类有改动，就通过contenxt.reload()操作，
+         * 把整个context下所有的Wrapper下的servlet全部重新加载一遍
+         */
+        if(null != instance){
+            instance.destroy();
+            instance = null;
+        }
+
         lifecycle.fireLifecycleEvent(STOP_EVENT,null);
     }
 }

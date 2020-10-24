@@ -1,6 +1,4 @@
-import com.nbcb.mytomcat.chap3.HttpProcessor;
-import com.nbcb.mytomcat.chap3.HttpRequest;
-import com.nbcb.mytomcat.chap3.HttpResponse;
+
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServlet;
@@ -81,6 +79,10 @@ public class ModernServlet extends HttpServlet {
         writer.println("<br>" + request.getRequestURI() + "</br>");
         writer.println("</body>");
         writer.println("</html>");
+
+
+
+
     }
 
     public void sayHello(){

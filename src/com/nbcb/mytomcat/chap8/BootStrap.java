@@ -89,6 +89,8 @@ public class BootStrap {
 
         // 日志文件中是否打印时间戳
         logger.setTimestamp(true);
+
+
         // 日志打印在哪个具体的目录下
         logger.setDirectory("webroot");
         context.setLogger(logger);

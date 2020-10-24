@@ -1,0 +1,729 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>576</x>
+      <y>232</y>
+      <w>112</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>WebappClassLoader
+--
+loadClass()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>160</y>
+      <w>112</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>SimpleWrapper
+--
+loadServlet()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>0</x>
+      <y>120</y>
+      <w>168</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>SimpleWrapper加载servlet class的入口
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>16</x>
+      <y>296</y>
+      <w>320</w>
+      <h>184</h>
+    </coordinates>
+    <panel_attributes>代码阅读总结:
+1.加载顺序
+我们看加载顺序:
+(1)先从之前缓存的class中查找
+findLoadedClass0() 
+其实就是从resourceEntries中找
+(2)再从系统class中去找:
+system.loadClass
+其实就是从JDK包中的class中去找,比如java.* / javax.*
+(3)再从我们的repository中去找
+findClass()
+这个和书本中关于Loader顺序的介绍是一致的,
+主要是为了防止我们自己的class覆盖JDK系统系统的class
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>256</x>
+      <y>200</y>
+      <w>120</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>130.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>488</x>
+      <y>256</y>
+      <w>104</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>110.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>784</x>
+      <y>120</y>
+      <w>112</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>WebappClassLoader
+--
+findLoadedClass0()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>360</x>
+      <y>8</y>
+      <w>168</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>判断servlet class instance是否存在,如果之前加载过了,就直接返回
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>784</x>
+      <y>40</y>
+      <w>256</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>先看看要加载的class,之前是否已经加载过了
+(要查看之前是否加载,
+只要根据servletName去resourceEntries
+这个Map中去取就行了)
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>368</x>
+      <y>80</y>
+      <w>96</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>之前加载过了,就直接返回
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>360</x>
+      <y>240</y>
+      <w>136</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>之前没有加载过,就调用Loader进行加载
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLSpecialState</id>
+    <coordinates>
+      <x>248</x>
+      <y>176</y>
+      <w>32</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>type=decision</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>256</x>
+      <y>96</y>
+      <w>128</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+存在</panel_attributes>
+    <additional_attributes>140.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>104</x>
+      <y>176</y>
+      <w>160</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+判断
+servlet class instance
+是否存在</panel_attributes>
+    <additional_attributes>180.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1096</x>
+      <y>120</y>
+      <w>96</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>直接返回之前加载的class
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1000</x>
+      <y>128</y>
+      <w>112</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+之前加载过了
+</panel_attributes>
+    <additional_attributes>120.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>680</x>
+      <y>144</y>
+      <w>120</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>130.0;10.0;10.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>1344</x>
+      <y>64</y>
+      <w>152</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>先看看要加载的class,之前是否已经加载过了
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>784</x>
+      <y>240</y>
+      <w>152</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>实时加载servlet class:
+system.loadClass(name);
+style=wordwrap
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>848</x>
+      <y>152</y>
+      <w>160</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+之前没有加载过</panel_attributes>
+    <additional_attributes>10.0;110.0;180.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>504</x>
+      <y>312</y>
+      <w>232</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>对于这个loadClass()方法,我们要简单说明一下.之前的版本(reload),我们是直接调用
+loader.loadClass(servletName)加载servlet class的.在cache这里,我们要重载
+loadClass()方法,加入我们的load逻辑
+
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLSpecialState</id>
+    <coordinates>
+      <x>976</x>
+      <y>128</y>
+      <w>32</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>type=decision</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>888</x>
+      <y>128</y>
+      <w>104</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+</panel_attributes>
+    <additional_attributes>110.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>784</x>
+      <y>384</y>
+      <w>200</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>SecurityManage
+--
+checkPackageAccess(servletName)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>776</x>
+      <y>312</y>
+      <w>232</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>用SecurityManage检测,当前要加载的servlet是否在合法的package下
+要加载一个Class类还是要慎重一点,不能让客户端随心所欲加载服务端的JavaClass类
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>680</x>
+      <y>256</y>
+      <w>120</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+</panel_attributes>
+    <additional_attributes>130.0;190.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>792</x>
+      <y>576</y>
+      <w>136</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>WebappClassLoader
+--
+findClass(servletName)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLSpecialState</id>
+    <coordinates>
+      <x>1096</x>
+      <y>392</y>
+      <w>32</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>type=decision</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>848</x>
+      <y>416</y>
+      <w>280</w>
+      <h>176</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+通过安全校验</panel_attributes>
+    <additional_attributes>10.0;200.0;330.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>976</x>
+      <y>392</y>
+      <w>136</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+</panel_attributes>
+    <additional_attributes>150.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1120</x>
+      <y>392</y>
+      <w>168</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+未通过安全校验</panel_attributes>
+    <additional_attributes>190.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1272</x>
+      <y>392</y>
+      <w>208</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>返回异常:ClassNotFoundException
+style=wordwrap
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>792</x>
+      <y>640</y>
+      <w>152</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>从本地Repository目录下去找我们要加载的class
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1128</x>
+      <y>576</y>
+      <w>176</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>WebappClassLoader
+--
+findClassInternal(servletName)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>920</x>
+      <y>576</y>
+      <w>224</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+</panel_attributes>
+    <additional_attributes>260.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>3064</x>
+      <y>208</y>
+      <w>152</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>Right side
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1464</x>
+      <y>512</y>
+      <w>200</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>WebappClassLoader
+--
+findResourceInternal(servletName)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1296</x>
+      <y>520</y>
+      <w>184</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+</panel_attributes>
+    <additional_attributes>210.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>16</x>
+      <y>0</y>
+      <w>264</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>这份文档主要是为了说明Loader cache的流程
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>400</x>
+      <y>1040</y>
+      <w>168</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>botton
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>2000</x>
+      <y>240</y>
+      <w>200</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>先尝试从我们的缓存(resourceEntries)获取我们要加载的class
+如果有的话,直接返回.
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>1992</x>
+      <y>312</y>
+      <w>248</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>再尝试从Repository目录(WEB-INF/classes)获取我们要加载的class
+如果有的话,创建ResourceEntry对象,并且把要加载的class的信息放到ResourceEntry对象中
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>1984</x>
+      <y>416</y>
+      <w>248</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>再尝试从jar包目录(WEB-INF/lib)获取我们要加载的class
+如果有的话,创建ResourceEntry对象,并且把要加载的class的信息放到ResourceEntry对象中
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>1984</x>
+      <y>528</y>
+      <w>248</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>如果从Repository目录(WEB-INF/classes)和jar包目录(WEB-INF/lib)
+都没法获取我们要加载的class,那就说明我们当前要加载的class没法加载
+放到notFoundResources这个Map中,后续再加载这个class的时候,
+可以快速抛出classNotFounde异常
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>1992</x>
+      <y>656</y>
+      <w>248</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>最后,把我们加载到的class对象放到resourceEntries这个Map中去,作为缓存.
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1656</x>
+      <y>256</y>
+      <w>360</w>
+      <h>288</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+</panel_attributes>
+    <additional_attributes>430.0;10.0;10.0;340.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1656</x>
+      <y>344</y>
+      <w>352</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+</panel_attributes>
+    <additional_attributes>420.0;10.0;10.0;230.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1656</x>
+      <y>440</y>
+      <w>344</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+</panel_attributes>
+    <additional_attributes>410.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1656</x>
+      <y>520</y>
+      <w>344</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+</panel_attributes>
+    <additional_attributes>410.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1656</x>
+      <y>520</y>
+      <w>352</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+</panel_attributes>
+    <additional_attributes>420.0;190.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>1024</x>
+      <y>192</y>
+      <w>240</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>Q:system是怎么来的?
+A:system是在WebappClassLoader的constructor中创建的.
+主要意思是,这个system是一个JDK提供的ClassLoader类,遵循Java类加载的规则.
+通过delegate的方式,避免出现我们servlet中定义的类把JDK原生的类覆盖的情况.
+我们不用纠结system的具体实现,只要知道,我们只要调用systemloadClass(name),就能获取一个Class对象.
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>680</x>
+      <y>256</y>
+      <w>120</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>130.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>680</x>
+      <y>256</y>
+      <w>128</w>
+      <h>360</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+</panel_attributes>
+    <additional_attributes>140.0;430.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>1472</x>
+      <y>464</y>
+      <w>152</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>从本地Repository目录下去找我们要加载的class文件
+主要是获取class文件的路径和class文件的binary
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1464</x>
+      <y>720</y>
+      <w>200</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>WebappClassLoader
+--
+defineClass()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>1464</x>
+      <y>616</y>
+      <w>200</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>根据上一步获取的class文件的binary,获取这个class文件的Class类.
+并且把Class类赋值给entry.loadedClass.最终形成load cache.
+后续客户端再来请求同样的servlet,就用这个Class类来创建对象实例.
+那为啥不直接生成Class类呢?这个主要还是基于安全考虑,
+毕竟要加载一个Class类还是要慎重一点,不能让客户端随心所欲加载服务端的JavaClass类
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1296</x>
+      <y>584</y>
+      <w>184</w>
+      <h>176</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+</panel_attributes>
+    <additional_attributes>210.0;200.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>

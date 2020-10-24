@@ -152,4 +152,185 @@ file:/Users/zhoushuo/Documents/workspace/TomcatWin/WEB-INF/classes/
 
 趁热好好总结一下。
 
+20200802
+今天把loader顺序的问题总结了一下。
+同时开始研究cache
+
+
+
+20200803
+今天把cache的顺序梳理了一遍
+主要参考Tomcat官方的WebappClassLoader.java
+记录在UML流程图中了
+
+明天计划:
+1.system(loader)怎么来的?
+2.securityManager怎么来的?
+
+
+20200808
+今天思索了一下cache的原理，
+
+20200809
+还是继续探索cache的原理，主要是阅读
+WebappClassLoader.findResourceInternal()的代码流程
+为啥这块内容要看这么久呢？主要还是因为对Java 反射部分的内容理解比较肤浅。
+
+
+20200902
+又是将近一个月没有看源码了，罪过罪过
+导致之前看的cache相关内容，又有点生疏了。
+0830周末头疼
+0823周末牙疼
+0816周末不知道在干吗
+看来良好的身体才是革命的本钱。
+先把cache的整个流程再通过UML图梳理一遍。
+
+20200929
+今天终于领悟了tomcat servlet cache的奥义
+简单总结一下就是，如果没有cache，每次根据客户端请求，都要加载一遍servlet类
+这个加载过程看起来很方便：
+Class myClass = classLoader.loadClass(servletName);
+servlet = (Servlet)myClass.newInstance();
+核心是利用反射的原理，将class类文件转化为对象实例。
+具体代码参考SimpleWrapper.loadServlet()
+
+但是，这个过程的本质是什么呢？就是从文件系统中获取class类文件，然后对class类进行加载。
+这个加载过程我们深入研究一下，其实还是很复杂的，要解析class文件，然后加载到内存加以执行。
+显然，这个过程会拖慢tomcat加载servlet的效率。
+tomcat作为java容器，对于servlet laod这块功能，显然是需要优化的。
+
+怎么优化呢？根据servlet cache的思路，就是把那些曾经加载过的servlet类，放到内存中。
+下载客户端再来请求类似的servlet，就能直接从内存中拿到servlet对象实例了。
+
+这个思路非常不错。后续可以应用到项目实践中去。之后碰到类似的场景，可以用上。
+
+当然，能够有这样的领悟还是很不容易的，这次花了这么久的时间才领悟到load的原理，
+一方面是对java基础知识掌握不牢固(反射的原理，JVM加载Java class类的原理)
+另一方面，servlet laod这块内容确实应该是tomcat最核心最难的部分了。应该和之前Connector并列最难的部分
+
+
+
+
+
+通过这次领悟的过程，收获还是很大的：
+1.成为Java大神的路还很长很长，要学习的内容还很多很多；
+2.只有自己领悟的东西才是自己真正掌握的，其他的资料再丰富再详细，没有自己的领悟，是没用的；
+3.学习源码、练习源码好处实在是太多了，学习源码需要有良好的编程语言支持，反过来，学习源码会促进对编程语言的深入掌握
+4.所谓的学而不思则罔、思而不学则殆。学思结合是非常重要的；
+你学习了很多知识，但是没有自己深入思考，是没啥印象的；
+你平时思考了很多，想要做这做那，但是懒得去学习新的知识，没有深入实践，那也是没有用的；
+
+
+20201001
+理解了load cache原理之后，后续计划：
+1.
+一方面参考一下tomcat servlet load官方实现源码(包括较老的4版本和较新的9版本)，自己把cache功能实现了：
+org.apache.catalina.loader.WebappClassLoader.java/findResourceInternal()
+
+2.
+另一方面，通过测试案例，比对一下，用了cache和没用cache的区别。
+我们大致想想就知道，用了cache，性能肯定比不用cache要好。关键是好多少的问题。
+如果没有用cache，那加载一个servlet类就需要访问tomcat本地磁盘，加载sevlet class文件。
+如果用了cache，直接从内存中去拿就行了。关键是如何体现出差异来。
+那么如何通过我们的程序，检验cache的性能提升了多少呢？
+
+3.
+最后还需要对Load这块内容好好总结一下。
+
+Q:这边我有一个疑问，为啥官网的实现要这么做，把class的binary作为缓存。
+直接把class类放到Map中不香吗？为啥非要放class类的binary？
+这个Map的key/value为：servlet path/对应的servlet Class类
+A：只要仔细看源码就能知道，Map中的key/value确实为servlet name/Class
+后续每次客户端来请求同一个servlet类，都会从缓存中根据servlet name获取对应的Class类
+
+20201009
+国庆期间一直在思考，如何通过小程序，验证cache的性能作用。
+总结了以下几点：
+1.框架
+比如Spring MVC框架，通过加载SpringDispatch来验证cache的性能
+
+2.加载lib
+servlet类，很可能会需要用到第三方jar包.
+如果把这些jar包也提前加载进来，那么，cache的作用是否会更加明显？
+
+3.加载一个比较大的servlet类
+这个servlet类的文件比较大。
+
+4.并发加载servlet
+模拟在高并发、频繁调用servlet类的场景下，cache的作用
+
+以上这些想法，其实都可以通过小程序来模拟。因为tomcat的本质就是load一段java程序，然后执行。
+没有什么特别神秘的东西。如果要深入了解Load原理，当然要了解JVM的机制。
+具体小程序可以参考这个package下的程序：com.nbcb.mytomcat.test.load.LoadTest
+这个程序通过比较各种创建对象实例的方式，非常清晰地显示了load cache的性能优势。
+对于Tomcat来说，这点性能提升是非常有用的。
+
+
+临时感想：
+对技术要永远保持敬畏。
+就像我们学习tomcat，大致想想么，不就是处理客户端http请求，然后执行一段servlet，然后返回结果。
+但是只要我们深入学习tomcat，会发现不是这么简单。
+单单是load这章，就需要掌握JVM加载Java class文件的相关知识。
+需要通过了解JVM虚拟机规范，来真正理解tomcat load原理，这是始料未及的。
+就像我们游览一个地方，总是要亲自身临其境，才能真正去感受这个地方。
+如果只是通过照片、电视去了解，那就流于形式了。
+所以，学习一门知识，也是一样。尤其技术方面，实践是必不可少的。只有真正动手去做，才能体会这门技术。
+
+20201021
+既然搞清楚了load cache的好处，那么接下来就开始用代码实现了。
+在写代码之前，我们先要规划一下。
+我们知道，在实现load cache之前，我们的load原理可以参考SimpleWrapper.loadServlet()方法，具体Load逻辑：
+ClassLoader classLoader = loader.getClassLoader();
+myClass = classLoader.loadClass(servletName);
+servlet = (Servlet)myClass.newInstance();
+
+其中classLoader是我们WebappClassLoader.java
+classLoader.loadClass(servletName)调用的是系统默认的java.lang.ClassLoader.loadClass()
+
+为了实现load cache，我们计划对这个loadClass(String servletName)方法进行重载
+
+具体的逻辑，我们至少要实现class load的功能。其他的功能，比如Load顺序、SecurityManage等高级主题，
+看情况添加。
+
+
+20201024
+为了调试方便，后续我们建议对官网的tomcat工程做一下编译，根据官网的tomcat源码在本地运行。
+
+今天，主要是搭建了load cache的框架
+第八章结束后，必须好好总结一下，尤其是reload/load cache，这两块要好好梳理一下。
+以后用到实际项目中去。
+
+今日份的感悟：你看load这块，思考了这么长的时间。代码产出才多少行？
+所以按照行数来判断软件的产出，那真是......
+所以，思考是很重要的，思考各种原理，为什么呢？为什么呢？为什么呢？
+还有就是提前知识储备很重要，如果没有《The Java Virtual Machine Specification》这本书，
+估计也没法理解class load的概念。
+
+
+Q&A
+Q:
+今天完成了load cache相关的代码，有一个小小的疑问：
+既然我们的SimpleWrapper中把servlet实例缓存起来了(参考SimpleWrapper.instance)
+那么为啥还有必要把servlet Class类缓存起来呢？
+难道其他地方可能还会用到？
+
+A:对于这个问题，我们只要在org.apache这个package下搜索loadClass关键字就行了
+我们会发现，loader.loadClass()是一个通用的方法，不仅仅只是在Wrapper load servlet的时候会用到。
+任何需要根据class path加载Class对象，最终获取对应实例的地方，都会用到loadClass()方法。
+同时，loader的初始化也是独立的，具体初始化loader的代码可以参考：
+WebappLoader.createClassLoader()
+无非就是通过反射的方式，获取WebappClassLoader实例，
+然后调用WebappClassLoader.addRepository()，设置一下对应的repository就行了。
+
+Load这章要不先到这里吧。
+后续我们找一个时间好好总结一下Load的整块内容
+
+这章应该是目前为止，时间跨度最长的一章了：
+20200625-20201024
+
+
+
+
+
 

@@ -4,7 +4,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>400</x>
+      <x>392</x>
       <y>208</y>
       <w>112</w>
       <h>56</h>
@@ -17,7 +17,7 @@ run()</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>584</x>
+      <x>576</x>
       <y>296</y>
       <w>168</w>
       <h>56</h>
@@ -30,7 +30,7 @@ notifyContext()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>504</x>
+      <x>496</x>
       <y>224</y>
       <w>96</w>
       <h>112</h>
@@ -41,7 +41,7 @@ notifyContext()</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>136</x>
+      <x>128</x>
       <y>48</y>
       <w>336</w>
       <h>32</h>
@@ -53,7 +53,7 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>384</x>
+      <x>376</x>
       <y>272</y>
       <w>152</w>
       <h>56</h>
@@ -65,7 +65,7 @@ style=wordwrap</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>584</x>
+      <x>576</x>
       <y>128</y>
       <w>112</w>
       <h>56</h>
@@ -78,7 +78,7 @@ modified()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>504</x>
+      <x>496</x>
       <y>144</y>
       <w>96</w>
       <h>104</h>
@@ -89,7 +89,7 @@ modified()</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>584</x>
+      <x>576</x>
       <y>80</y>
       <w>120</w>
       <h>32</h>
@@ -101,7 +101,7 @@ style=wordwrap</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>800</x>
+      <x>792</x>
       <y>296</y>
       <w>168</w>
       <h>56</h>
@@ -114,7 +114,7 @@ run()</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>592</x>
+      <x>584</x>
       <y>248</y>
       <w>144</w>
       <h>48</h>
@@ -126,7 +126,7 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>792</x>
+      <x>784</x>
       <y>264</y>
       <w>176</w>
       <h>32</h>
@@ -139,7 +139,7 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>744</x>
+      <x>736</x>
       <y>312</y>
       <w>72</w>
       <h>24</h>
@@ -150,7 +150,7 @@ style=wordwrap</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1032</x>
+      <x>1024</x>
       <y>296</y>
       <w>168</w>
       <h>56</h>
@@ -163,7 +163,7 @@ reload()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>960</x>
+      <x>952</x>
       <y>320</y>
       <w>88</w>
       <h>24</h>
@@ -174,7 +174,7 @@ reload()</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>1032</x>
+      <x>1024</x>
       <y>256</y>
       <w>176</w>
       <h>32</h>
@@ -187,7 +187,7 @@ style=wordwrap</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>48</x>
+      <x>40</x>
       <y>288</y>
       <w>112</w>
       <h>56</h>
@@ -200,7 +200,7 @@ start()</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>8</x>
+      <x>0</x>
       <y>304</y>
       <w>40</w>
       <h>24</h>
@@ -212,7 +212,7 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>152</x>
+      <x>144</x>
       <y>224</y>
       <w>112</w>
       <h>104</h>
@@ -223,7 +223,7 @@ style=wordwrap</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>248</x>
+      <x>240</x>
       <y>208</y>
       <w>112</w>
       <h>56</h>
@@ -236,7 +236,7 @@ threadStart()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>352</x>
+      <x>344</x>
       <y>224</y>
       <w>64</w>
       <h>24</h>
@@ -247,7 +247,7 @@ threadStart()</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>240</x>
+      <x>232</x>
       <y>160</y>
       <w>136</w>
       <h>40</h>
@@ -259,7 +259,7 @@ style=wordwrap</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>808</x>
+      <x>800</x>
       <y>32</y>
       <w>160</w>
       <h>56</h>
@@ -272,7 +272,7 @@ getClassFileLastModifies()</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>992</x>
+      <x>984</x>
       <y>32</y>
       <w>120</w>
       <h>48</h>
@@ -284,7 +284,7 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>688</x>
+      <x>680</x>
       <y>48</y>
       <w>136</w>
       <h>128</h>
@@ -295,7 +295,7 @@ style=wordwrap</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>816</x>
+      <x>808</x>
       <y>112</y>
       <w>112</w>
       <h>56</h>
@@ -308,7 +308,7 @@ getLastModifieds()</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>984</x>
+      <x>976</x>
       <y>144</y>
       <w>120</w>
       <h>48</h>
@@ -320,7 +320,7 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>688</x>
+      <x>680</x>
       <y>136</y>
       <w>144</w>
       <h>40</h>
@@ -331,7 +331,7 @@ style=wordwrap</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>808</x>
+      <x>800</x>
       <y>192</y>
       <w>240</w>
       <h>56</h>
@@ -344,7 +344,7 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>688</x>
+      <x>680</x>
       <y>152</y>
       <w>136</w>
       <h>88</h>
@@ -355,7 +355,7 @@ style=wordwrap</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>256</x>
+      <x>248</x>
       <y>384</y>
       <w>112</w>
       <h>56</h>
@@ -368,7 +368,7 @@ setLastModifieds()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>152</x>
+      <x>144</x>
       <y>304</y>
       <w>120</w>
       <h>128</h>
@@ -379,7 +379,7 @@ setLastModifieds()</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>440</x>
+      <x>432</x>
       <y>384</y>
       <w>160</w>
       <h>56</h>
@@ -392,7 +392,7 @@ getClassFileLastModifies()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>360</x>
+      <x>352</x>
       <y>408</y>
       <w>96</w>
       <h>24</h>
@@ -403,7 +403,7 @@ getClassFileLastModifies()</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>248</x>
+      <x>240</x>
       <y>456</y>
       <w>136</w>
       <h>64</h>
@@ -415,7 +415,7 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>1272</x>
+      <x>1264</x>
       <y>184</y>
       <w>168</w>
       <h>24</h>
@@ -427,7 +427,7 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>1280</x>
+      <x>1272</x>
       <y>360</y>
       <w>168</w>
       <h>48</h>
@@ -439,7 +439,7 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1192</x>
+      <x>1184</x>
       <y>256</y>
       <w>104</w>
       <h>80</h>
@@ -450,7 +450,7 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1192</x>
+      <x>1184</x>
       <y>312</y>
       <w>104</w>
       <h>72</h>
@@ -461,7 +461,7 @@ style=wordwrap</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1280</x>
+      <x>1272</x>
       <y>232</y>
       <w>168</w>
       <h>56</h>

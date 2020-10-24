@@ -7,4 +7,6 @@
 所以，我们要参考TestUI框架，搞一个自动化验证的工具。能够自动对存量功能进行回归验证。
 
 
-
+同时，我们可以参考MySQL官网上的一个Test Framework
+了解像MySQL这样的大型开源软件是如何通过测试保证软件质量的
+https://dev.mysql.com/doc/dev/mysql-server/latest/PAGE_MYSQL_TEST_RUN.html

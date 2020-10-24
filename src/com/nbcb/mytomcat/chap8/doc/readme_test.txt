@@ -27,7 +27,8 @@ http://localhost:8080/servlet/ModernServlet
 (3)然后我们修改Servlet类的代码：ModernServlet.java
 (4)编译这个新的Servlet类，生成ModernServlet.class
 (5)把这个新编译的class类覆盖WEB-INF下的class类
-mv /Users/zhoushuo/Documents/workspace/TomcatWin/out/production/TomcatWin/ModernServlet.class /Users/zhoushuo/Documents/workspace/TomcatWin/WEB-INF/classes
+mv /Users/zhoushuo/Documents/workspace/TomcatWin/out/production/TomcatWin/ModernServlet.class
+/Users/zhoushuo/Documents/workspace/TomcatWin/WEB-INF/classes
 这里需要特别注意，我们要用mv命令把out目录下新编译的class类，直接剪切到WEB-INF目录下
 否则的话，我们的Loader会优先加载out目录下的class类，这个和Java Loader顺序有关
 

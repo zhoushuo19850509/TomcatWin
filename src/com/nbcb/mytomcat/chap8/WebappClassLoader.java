@@ -1,6 +1,5 @@
 package com.nbcb.mytomcat.chap8;
 
-import com.nbcb.mytomcat.util.Constants;
 import com.nbcb.mytomcat.util.FileUtil;
 import org.apache.catalina.Lifecycle;
 import org.apache.catalina.LifecycleException;
@@ -9,7 +8,6 @@ import org.apache.catalina.loader.Reloader;
 import org.apache.catalina.loader.ResourceEntry;
 
 import java.io.File;
-import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLClassLoader;
@@ -41,21 +39,6 @@ public class WebappClassLoader extends URLClassLoader implements Reloader , Life
      */
     protected List<Long> lastModifieds = null;
 
-    public List<Long> getLastModifieds() {
-        return lastModifieds;
-    }
-
-    public void setLastModifieds(){
-
-        if(null == lastModifieds){
-            lastModifieds = new ArrayList<Long>();
-        }
-        FileUtil.getClassFileLastModifies(repository, lastModifieds);
-    }
-
-
-
-
     /**
      * constructor
      * 按照之前SimpleLoader的方式，初始化一个URLClassLoader实例
@@ -79,6 +62,11 @@ public class WebappClassLoader extends URLClassLoader implements Reloader , Life
      */
     protected Map<String ,ResourceEntry> resourceEntries = new HashMap<String, ResourceEntry>();
 
+    /**
+     * 简易版的class cache
+     * 只保留了servlet对应的Class类对象
+     */
+    protected Map<String ,Class> resourceEntriesSimple = new HashMap<String ,Class>();
 
 
     @Override
@@ -164,7 +152,20 @@ public class WebappClassLoader extends URLClassLoader implements Reloader , Life
             System.out.println(previousLastModified);
         }
 
+
+        printLoadCache();
+
         return false;
+    }
+
+    /**
+     * 这个方法用于打印当前loader cache中，缓存了多少Class对象
+     */
+    public void printLoadCache(){
+        System.out.println("start printLoadCache: ");
+        for(String key : resourceEntriesSimple.keySet()){
+            System.out.println(key + ":" + resourceEntriesSimple.get(key));
+        }
     }
 
     /**
@@ -196,6 +197,22 @@ public class WebappClassLoader extends URLClassLoader implements Reloader , Life
 
     }
 
+    /**
+     * getter/setter() of lastModifieds
+     * @return
+     */
+    public List<Long> getLastModifieds() {
+        return lastModifieds;
+    }
+
+    public void setLastModifieds(){
+
+        if(null == lastModifieds){
+            lastModifieds = new ArrayList<Long>();
+        }
+        FileUtil.getClassFileLastModifies(repository, lastModifieds);
+    }
+
 
     /**
      * getter()/setter() of jar path
@@ -212,6 +229,132 @@ public class WebappClassLoader extends URLClassLoader implements Reloader , Life
 
     public String getRepository() {
         return repository;
+    }
+
+    /**
+     * 重载java.lang.ClassLoader.loadClass(String servletName)方法
+     * 这里我们会加入load cache相关的逻辑
+     * @param name
+     * @return
+     * @throws ClassNotFoundException
+     */
+    public Class loadClass(String name) throws ClassNotFoundException {
+
+        /**
+         * 先打印一下servlet的名称
+         * 比如ModernServlet,这个名称显然是不够完善的
+         * 我们需要的是com.nbcb.mytomcat.MordernServlet这样完整的servlet相对路径
+         * 这样才能根据servlet路径获取对应的servlet Class对象
+         * 这就涉及在配置文件web.xml中定义servlet name和servlet相对路径的映射关系了。
+         * 这里为了方便，就先暂时用ModernServlet这个名称把
+         * 后续等搞定web.xml解析模块之后，再回过头来优化
+         */
+        System.out.println("servlet name: " + name);
+
+
+        Class myClass = null;
+
+        /**
+         * 先尝试从Map缓存中看看，这个servlet之前是否已经加载过了
+         */
+        myClass = findLoadedClass0(name);
+
+        if(null != myClass){
+            return myClass;
+        }
+
+        /**
+         * 接下来，尝试调用JVM的Loader，加载servlet类
+         * 防止我们自己应用包中的类覆盖JVM自带的类，造成安全隐患
+         */
+
+
+        /**
+         * 如果代码流转到了这里，说明这个servlet类之前没有加载过
+         * 那么需要我们从我们自己应用包中加载servlet类
+         * 但是，在加载正式的servlet类之前，先要用security manager检查一下这个servlet类的安全性
+         * 至少保证我们要加载的servlet类是在我们自己应用的范围内
+         * (只能加载当前应用的WEB-INF目录下的servlet和jar包，否则会有安全隐患)
+         */
+
+
+        /**
+         * 最后，可以从我们应用包中获取servlet类对应的Class对象了
+         */
+        myClass = findClass(name);
+
+
+        return myClass;
+    }
+
+
+    /**
+     * 从缓存中看看，之前是否加载过这个servlet
+     * 其实就是从Map resourceEntries中，根据servlet name获取之前缓存过的class对象
+     * @param name
+     * @return
+     */
+    public Class findLoadedClass0(String name){
+        Class myClass = resourceEntriesSimple.get(name);
+        if(null != myClass){
+            System.out.println("load from cache: " + name);
+            return myClass;
+        }
+
+        return null;
+    }
+
+
+    /**
+     * 根据servlet name获取对应servlet类的Class对象，并且放到缓存中
+     * 这个类是简化处理的，对标的是官方代码：
+     * WebappClassLoader.findResourceInternal()
+     * @param name
+     * @return
+     */
+    public Class findClass(String name){
+
+        /**
+         * Step1 还是先从缓存中看看，是否有我们要加载的servlet Class对象
+         */
+        Class myClass = resourceEntriesSimple.get(name);
+        if(null != myClass){
+            System.out.println("load from cache");
+            return myClass;
+        }
+
+        /**
+         * 尝试从WEB-INF中，获取我们要加载的servlet类
+         * 这里的加载方法，参考了之前SimpleLoader的加载方法，
+         * 通过URLClassLoader的方法加载Class对象
+         */
+        String myRepository = null;
+        try {
+            myRepository = (new URL("file",null,
+                    repository + File.separator)).toString();
+            URLStreamHandler streamHandler = null;
+
+            URL[] urls = new URL[1];
+            urls[0] = new URL(null,myRepository,streamHandler);
+            URLClassLoader loader = new URLClassLoader(urls);
+            myClass = loader.loadClass(name);
+
+
+            /**
+             * 如果能加载到我们需要的servlet，就把这个加载好的servlet Class对象放到缓存
+             */
+            if(null != myClass){
+                System.out.println("put the Class into cache : " + name);
+                resourceEntriesSimple.put(name,myClass);
+                return myClass;
+            }
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        return null;
     }
 
     @Override

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>430</x>
+      <y>180</y>
+      <w>140</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>SimpleWrapper
+--
+loadServlet()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>100</x>
+      <y>160</y>
+      <w>140</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>BootStrap
+--
+main()
+---
+BootStrap以main()方法作为入口
+主要做的事情有:
+1.定义整个tomcat各层级的架构
+比如Connector
+
+
+
+
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>430</x>
+      <y>40</y>
+      <w>140</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>HttpConnector
+--
+initialize()
+start()
+--
+Connector的功能我们已经很熟悉了</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>30</x>
+      <y>110</y>
+      <w>290</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>这份文档主要是为了说明整个tomcat的流程
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

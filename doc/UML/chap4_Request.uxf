@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>410</x>
+      <y>650</y>
+      <w>320</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>这份文档主要是为了说明Request的整体架构
+style=wordwrap
+------
+我们在Servlet开发的时候,doGet()方法中,
+会通过req获取客户端request请求中的内容,
+比如http header/client ip/parameter/url等等:
+
+doGet(HttpServletRequest req, HttpServletResponse resp){
+    String contentLength = request.getHeader("Content-Length");
+}
+
+
+那么,问题来了,这些客户端Request中的数据从哪里来呢?
+Request对象是什么时候创建的呢?
+
+1.Request对象从哪来?
+我们可以参考HttpProcessor的constructor
+tomcat在处理客户端HTTP请求的时候,会先创建
+HttpRequestImpl实例
+
+2.Request对象中的数据从哪来?
+Servlet的doGet()方法中,HttpServletRequest中的数据从哪里来?
+总体来说,Request中的数据是tomcat从客户端HTTP请求中解析而来的.
+具体代码流程,我们可以参考tomcat执行某个具体的servlet对象的代码:
+SimpleWrapperValve.invoke(){
+    ....
+    servlet.service(hsreq,hsres);
+}
+
+
+以上这些问题回答好了,我们也就搞清楚了,
+为啥HttpRequest的实现类(HttpRequestImpl),
+既要实现Catalina相关的接口(HttpRequest),同时也要实现Servlet相关的接口
+那是因为:
+1.实现Catalina相关的接口(HttpRequest),遵循tomcat制定的规范,
+用于实现tomat相关要求,用于tomcat对客户端http请求进行解析,
+并且把解析内容放到HttpRequest对象中;
+2.实现Servlet相关的接口(HttpServletRequest),遵循Servlet规范
+用于Servlet开发的相关要求,用于Servlet开发人员从HttpRequest中获取客户端请求中的各个参数
+
+
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>460</x>
+      <y>330</y>
+      <w>140</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>HttpRequestBase
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>460</x>
+      <y>460</y>
+      <w>140</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>HttpRequestImpl
+--
+
+
+
+
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>520</x>
+      <y>380</y>
+      <w>80</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+extends</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>460</x>
+      <y>180</y>
+      <w>140</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>RequestBase
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>520</x>
+      <y>230</y>
+      <w>80</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+extends</panel_attributes>
+    <additional_attributes>10.0;100.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLInterface</id>
+    <coordinates>
+      <x>190</x>
+      <y>40</y>
+      <w>80</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>Request
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>230</x>
+      <y>90</y>
+      <w>310</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+implements</panel_attributes>
+    <additional_attributes>10.0;10.0;290.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLInterface</id>
+    <coordinates>
+      <x>740</x>
+      <y>40</y>
+      <w>120</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>ServletRequest
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>530</x>
+      <y>90</y>
+      <w>290</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+implements</panel_attributes>
+    <additional_attributes>270.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLInterface</id>
+    <coordinates>
+      <x>180</x>
+      <y>230</y>
+      <w>100</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>HttpRequest
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLInterface</id>
+    <coordinates>
+      <x>740</x>
+      <y>240</y>
+      <w>140</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>HttpServletRequest
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>230</x>
+      <y>280</y>
+      <w>250</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+implements</panel_attributes>
+    <additional_attributes>10.0;10.0;230.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>590</x>
+      <y>290</y>
+      <w>230</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+implements</panel_attributes>
+    <additional_attributes>210.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>220</x>
+      <y>90</y>
+      <w>80</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+extends</panel_attributes>
+    <additional_attributes>10.0;140.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>790</x>
+      <y>90</y>
+      <w>90</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+extends</panel_attributes>
+    <additional_attributes>20.0;160.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>60</x>
+      <y>450</y>
+      <w>320</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>左边的这几个接口,是Catalina相关的
+style=wordwrap
+------
+遵循tomcat规范</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>680</x>
+      <y>450</y>
+      <w>320</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>左边的这几个接口,是Servlet相关的
+style=wordwrap
+-----
+遵循Servlet规范</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

@@ -4,9 +4,19 @@ Loader
 
 ===============================Why customized Loader?
 为啥要搞一个自定义的Loader？原来的SimpleLoader有啥问题？
-
+总体来说，原来的SimpleLoader功能过于简单，只是根据客户端请求的servlet name
+按照反射原理初始化servlet类。但是在实际运行环境中，这样的SimpleLoader显然是远远无法满足需要的。
+自定义的Loader新增的功能包括：
+1.reload
+2.load cache
+3.security manager
 
 ===============================Java类加载的原理
+按照我自己的理解，Java类加载的原理是这样的：
+1.(提前通过编译器)将某个Java文件编译成Class文件；
+2.JVM将Class文件进行解析，解析成对应的Class对象；
+3.如果要实例化这个对象，就调用Class对象的newInstance()方法，给这个对象分配内存等资源；
+tomcat中，所谓的load cache，其实是将Class对象做了缓存。而不是servlet对象的实例。
 
 
 ===============================值得借鉴的架构

@@ -55,7 +55,8 @@ public class ModernServlet extends HttpServlet {
 
         while(headerNames.hasMoreElements()) {
             String headerName = (String)headerNames.nextElement();
-            writer.println("<br>" + headerName +  "</br>"); //  " : " + request.getHeader(headerName) + "</br>");
+            String headerValue = request.getHeader(headerName);
+            writer.println("<br>" + headerName + ":" + headerValue + "</br>"); //  " : " + request.getHeader(headerName) + "</br>");
         }
 
         writer.println("<br><h2>Method</h2>");
@@ -79,6 +80,8 @@ public class ModernServlet extends HttpServlet {
         writer.println("<br>" + request.getRequestURI() + "</br>");
         writer.println("</body>");
         writer.println("</html>");
+
+
 
 
 

@@ -28,4 +28,23 @@
 我们知道WAS中，配置JVM参数、JVM大小的配置还是很多。
 所以后续要好好研究一下GC相关的内容
 
+7.后续建议在tomcat中实现一些WAS中做得比较好的特性
+比如对数据库连接池的管理、比如LTC特性(transaction data source)等等
+
+8.后续建议对connector做一个升级
+将HTTP协议中那些高级的特性纳入进来，
+比如connection persistence/content compress等等。
+
+9.增加《How Tomcat Works》的主题
+在《How Tomcat Works》基础上，
+(1)深度
+一方面对原有主体深入研究(比如session主题，扩展RedisStore的功能，
+Connector主题扩展连接保持的主题)，
+(2)广度
+另一方面扩展新的主题，比如通过Maven管理tomcat集成的第三方jar包；异步IO；
+新的主体，风格可以参考原有书本的风格，在功能介绍的基础上，
+罗列一些相关的关键类和关键方法逻辑代码，
+读者可以根据这些线索，参考官方源码，自行实现这个主题的功能。
+
+
 

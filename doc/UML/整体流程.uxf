@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>430</x>
-      <y>180</y>
+      <x>540</x>
+      <y>310</y>
       <w>140</w>
       <h>70</h>
     </coordinates>
@@ -17,8 +17,8 @@ loadServlet()</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>100</x>
-      <y>160</y>
+      <x>260</x>
+      <y>240</y>
       <w>140</w>
       <h>50</h>
     </coordinates>
@@ -43,8 +43,8 @@ BootStrap以main()方法作为入口
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>430</x>
-      <y>40</y>
+      <x>540</x>
+      <y>170</y>
       <w>140</w>
       <h>60</h>
     </coordinates>
@@ -59,8 +59,8 @@ Connector的功能我们已经很熟悉了</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>30</x>
-      <y>110</y>
+      <x>120</x>
+      <y>190</y>
       <w>290</w>
       <h>40</h>
     </coordinates>

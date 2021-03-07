@@ -323,7 +323,17 @@ WebappLoader.createClassLoader()
 无非就是通过反射的方式，获取WebappClassLoader实例，
 然后调用WebappClassLoader.addRepository()，设置一下对应的repository就行了。
 
+当然这个解释是错的！我们仔细研究一下，就会发现，servlet类实例作为缓存，那是不可靠的。
+很简单，因为不同客户端请求的servlet，servlet实例包含的数据显然是不同的！
+不可能A发起的servlet调用和B发起的servlet调用，数据一模一样(至少clientIP不同)
+所以后续要研究一下，客户端请求结束后，Wrapper对象应该会销毁，并且重新初始化。
 
+
+Load这章要不先到这里吧。
+后续我们找一个时间好好总结一下Load的整块内容
+
+这章应该是目前为止，时间跨度最长的一章了：
+20200625-20201024
 
 
 

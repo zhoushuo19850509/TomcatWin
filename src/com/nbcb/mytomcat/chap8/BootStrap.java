@@ -4,7 +4,6 @@ import com.nbcb.mytomcat.chap4.HttpConnector;
 import com.nbcb.mytomcat.chap6.*;
 import org.apache.catalina.*;
 import org.apache.catalina.logger.FileLogger;
-import com.nbcb.mytomcat.chap8.SimpleContextMapper;
 
 import java.io.IOException;
 

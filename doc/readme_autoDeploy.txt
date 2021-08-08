@@ -18,3 +18,7 @@ ant需要做的事情是：
 
 
 最终，客户端就能访问我们自己的Tomcat发布的Servlet服务了
+
+目前的进度是，能够将我们的tomcat工程打包成jar包，然后能够通过java -jar XXX启动tomcat
+具体参考：
+SimpleTomcat/simpletomcat-chap9/doc/readme_package.txt

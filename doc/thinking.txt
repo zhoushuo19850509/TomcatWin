@@ -94,9 +94,16 @@ Apache Tomcat社区是鼓励你对社区做贡献的。
 比如web container、session、Class Loader，等等。
 一旦亲自实现过这些内容，这些概念就深入骨髓了。
 
+16.我们把《How Tomcat Works》的例子都实践完之后，
+后续怎么办？应该怎么规划？
+我想借助Maven官网的框架，说明一下后续的规划。
+那就是：
+Use->Extend->Contribute
+就是会用->扩展->贡献
 
-
-
+会用，包括下载、安装、运行tomcat，配置tomcat，了解tomcat官方的各个功能，了解tomcat各个参数配置；
+扩展，包括写一些tomcat相关的plugin，写一些tomcat相关的功能，提升tomcat的性能
+贡献，是贡献社区，为现有的tomcat贡献新的功能
 
 
 

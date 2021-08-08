@@ -34,6 +34,8 @@
 8.后续建议对connector做一个升级
 将HTTP协议中那些高级的特性纳入进来，
 比如connection persistence/content compress等等。
+这些都是非常有意思的主题，尤其是connection persistence，是比较高阶的内容。
+以tomcat为契机，把http协议实现一下，想想也是非常有意思。
 
 9.增加《How Tomcat Works》的主题
 在《How Tomcat Works》基础上，

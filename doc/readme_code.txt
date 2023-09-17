@@ -31,3 +31,16 @@ chap1 A Simple Web Server
 我们启动HttpServer.java之后，客户端能够通过如下url:
 http://localhost:8080/index.html
 获取到一个静态页面
+
+============================================源码阅读技巧
+我们下载了各个版本的源码，包括<How Tomcat Works>官网源码、Tomcat官网源码等。
+如何阅读呢？我们还是建议通过IDEA进行阅读。
+功能丰富，阅读代码方便，支持搜索等功能。
+但是需要注意:
+1.要设置正确的Module
+Module/sources
+
+2.要设置准确的JDK
+各个版本的Tomcat有对应的JDK版本，参考 readme_tomcat_version.txt
+
+

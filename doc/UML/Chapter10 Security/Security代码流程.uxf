@@ -1,0 +1,695 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>240</x>
+      <y>640</y>
+      <w>160</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>BootStrap
+--
+
+在官网工程的目录为:
+ex10.pyrmont.startup.Bootstrap1
+ex10.pyrmont.startup.Bootstrap2
+
+启动类设置Security相关的组件,包括:
+
+SecurityCollection
+SecurityConstraint
+LoginConfig
+SimpleRealm
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>512</x>
+      <y>648</y>
+      <w>144</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>SimpleContextConfig
+--
+authenticatorConfig()
+
+最重要的就是这个方法了.
+这个方法做的事情是:
+1创建LoginConfig实例
+2.创建Authenticator实例
+3.把Authenticator实例加入到Context的valve中去
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>768</x>
+      <y>752</y>
+      <w>144</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>BasicAuthenticator
+--
+authenticate()
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>528</x>
+      <y>608</y>
+      <w>80</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>加载配置
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>232</x>
+      <y>528</y>
+      <w>344</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>这份文档主要是为了说明本章Security代码的大致流程
+style=wordwrap
+
+该流程主要是参考&lt;how tomcat works&gt;官网代码
+整个流程中,最重要的代码也已经标红了.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>776</x>
+      <y>520</y>
+      <w>144</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>LoginConfig
+--
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>784</x>
+      <y>480</y>
+      <w>152</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>登录配置
+
+保存了:
+1.Realm实现类的名称(注意:这里保存的仅仅只是realm实现类的名称);
+2.登录用户输入username/password的界面
+3.username/password输入错误的显示界面
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>264</x>
+      <y>592</y>
+      <w>152</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>启动类
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>392</x>
+      <y>648</y>
+      <w>136</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+</panel_attributes>
+    <additional_attributes>150.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>736</x>
+      <y>800</y>
+      <w>176</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>实例化Authentication
+并且加入到context valve中去
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>768</x>
+      <y>624</y>
+      <w>144</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>AuthenticatorBase
+--
+invoke()
+
+invoke()方法是Authentication实现Valve接口的实现方法
+是Security主题中最为重要的方法.
+要重点关注这个方法.仔细读invoke()这个方法
+
+fg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>840</x>
+      <y>656</y>
+      <w>64</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+extends</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>648</x>
+      <y>656</y>
+      <w>136</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+</panel_attributes>
+    <additional_attributes>150.0;140.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>648</x>
+      <y>536</y>
+      <w>144</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+</panel_attributes>
+    <additional_attributes>160.0;10.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1064</x>
+      <y>184</y>
+      <w>144</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Principal
+--
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>904</x>
+      <y>200</y>
+      <w>176</w>
+      <h>456</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+</panel_attributes>
+    <additional_attributes>200.0;10.0;10.0;550.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1048</x>
+      <y>648</y>
+      <w>240</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>BasicAuthenticator
+--
+authenticate(hrequest, hresponse, config)
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>1056</x>
+      <y>584</y>
+      <w>192</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>调用Authentication具体实现类的
+authenticate()方法.验证username/password是否正确
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1056</x>
+      <y>984</y>
+      <w>144</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>AuthenticatorBase
+--
+accessControl()
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>904</x>
+      <y>632</y>
+      <w>168</w>
+      <h>392</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+</panel_attributes>
+    <additional_attributes>190.0;470.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>904</x>
+      <y>632</y>
+      <w>160</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+</panel_attributes>
+    <additional_attributes>180.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>904</x>
+      <y>304</y>
+      <w>184</w>
+      <h>352</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+</panel_attributes>
+    <additional_attributes>210.0;10.0;10.0;420.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1056</x>
+      <y>1112</y>
+      <w>144</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>StandardContext
+--
+invokeNext()
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>904</x>
+      <y>632</y>
+      <w>168</w>
+      <h>512</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+</panel_attributes>
+    <additional_attributes>190.0;620.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>1048</x>
+      <y>1168</y>
+      <w>192</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>context调用下一个valve
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1312</x>
+      <y>992</y>
+      <w>232</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Realm
+--
+hasRole(Principal principal, String role)
+
+
+这个方法判断当前用户执行某个动作是否有权限
+
+
+fg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1360</x>
+      <y>808</y>
+      <w>336</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Realm
+--
+Principal authenticate(String username, String credentials)
+
+这里的Realm只是一个接口.
+我们要通过他的实现类,去看真正的authenticate()方法.
+不同的实现类,authenticate()方法的实现方式也不同
+
+比如我们挑选SimpleRealm.authenticate
+这个方法做两件事:
+1.根据登录客户端的username/credentials判断该用户是否存在;
+如果不存在,就马上返回;
+如果存在,就调用getUser()方法,获取该用户的user对象
+备注:user对象包含username/password/该用户对应的权限(roles)
+
+2.根据user对象,获取该对象对应的GenericPrincipal对象
+返回该用户对应的GenericPrincipal对象
+
+fg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>1376</x>
+      <y>768</y>
+      <w>216</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>调用Realm的authenticate()方法,
+判断当前用户的是否有权限.
+如果有权限的话,就返回principal对象
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1192</x>
+      <y>1000</y>
+      <w>136</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>150.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1280</x>
+      <y>656</y>
+      <w>96</w>
+      <h>184</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>100.0;210.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>1336</x>
+      <y>944</y>
+      <w>192</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>调用Realm的hasRole()方法,
+判断是否有某个权限
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1664</x>
+      <y>992</y>
+      <w>144</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>GenericPrincipal
+--
+hasRole()
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1536</x>
+      <y>1000</y>
+      <w>144</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>160.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>1056</x>
+      <y>136</y>
+      <w>152</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>尝试从缓存获取当前访问用户的Principal
+如果当前用户之前已经访问过,那么可能会把Principal信息放在session信息中.
+那么就可以直接拿到该用户的Principal了.
+这样不用每次都调用Realm.authenticate()方法获取该用户的Principal
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1072</x>
+      <y>296</y>
+      <w>144</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>AuthenticatorBase
+--
+findConstraint()
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1312</x>
+      <y>224</y>
+      <w>144</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Context
+--
+findConstraints()
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1208</x>
+      <y>232</y>
+      <w>120</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>130.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>1312</x>
+      <y>184</y>
+      <w>176</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>先从context中获取security constraints配置信息
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>1328</x>
+      <y>336</y>
+      <w>176</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>然后遍历security constraints配置,
+找到和本次request匹配的security相关的内容,
+返回一个SecurityConstraint对象
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1208</x>
+      <y>304</y>
+      <w>128</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>140.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1368</x>
+      <y>552</y>
+      <w>240</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>request
+--
+getAuthorization()
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>1632</x>
+      <y>560</y>
+      <w>192</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>尝试从request中获取security相关的http header: Authorization
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1368</x>
+      <y>664</y>
+      <w>240</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>BasicAuthenticator
+--
+parseUsername()
+parsePassword()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>1624</x>
+      <y>672</y>
+      <w>248</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>尝试从http header: Authorization中解析出username/password
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1280</x>
+      <y>656</y>
+      <w>104</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>110.0;40.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1280</x>
+      <y>560</y>
+      <w>104</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>110.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1368</x>
+      <y>880</y>
+      <w>144</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>AuthenticatorBase
+--
+register()
+
+一旦认证成功,就把Principal对象注册到:
+1.请求报文
+2.session中
+
+保证下次访问的时候,服务端能够从session中直接取出经过认证的Principal信息
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1072</x>
+      <y>432</y>
+      <w>144</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>AuthenticatorBase
+--
+checkUserData()
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

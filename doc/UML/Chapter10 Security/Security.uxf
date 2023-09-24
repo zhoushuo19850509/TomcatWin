@@ -1,0 +1,621 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>9</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>675</x>
+      <y>288</y>
+      <w>162</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>AuthenticatorBase
+--
+invoke()
+abstract authenticate()
+
+
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>630</x>
+      <y>189</y>
+      <w>162</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+implement</panel_attributes>
+    <additional_attributes>10.0;10.0;160.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>765</x>
+      <y>153</y>
+      <w>189</w>
+      <h>153</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+implement</panel_attributes>
+    <additional_attributes>190.0;10.0;10.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>279</x>
+      <y>0</y>
+      <w>171</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>这份文档主要是为了说明本章Security相关代码的架构
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>990</x>
+      <y>288</y>
+      <w>126</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>ValveBase
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>828</x>
+      <y>306</y>
+      <w>180</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+extends</panel_attributes>
+    <additional_attributes>180.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>405</x>
+      <y>468</y>
+      <w>126</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>BasicAuthenticator
+--
+authenticate()
+
+BasicAuthenticator
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>459</x>
+      <y>333</y>
+      <w>324</w>
+      <h>153</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+extends</panel_attributes>
+    <additional_attributes>340.0;10.0;10.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>630</x>
+      <y>333</y>
+      <w>153</w>
+      <h>153</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+extends</panel_attributes>
+    <additional_attributes>150.0;10.0;10.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>576</x>
+      <y>468</y>
+      <w>126</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>DigestAuthenticator
+--
+authenticate()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>756</x>
+      <y>333</y>
+      <w>99</w>
+      <h>153</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+extends</panel_attributes>
+    <additional_attributes>10.0;10.0;60.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>747</x>
+      <y>468</y>
+      <w>126</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>FormAuthenticator
+--
+authenticate()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>756</x>
+      <y>333</y>
+      <w>225</w>
+      <h>153</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+extends</panel_attributes>
+    <additional_attributes>10.0;10.0;230.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>900</x>
+      <y>468</y>
+      <w>162</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>NonLoginAuthenticator
+--
+authenticate()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>756</x>
+      <y>333</y>
+      <w>405</w>
+      <h>153</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+extends</panel_attributes>
+    <additional_attributes>10.0;10.0;430.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1080</x>
+      <y>468</y>
+      <w>126</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>SSLAuthenticator
+--
+authenticate()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>108</x>
+      <y>216</y>
+      <w>279</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>所谓的Authenticator，其实一个valve，
+挂靠在context下的valve。
+这个valve比较特殊，执行顺序在context中比较靠前：
+在context执行servlet之前，就要执行一下。
+用来判断当前客户端是否有权限访问本servlet
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>666</x>
+      <y>909</y>
+      <w>126</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>RealmBase
+--
+hasRole()
+authenticate()
+
+
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>594</x>
+      <y>774</y>
+      <w>153</w>
+      <h>153</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+implement</panel_attributes>
+    <additional_attributes>10.0;10.0;150.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>720</x>
+      <y>792</y>
+      <w>162</w>
+      <h>135</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+implement</panel_attributes>
+    <additional_attributes>160.0;10.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>378</x>
+      <y>1098</y>
+      <w>126</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>JDBCRealm
+--
+authenticate()
+
+所谓的JDBCRealm,其实就是在RealmBase的基础上,
+重载了authenticate()方法
+实现逻辑就是根据username从数据库取出对应的用户和principal
+用于后续判断当前用户的合法性
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>432</x>
+      <y>954</y>
+      <w>306</w>
+      <h>162</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+extends</panel_attributes>
+    <additional_attributes>320.0;10.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>630</x>
+      <y>954</y>
+      <w>117</w>
+      <h>162</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+extends</panel_attributes>
+    <additional_attributes>100.0;10.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>576</x>
+      <y>1098</y>
+      <w>126</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>JNDIRealm
+--
+authenticate()
+
+JDNIRealm和JDBCRealm类似.
+不同之处就是JNDI的数据库连接是通过JNDI的方式获取的,
+而不是像JDBCRealm那样硬编码在代码中.
+这样数据源就算修改了,改动量也不太大.
+只要修改JNDI配置就行了.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>711</x>
+      <y>954</y>
+      <w>162</w>
+      <h>162</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+extends</panel_attributes>
+    <additional_attributes>10.0;10.0;160.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>792</x>
+      <y>1098</y>
+      <w>126</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>MemoryRealm
+--
+authenticate()
+
+这个Realm的工作原理是这样的.
+用户信息/对应的权限信息,都保存在一个XML文件中.
+这个XML文件由管理员配置,放在conf/tomcat-user.xml中
+
+在Digest加载tomcat配置文件xml的时候,把这些用户信息加载到内存中.
+放到MemoryRealm的principals属性中.
+这个属性一个一个key/value形式的map中,key为username,value为用户对应的password和对应的权限
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>711</x>
+      <y>954</y>
+      <w>351</w>
+      <h>162</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+extends</panel_attributes>
+    <additional_attributes>10.0;10.0;370.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>981</x>
+      <y>1098</y>
+      <w>126</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>UserDatabaseRealm
+--
+authenticate()
+
+我们看authenticate()方法第一句就知道了
+这个Reaml实现类将用户信息和对应权限信息保存在用户自定义的database对象中:
+User user = database.findUser(username);
+
+那么database对象是哪里来的呢?是在UserDatabaseRealm启动的时候生成的(start()方法中)
+database对象其实是UserDatabase接口的某个实现类,在系统启动的时候,从conf/tomcat-users.xml中读取对应的用户信息
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLInterface</id>
+    <coordinates>
+      <x>540</x>
+      <y>81</y>
+      <w>198</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>Authenticator
+--
+这个接口中啥方法都没有
+作用就是判断那些实现类是实现了
+Authenticator接口
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLInterface</id>
+    <coordinates>
+      <x>576</x>
+      <y>729</y>
+      <w>54</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>Realm
+--
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLInterface</id>
+    <coordinates>
+      <x>828</x>
+      <y>747</y>
+      <w>72</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>LifeCycle
+--
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLInterface</id>
+    <coordinates>
+      <x>900</x>
+      <y>108</y>
+      <w>72</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>LifeCycle
+--
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>225</x>
+      <y>648</y>
+      <w>324</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>所谓的Realm，其实是挂靠在Context下的一个组件。
+这个组件用于判断当前用户是否有权限访问本servlet
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>198</x>
+      <y>1089</y>
+      <w>108</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>SimpleRealm
+--
+SimpleRealm()
+hasRole()
+authenticate(String username, String credentials)
+
+这个是我们实验性质的Realm实现类.
+1.SimpleRealm()
+constructor,初始化用户列表
+用户列表的属性是写死在SimpleRealm.createUserDatabase()中的.
+用户列表中,每个用户包含username/password/role(包含的权限)
+1.authenticate()方法,根据username获取user对象,
+user信息是写死在代码里的,只是为了实验而已.
+
+但是要表达的意思是表达清楚了
+我们看authenticate()方法,其实就是判断
+客户端请求的username/password是否在我们的用户信息列表中.
+如果在我们信息列表中,就说明这个客户端请求的sername/password是正确的.
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>243</x>
+      <y>954</y>
+      <w>495</w>
+      <h>153</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+extends</panel_attributes>
+    <additional_attributes>530.0;10.0;10.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>531</x>
+      <y>1188</y>
+      <w>324</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>这些都是Reaml的一些具体的实现类.
+主要是重载了authenticate(String username, String credential)方法
+总体来说,各个authenticate()方法就是根据username
+判断用户密码(credential)是否正确.
+如果正确的话就返回这个用户对应的权限(Principal).
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1494</x>
+      <y>342</y>
+      <w>162</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>Principal
+--
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1494</x>
+      <y>558</y>
+      <w>162</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>SecurityConstraint
+--
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1845</x>
+      <y>549</y>
+      <w>162</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>LoginConfig
+--
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1827</x>
+      <y>342</y>
+      <w>162</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>SimpleContextConfig
+--
+authenticatorConfig()
+
+最重要的就是这个方法了.
+这个方法做的事情是:
+1创建LoginConfig实例
+2.创建Authenticator实例
+3.把Authenticator实例加入到Context的valve中去
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1485</x>
+      <y>765</y>
+      <w>162</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>SecurityCollection
+--
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

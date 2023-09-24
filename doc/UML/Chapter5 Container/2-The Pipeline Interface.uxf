@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <help_text/>
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>670</x>
+      <y>40</y>
+      <w>200</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>The Pipeline Interface
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>950</x>
+      <y>490</y>
+      <w>340</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>SimplePipeline
+--
+addValve(Valve)
+Valve[] getValves()
+invoke(Request request, Response response)
+--
+{innerclass
+SimplePipelineValveContext
+--
+invokeNext()
+innerclass}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1070</x>
+      <y>340</y>
+      <w>120</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+implements</panel_attributes>
+    <additional_attributes>30.0;10.0;10.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>930</x>
+      <y>250</y>
+      <w>330</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+/Pipeline/
+--
+addValve(Valve)
+Valve[] getValves()
+invoke(Request request, Response response)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1460</x>
+      <y>540</y>
+      <w>150</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+/ValveContext/
+--
+invokeNext()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1220</x>
+      <y>560</y>
+      <w>260</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+implements</panel_attributes>
+    <additional_attributes>240.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>370</x>
+      <y>240</y>
+      <w>220</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+/Valve/
+--
+invoke(Request request, 
+       Response response,
+       ValveContext context)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>110</x>
+      <y>480</y>
+      <w>220</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>SimpleWrapperValve
+--
+invoke(Request request, 
+       Response response,
+       ValveContext context)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>400</x>
+      <y>480</y>
+      <w>220</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>ClientIPLoggerValve
+--
+invoke(Request request, 
+       Response response,
+       ValveContext context)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>670</x>
+      <y>470</y>
+      <w>220</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>HeaderLoggerValve
+--
+invoke(Request request, 
+       Response response,
+       ValveContext context)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>470</x>
+      <y>330</y>
+      <w>330</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+implements</panel_attributes>
+    <additional_attributes>10.0;10.0;310.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>470</x>
+      <y>330</y>
+      <w>120</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+implements</panel_attributes>
+    <additional_attributes>10.0;10.0;40.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>210</x>
+      <y>330</y>
+      <w>270</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+implements</panel_attributes>
+    <additional_attributes>250.0;10.0;10.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>950</x>
+      <y>670</y>
+      <w>360</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>SimplePipeline 说明:
+我们之前在Pipeline interface提到了invoke()方法
+这个方法的功能是执行pipeline下所有的valve
+那么具体是怎么执行的呢?
+
+我们看SimplePipeline.invoke()的逻辑
+其实是调用SimplePipeline的内部类:
+SimplePipelineValveContext.invokeNext()
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>370</x>
+      <y>160</y>
+      <w>200</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>The Valve Interface说明:
+invoke()
+执行当前valve的功能
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>1660</x>
+      <y>520</y>
+      <w>390</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>ValveContext Interface说明:
+1.invokeNext()
+ValveContext接口只有一个接口方法:
+invokeNext()
+从字面意思来看,invokeNext()是执行下一个任务(valve)
+具体是什么意思呢?我们看ValveContext接口的实现类
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>60</x>
+      <y>580</y>
+      <w>300</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>basic valve
+其实就是调用Wrapper.invoke()执行servlet
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>410</x>
+      <y>590</y>
+      <w>190</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>ClientIPLoggerValve
+功能:打印clientIP
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>690</x>
+      <y>580</y>
+      <w>190</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>HeaderLoggerValve
+功能:打印http header(s)
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>970</x>
+      <y>110</y>
+      <w>230</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>The Pipeline Interface说明:
+1.addValve()
+添加valve实例
+2.getValves()
+返回所有的valse实例
+3.invoke()
+执行pipeline下所有的valve
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>950</x>
+      <y>860</y>
+      <w>450</w>
+      <h>500</h>
+    </coordinates>
+    <panel_attributes>内部类SimplePipelineValveContext说明:
+
+那么,SimplePipelineValveContext.invokeNext()
+具体是怎么执行各个valve的呢?
+是按照for循环逐个执行吗?不是的.
+
+我们还是看SimplePipelineValveContext.invokeNext()代码:
+1.先执行普通valves
+2.最后再执行basice valve
+
+那么普通valves是怎么执行的呢?这里并没有类似for循环的逻辑啊
+我们随便找一个valve实现类看一下
+比如ClientIPLoggerValve.invoke(),实现逻辑是这样的:
+
+1.先执行下一个valve:
+context.invokeNext(request,response);
+2.然后再执行当前valve的逻辑.
+
+这样一看就明白了,其实就是valve在执行invoke()的时候,
+先执行下一个valve,再执行当前valve.
+这样就造成了valve执行顺序和加载顺序是相反的.
+
+比如加载valve的时候:
+xx.addValve(valve1);
+xx.addValve(valve2);
+xx.addValve(valve3);
+
+实际的执行顺序是这样的:
+valve3.invoke();
+valve2.invoke();
+valve1.invoke();
+basicValve.invoke();
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

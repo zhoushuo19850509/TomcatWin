@@ -46,7 +46,7 @@ public class SimpleContext implements Context,Pipeline {
     /**
      * constructor
      */
-        public SimpleContext(){
+    public SimpleContext(){
         pipeline.setBasic(new SimpleContextValve());
     }
 

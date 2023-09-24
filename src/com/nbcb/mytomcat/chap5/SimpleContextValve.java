@@ -43,6 +43,7 @@ public class SimpleContextValve implements Valve, Contained {
     @Override
     public void invoke(Request request, Response response, ValveContext valveContext) throws IOException, ServletException {
 
+        System.out.println("basic valve(SimpleContextValve) invoked ...");
         /**
          * 首先获取当前Valve挂靠在哪个container下
          */

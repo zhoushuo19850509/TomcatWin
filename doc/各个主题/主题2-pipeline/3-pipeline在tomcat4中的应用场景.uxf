@@ -5,21 +5,25 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>296</x>
-      <y>376</y>
-      <w>112</w>
-      <h>40</h>
+      <x>360</x>
+      <y>328</y>
+      <w>120</w>
+      <h>64</h>
     </coordinates>
-    <panel_attributes>SimpleContext
+    <panel_attributes>StandardPipeline
 --
-addValve(Valve)</panel_attributes>
+addValve(Valve)
+invoke()
+start()
+bg=red
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>592</x>
-      <y>344</y>
+      <x>656</x>
+      <y>296</y>
       <w>176</w>
       <h>64</h>
     </coordinates>
@@ -33,8 +37,8 @@ invoke(Request request,
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>592</x>
-      <y>200</y>
+      <x>656</x>
+      <y>152</y>
       <w>176</w>
       <h>64</h>
     </coordinates>
@@ -48,8 +52,8 @@ invoke(Request request,
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>592</x>
-      <y>480</y>
+      <x>656</x>
+      <y>432</y>
       <w>176</w>
       <h>64</h>
     </coordinates>
@@ -63,19 +67,19 @@ invoke(Request request,
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>344</x>
-      <y>304</y>
-      <w>24</w>
-      <h>88</h>
+      <x>208</x>
+      <y>192</y>
+      <w>224</w>
+      <h>152</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+    <additional_attributes>10.0;10.0;260.0;170.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>232</x>
-      <y>232</y>
+      <x>96</x>
+      <y>120</y>
       <w>264</w>
       <h>80</h>
     </coordinates>
@@ -90,46 +94,46 @@ invoke(Request request, Response response)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>400</x>
-      <y>224</y>
-      <w>208</w>
+      <x>472</x>
+      <y>176</y>
+      <w>200</w>
       <h>184</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>240.0;10.0;10.0;210.0</additional_attributes>
+    <additional_attributes>230.0;10.0;10.0;210.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>400</x>
-      <y>360</y>
-      <w>208</w>
+      <x>472</x>
+      <y>312</y>
+      <w>200</w>
       <h>48</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>240.0;10.0;10.0;40.0</additional_attributes>
+    <additional_attributes>230.0;10.0;10.0;40.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>400</x>
-      <y>384</y>
-      <w>208</w>
+      <x>472</x>
+      <y>336</y>
+      <w>200</w>
       <h>152</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>240.0;170.0;10.0;10.0</additional_attributes>
+    <additional_attributes>230.0;170.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>240</x>
-      <y>136</y>
+      <x>184</x>
+      <y>0</y>
       <w>240</w>
       <h>64</h>
     </coordinates>
     <panel_attributes>第一步:pipeline添加valves
-SimpleContext实现了Pileline接口,
+StandardContext实现了Pileline接口,
 通过调用功能addValve()方法,添加valves
 具体参考chap5/BootStrap2.java
 
@@ -139,13 +143,13 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>224</x>
-      <y>640</y>
+      <x>136</x>
+      <y>568</y>
       <w>184</w>
-      <h>48</h>
+      <h>40</h>
     </coordinates>
-    <panel_attributes>第二步:启动pileline
-SimpleContext.invoke()
+    <panel_attributes>第二步:启动pileline方式1
+StandardPipeline.invoke()
 
 style=wordwrap</panel_attributes>
     <additional_attributes/>
@@ -153,12 +157,12 @@ style=wordwrap</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>232</x>
-      <y>704</y>
+      <x>296</x>
+      <y>656</y>
       <w>112</w>
       <h>40</h>
     </coordinates>
-    <panel_attributes>SimpleContext
+    <panel_attributes>StandardContext
 --
 invoke()</panel_attributes>
     <additional_attributes/>
@@ -166,12 +170,12 @@ invoke()</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>408</x>
-      <y>704</y>
+      <x>472</x>
+      <y>656</y>
       <w>96</w>
       <h>40</h>
     </coordinates>
-    <panel_attributes>SimplePipeline
+    <panel_attributes>StandardPipeline
 --
 invoke()</panel_attributes>
     <additional_attributes/>
@@ -179,8 +183,8 @@ invoke()</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>584</x>
-      <y>704</y>
+      <x>648</x>
+      <y>656</y>
       <w>184</w>
       <h>40</h>
     </coordinates>
@@ -192,8 +196,8 @@ invokeNext()</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>848</x>
-      <y>648</y>
+      <x>912</x>
+      <y>600</y>
       <w>136</w>
       <h>40</h>
     </coordinates>
@@ -205,8 +209,8 @@ invoke()</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>848</x>
-      <y>712</y>
+      <x>912</x>
+      <y>664</y>
       <w>144</w>
       <h>40</h>
     </coordinates>
@@ -218,8 +222,8 @@ invoke()</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>848</x>
-      <y>792</y>
+      <x>912</x>
+      <y>744</y>
       <w>152</w>
       <h>40</h>
     </coordinates>
@@ -231,8 +235,8 @@ invoke()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>336</x>
-      <y>712</y>
+      <x>400</x>
+      <y>664</y>
       <w>88</w>
       <h>24</h>
     </coordinates>
@@ -242,8 +246,8 @@ invoke()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>496</x>
-      <y>712</y>
+      <x>560</x>
+      <y>664</y>
       <w>104</w>
       <h>32</h>
     </coordinates>
@@ -253,8 +257,8 @@ invoke()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>760</x>
-      <y>656</y>
+      <x>824</x>
+      <y>608</y>
       <w>104</w>
       <h>80</h>
     </coordinates>
@@ -264,8 +268,8 @@ invoke()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>760</x>
-      <y>712</y>
+      <x>824</x>
+      <y>664</y>
       <w>104</w>
       <h>32</h>
     </coordinates>
@@ -275,8 +279,8 @@ invoke()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>760</x>
-      <y>712</y>
+      <x>824</x>
+      <y>664</y>
       <w>104</w>
       <h>120</h>
     </coordinates>
@@ -286,8 +290,8 @@ invoke()</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>112</x>
-      <y>384</y>
+      <x>176</x>
+      <y>336</y>
       <w>96</w>
       <h>24</h>
     </coordinates>
@@ -297,12 +301,125 @@ invoke()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>200</x>
-      <y>392</y>
+      <x>264</x>
+      <y>344</y>
       <w>112</w>
       <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>120.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>456</x>
+      <y>128</y>
+      <w>128</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+/LifeCycle/
+--
+start()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>416</x>
+      <y>176</y>
+      <w>128</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>140.0;10.0;10.0;190.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>192</x>
+      <y>920</y>
+      <w>136</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>StandardPipeline
+--
+start()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>440</x>
+      <y>848</y>
+      <w>136</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>CertificatesValve
+--
+start()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>440</x>
+      <y>960</y>
+      <w>144</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>XXXValve
+--
+start()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>320</x>
+      <y>856</y>
+      <w>136</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>150.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>320</x>
+      <y>928</y>
+      <w>136</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>150.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>112</x>
+      <y>776</y>
+      <w>184</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>第二步:启动pileline方式
+StandardPipeline.start()
+
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>272</x>
+      <y>1040</y>
+      <w>184</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>StandardPipeline.start()遍历
+各个valve,调用各个valve的start()方法
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>

@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>9</zoom_level>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>702</x>
+      <y>0</y>
+      <w>378</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>我们在Security.uxf UML中讨论了security几个主要的概念,
+比如Authenticator/Realm/GeneralPrincipal
+那么,这些概念之间的关系是什么样的呢?我们在这个UML中说明
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>441</x>
+      <y>378</y>
+      <w>162</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>AuthenticatorBase
+--
+invoke()
+abstract authenticate()
+
+
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>477</x>
+      <y>495</y>
+      <w>126</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>BasicAuthenticator
+--
+authenticate()
+
+BasicAuthenticator
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>522</x>
+      <y>423</y>
+      <w>81</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+extends</panel_attributes>
+    <additional_attributes>10.0;10.0;20.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>117</x>
+      <y>324</y>
+      <w>162</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>SimpleContextConfig
+--
+authenticatorConfig()
+
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>342</x>
+      <y>135</y>
+      <w>243</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>2.读取realm/Authenticator相关配置,
+放到LoginConfig实例中
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>405</x>
+      <y>207</y>
+      <w>171</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>LoginConfig
+--
+// reaml具体实现类的名称
+realmName
+// Authenticator具体实现类的名称
+// 比如BASIC, DIGEST, FORM, or CLIENT-CERT
+authMethod
+--
++getRealmName()
++getAuthMethod()
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>270</x>
+      <y>234</y>
+      <w>153</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>150.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>0</x>
+      <y>234</y>
+      <w>306</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>1.tomcat启动的时候,加载各种配置
+把配置放到SimpleContextConfig对象中
+其中authenticatorConfig()方法用于加载security相关配置
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>270</x>
+      <y>333</y>
+      <w>225</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>230.0;220.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>270</x>
+      <y>576</y>
+      <w>360</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>3.根据Authenticator相关配置,
+创建对应的Authenticator实例,加入context pipeline
+这样后续context在处理servlet服务请求的时候,
+就可以用这个Authenticator实例对请求的合法性进行校验
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>738</x>
+      <y>495</y>
+      <w>342</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>JDBCRealm
+--
+GeneralPrincipal authenticate(username, password)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>747</x>
+      <y>621</y>
+      <w>549</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>
+BasicAuthenticator.doAuthenticate()
+Principal principal = context.getRealm().authenticate(username, password);
+                
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>594</x>
+      <y>513</y>
+      <w>162</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>160.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>738</x>
+      <y>414</y>
+      <w>405</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>Authenticator调用realm的authenticate()方法
+获取当前访问用户的各种授权信息,比如username/password/roles
+以Principal的形式返回
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

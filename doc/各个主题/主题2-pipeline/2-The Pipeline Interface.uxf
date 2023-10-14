@@ -6,7 +6,7 @@
     <id>Text</id>
     <coordinates>
       <x>610</x>
-      <y>60</y>
+      <y>50</y>
       <w>200</w>
       <h>30</h>
     </coordinates>
@@ -18,7 +18,7 @@ style=wordwrap</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>890</x>
-      <y>510</y>
+      <y>500</y>
       <w>340</w>
       <h>130</h>
     </coordinates>
@@ -39,7 +39,7 @@ innerclass}</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1010</x>
-      <y>360</y>
+      <y>350</y>
       <w>120</w>
       <h>170</h>
     </coordinates>
@@ -51,7 +51,7 @@ implements</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>870</x>
-      <y>270</y>
+      <y>260</y>
       <w>330</w>
       <h>100</h>
     </coordinates>
@@ -67,7 +67,7 @@ invoke(Request request, Response response)</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>1400</x>
-      <y>560</y>
+      <y>550</y>
       <w>150</w>
       <h>70</h>
     </coordinates>
@@ -81,7 +81,7 @@ invokeNext()</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1160</x>
-      <y>580</y>
+      <y>570</y>
       <w>260</w>
       <h>40</h>
     </coordinates>
@@ -93,7 +93,7 @@ implements</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>310</x>
-      <y>260</y>
+      <y>250</y>
       <w>220</w>
       <h>100</h>
     </coordinates>
@@ -109,7 +109,7 @@ invoke(Request request,
     <id>UMLClass</id>
     <coordinates>
       <x>50</x>
-      <y>500</y>
+      <y>490</y>
       <w>220</w>
       <h>80</h>
     </coordinates>
@@ -124,7 +124,7 @@ invoke(Request request,
     <id>UMLClass</id>
     <coordinates>
       <x>340</x>
-      <y>500</y>
+      <y>490</y>
       <w>220</w>
       <h>80</h>
     </coordinates>
@@ -139,7 +139,7 @@ invoke(Request request,
     <id>UMLClass</id>
     <coordinates>
       <x>610</x>
-      <y>490</y>
+      <y>480</y>
       <w>220</w>
       <h>80</h>
     </coordinates>
@@ -154,7 +154,7 @@ invoke(Request request,
     <id>Relation</id>
     <coordinates>
       <x>410</x>
-      <y>350</y>
+      <y>340</y>
       <w>330</w>
       <h>160</h>
     </coordinates>
@@ -166,7 +166,7 @@ implements</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>410</x>
-      <y>350</y>
+      <y>340</y>
       <w>120</w>
       <h>170</h>
     </coordinates>
@@ -178,7 +178,7 @@ implements</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>150</x>
-      <y>350</y>
+      <y>340</y>
       <w>270</w>
       <h>170</h>
     </coordinates>
@@ -190,7 +190,7 @@ implements</panel_attributes>
     <id>Text</id>
     <coordinates>
       <x>890</x>
-      <y>690</y>
+      <y>680</y>
       <w>360</w>
       <h>140</h>
     </coordinates>
@@ -209,7 +209,7 @@ style=wordwrap</panel_attributes>
     <id>Text</id>
     <coordinates>
       <x>310</x>
-      <y>180</y>
+      <y>170</y>
       <w>200</w>
       <h>60</h>
     </coordinates>
@@ -223,7 +223,7 @@ style=wordwrap</panel_attributes>
     <id>Text</id>
     <coordinates>
       <x>1600</x>
-      <y>540</y>
+      <y>530</y>
       <w>390</w>
       <h>110</h>
     </coordinates>
@@ -240,7 +240,7 @@ style=wordwrap</panel_attributes>
     <id>Text</id>
     <coordinates>
       <x>0</x>
-      <y>600</y>
+      <y>590</y>
       <w>300</w>
       <h>50</h>
     </coordinates>
@@ -253,7 +253,7 @@ style=wordwrap</panel_attributes>
     <id>Text</id>
     <coordinates>
       <x>350</x>
-      <y>610</y>
+      <y>600</y>
       <w>190</w>
       <h>50</h>
     </coordinates>
@@ -266,7 +266,7 @@ style=wordwrap</panel_attributes>
     <id>Text</id>
     <coordinates>
       <x>630</x>
-      <y>600</y>
+      <y>590</y>
       <w>190</w>
       <h>50</h>
     </coordinates>
@@ -279,7 +279,7 @@ style=wordwrap</panel_attributes>
     <id>Text</id>
     <coordinates>
       <x>910</x>
-      <y>130</y>
+      <y>120</y>
       <w>230</w>
       <h>120</h>
     </coordinates>
@@ -297,7 +297,7 @@ style=wordwrap</panel_attributes>
     <id>Text</id>
     <coordinates>
       <x>890</x>
-      <y>880</y>
+      <y>870</y>
       <w>450</w>
       <h>500</h>
     </coordinates>

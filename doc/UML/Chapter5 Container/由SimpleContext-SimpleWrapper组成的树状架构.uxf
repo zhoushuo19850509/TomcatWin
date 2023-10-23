@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>320</x>
-      <y>230</y>
+      <x>550</x>
+      <y>320</y>
       <w>230</w>
       <h>50</h>
     </coordinates>
@@ -17,8 +17,8 @@ addChild(Container container)</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>150</x>
-      <y>410</y>
+      <x>380</x>
+      <y>500</y>
       <w>160</w>
       <h>50</h>
     </coordinates>
@@ -30,8 +30,8 @@ servlet1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>360</x>
-      <y>410</y>
+      <x>590</x>
+      <y>500</y>
       <w>170</w>
       <h>50</h>
     </coordinates>
@@ -43,8 +43,8 @@ servlet2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>680</x>
-      <y>410</y>
+      <x>910</x>
+      <y>500</y>
       <w>170</w>
       <h>50</h>
     </coordinates>
@@ -56,8 +56,8 @@ servletX</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>570</x>
-      <y>410</y>
+      <x>800</x>
+      <y>500</y>
       <w>70</w>
       <h>30</h>
     </coordinates>
@@ -68,8 +68,8 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>220</x>
-      <y>270</y>
+      <x>450</x>
+      <y>360</y>
       <w>230</w>
       <h>160</h>
     </coordinates>
@@ -79,8 +79,8 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>430</x>
-      <y>270</y>
+      <x>660</x>
+      <y>360</y>
       <w>40</w>
       <h>160</h>
     </coordinates>
@@ -90,8 +90,8 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>470</x>
-      <y>270</y>
+      <x>700</x>
+      <y>360</y>
       <w>310</w>
       <h>160</h>
     </coordinates>

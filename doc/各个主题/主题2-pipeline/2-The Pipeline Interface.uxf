@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
   <help_text/>
-  <zoom_level>10</zoom_level>
+  <zoom_level>9</zoom_level>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>610</x>
-      <y>50</y>
-      <w>200</w>
-      <h>30</h>
+      <x>549</x>
+      <y>0</y>
+      <w>180</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>The Pipeline Interface
 style=wordwrap</panel_attributes>
@@ -17,10 +17,10 @@ style=wordwrap</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>890</x>
-      <y>500</y>
-      <w>340</w>
-      <h>130</h>
+      <x>801</x>
+      <y>405</y>
+      <w>306</w>
+      <h>117</h>
     </coordinates>
     <panel_attributes>SimplePipeline
 --
@@ -38,10 +38,10 @@ innerclass}</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1010</x>
-      <y>350</y>
-      <w>120</w>
-      <h>170</h>
+      <x>909</x>
+      <y>270</y>
+      <w>108</w>
+      <h>153</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 implements</panel_attributes>
@@ -50,10 +50,10 @@ implements</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>870</x>
-      <y>260</y>
-      <w>330</w>
-      <h>100</h>
+      <x>783</x>
+      <y>189</y>
+      <w>297</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Interface&gt;&gt;
 /Pipeline/
@@ -66,10 +66,10 @@ invoke(Request request, Response response)</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1400</x>
-      <y>550</y>
-      <w>150</w>
-      <h>70</h>
+      <x>1260</x>
+      <y>450</y>
+      <w>135</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Interface&gt;&gt;
 /ValveContext/
@@ -80,10 +80,10 @@ invokeNext()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1160</x>
-      <y>570</y>
-      <w>260</w>
-      <h>40</h>
+      <x>1044</x>
+      <y>468</y>
+      <w>234</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 implements</panel_attributes>
@@ -92,10 +92,10 @@ implements</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>310</x>
-      <y>250</y>
-      <w>220</w>
-      <h>100</h>
+      <x>279</x>
+      <y>180</y>
+      <w>198</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Interface&gt;&gt;
 /Valve/
@@ -108,10 +108,10 @@ invoke(Request request,
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>50</x>
-      <y>490</y>
-      <w>220</w>
-      <h>80</h>
+      <x>45</x>
+      <y>396</y>
+      <w>198</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>SimpleWrapperValve
 --
@@ -123,10 +123,10 @@ invoke(Request request,
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>340</x>
-      <y>490</y>
-      <w>220</w>
-      <h>80</h>
+      <x>306</x>
+      <y>396</y>
+      <w>198</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>ClientIPLoggerValve
 --
@@ -138,10 +138,10 @@ invoke(Request request,
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>610</x>
-      <y>480</y>
-      <w>220</w>
-      <h>80</h>
+      <x>549</x>
+      <y>387</y>
+      <w>198</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>HeaderLoggerValve
 --
@@ -153,10 +153,10 @@ invoke(Request request,
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>410</x>
-      <y>340</y>
-      <w>330</w>
-      <h>160</h>
+      <x>369</x>
+      <y>261</y>
+      <w>297</w>
+      <h>144</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 implements</panel_attributes>
@@ -165,10 +165,10 @@ implements</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>410</x>
-      <y>340</y>
-      <w>120</w>
-      <h>170</h>
+      <x>369</x>
+      <y>261</y>
+      <w>108</w>
+      <h>153</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 implements</panel_attributes>
@@ -177,10 +177,10 @@ implements</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>150</x>
-      <y>340</y>
-      <w>270</w>
-      <h>170</h>
+      <x>135</x>
+      <y>261</y>
+      <w>243</w>
+      <h>153</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 implements</panel_attributes>
@@ -189,10 +189,10 @@ implements</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>890</x>
-      <y>680</y>
-      <w>360</w>
-      <h>140</h>
+      <x>801</x>
+      <y>567</y>
+      <w>324</w>
+      <h>126</h>
     </coordinates>
     <panel_attributes>SimplePipeline 说明:
 我们之前在Pipeline interface提到了invoke()方法
@@ -208,10 +208,10 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>310</x>
-      <y>170</y>
-      <w>200</w>
-      <h>60</h>
+      <x>279</x>
+      <y>108</y>
+      <w>180</w>
+      <h>54</h>
     </coordinates>
     <panel_attributes>The Valve Interface说明:
 invoke()
@@ -222,10 +222,10 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>1600</x>
-      <y>530</y>
-      <w>390</w>
-      <h>110</h>
+      <x>1440</x>
+      <y>432</y>
+      <w>351</w>
+      <h>99</h>
     </coordinates>
     <panel_attributes>ValveContext Interface说明:
 1.invokeNext()
@@ -240,9 +240,9 @@ style=wordwrap</panel_attributes>
     <id>Text</id>
     <coordinates>
       <x>0</x>
-      <y>590</y>
-      <w>300</w>
-      <h>50</h>
+      <y>486</y>
+      <w>270</w>
+      <h>45</h>
     </coordinates>
     <panel_attributes>basic valve
 其实就是调用Wrapper.invoke()执行servlet
@@ -252,10 +252,10 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>350</x>
-      <y>600</y>
-      <w>190</w>
-      <h>50</h>
+      <x>315</x>
+      <y>495</y>
+      <w>171</w>
+      <h>45</h>
     </coordinates>
     <panel_attributes>ClientIPLoggerValve
 功能:打印clientIP
@@ -265,10 +265,10 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>630</x>
-      <y>590</y>
-      <w>190</w>
-      <h>50</h>
+      <x>567</x>
+      <y>486</y>
+      <w>171</w>
+      <h>45</h>
     </coordinates>
     <panel_attributes>HeaderLoggerValve
 功能:打印http header(s)
@@ -278,10 +278,10 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>910</x>
-      <y>120</y>
-      <w>230</w>
-      <h>120</h>
+      <x>819</x>
+      <y>63</y>
+      <w>207</w>
+      <h>108</h>
     </coordinates>
     <panel_attributes>The Pipeline Interface说明:
 1.addValve()
@@ -296,10 +296,10 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>890</x>
-      <y>870</y>
-      <w>450</w>
-      <h>500</h>
+      <x>801</x>
+      <y>738</y>
+      <w>405</w>
+      <h>450</h>
     </coordinates>
     <panel_attributes>内部类SimplePipelineValveContext说明:
 

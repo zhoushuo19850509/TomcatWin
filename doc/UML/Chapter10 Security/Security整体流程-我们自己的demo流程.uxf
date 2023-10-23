@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>350</x>
+      <y>480</y>
+      <w>480</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>这份文档主要是为了说明我们本章Security相关代码实践的流程:
+一个http servlet请求过来，tomcat是如何验证这个servlet请求是否合法
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>160</x>
+      <y>790</y>
+      <w>220</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>BasicAuthenticatorClient
+--
+startAccessTomcat
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>0</x>
+      <y>650</y>
+      <w>450</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>1.客户端发起请求
+客户端通过httpclient发起http servlet请求
+从命名也可以看出,这个请求以BasicAuthenticate的方式
+发起认证请求,认证请求http header为:
+"authorization basic emhvdXNodW86MTIzNDU2"
+其中emhvdXNodW86MTIzNDU2这段就是客户端的
+username:password("zhoushuo:nbcb")经过base64转化而来
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>760</x>
+      <y>790</y>
+      <w>140</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>HttpProcessor
+--
+parseHeaders()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>370</x>
+      <y>790</y>
+      <w>410</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+http header
+"authorization basic emhvdXNodW86MTIzNDU2"</panel_attributes>
+    <additional_attributes>390.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1070</x>
+      <y>790</y>
+      <w>80</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>context
+--
+start()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>730</x>
+      <y>680</y>
+      <w>270</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>2.tomcat开始处理http请求
+HttpProcessor从http header中解析出
+authorization 信息保存到request对象中
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>890</x>
+      <y>810</y>
+      <w>200</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>180.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>510</x>
+      <y>610</y>
+      <w>30</w>
+      <h>530</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;510.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>560</x>
+      <y>980</y>
+      <w>70</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>服务端
+--
+tomcat
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>390</x>
+      <y>990</y>
+      <w>90</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>客户端
+--
+httpclient
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1380</x>
+      <y>1000</y>
+      <w>80</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>pipeline
+--
+start()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>1040</x>
+      <y>740</y>
+      <w>140</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>3.context启动
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1140</x>
+      <y>810</y>
+      <w>260</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>240.0;220.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>1350</x>
+      <y>940</y>
+      <w>170</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>context执行pipeline流水线
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1610</x>
+      <y>880</y>
+      <w>150</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>BasicAuthenticator
+--
+invoke()
+bg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1610</x>
+      <y>1080</y>
+      <w>150</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>SimpleContextValve
+--
+invoke()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1450</x>
+      <y>900</y>
+      <w>180</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>160.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1450</x>
+      <y>1010</y>
+      <w>180</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>160.0;100.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>1530</x>
+      <y>770</y>
+      <w>320</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>pipeline流水线优先执行security相关的valve:
+BasicAuthenticator对servlet请求进行认证.
+如果认证没通过,后续的valve就不执行了
+包括真正执行servlet的basic valve: 
+如果认证通过,就继续执行.
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1870</x>
+      <y>880</y>
+      <w>150</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>BasicAuthenticator
+--
+authenticate()
+bg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>1850</x>
+      <y>770</y>
+      <w>370</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>BasicAuthenticator如何执行认证逻辑呢?
+调用BasicAuthenticator.authenticate()方法认证
+authenticate()方法就是从servlet请求header中解析出
+authorization字段,并且从authorization中解析出
+username/password
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1750</x>
+      <y>900</y>
+      <w>140</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>120.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2240</x>
+      <y>880</y>
+      <w>200</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>SimpleRealm
+--
+Principal authenticate()
+bg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2010</x>
+      <y>900</y>
+      <w>250</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>230.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>2260</x>
+      <y>770</y>
+      <w>460</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>BasicAuthenticator怎么知道username/password是合法的呢?
+就调用SimpleRealm,从realm用户库中查询正常的username/password
+并进行校验,如果校验成功,就返回Principal对象(其实就是用户对象)
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>1620</x>
+      <y>1030</y>
+      <w>170</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>基础valve ,其实就是执行servlet
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1380</x>
+      <y>560</y>
+      <w>140</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>ContextConfig
+--
+start()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1140</x>
+      <y>570</y>
+      <w>260</w>
+      <h>270</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>240.0;10.0;10.0;250.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>1320</x>
+      <y>470</y>
+      <w>230</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>4.加载ContextConfig
+context启动的时候,通过创建ContextConfig对象
+并启动ContextConfig,加载context相关的配置参数
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1650</x>
+      <y>560</y>
+      <w>170</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>ContextConfig
+--
+authenticatorConfig()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1510</x>
+      <y>580</y>
+      <w>160</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>140.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>1970</x>
+      <y>460</y>
+      <w>210</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>6.设置realm
+设置context的realm具体实现类,比如SimpleRealm
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1970</x>
+      <y>530</y>
+      <w>170</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>StandardContext
+--
+setRealm()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>1600</x>
+      <y>490</y>
+      <w>270</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>5.ContextConfig加载security相关参数
+ContextConfig.authenticatorConfig()
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1970</x>
+      <y>670</y>
+      <w>220</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>StandardContext
+--
+addValve(BasicAuthenticator)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>1970</x>
+      <y>600</y>
+      <w>440</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>7.设置Authenticator
+初始化具体的Authenticator实现类(比如BasicAuthenticator)
+并且把Authenticator实现类作为valve添加到context中
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1810</x>
+      <y>540</y>
+      <w>180</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>160.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1810</x>
+      <y>580</y>
+      <w>180</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>160.0;120.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>

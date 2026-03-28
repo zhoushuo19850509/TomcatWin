@@ -22,3 +22,10 @@ ant需要做的事情是：
 目前的进度是，能够将我们的tomcat工程打包成jar包，然后能够通过java -jar XXX启动tomcat
 具体参考：
 SimpleTomcat/simpletomcat-chap9/doc/readme_package.txt
+
+
+关于自动部署，我们之前看到过一篇文章，借助AI编程平台： Qoder，实现博客服务器迁移、博客代码自动更新等操作
+参考网文：
+《AI First 实践：从 Qoder 搭建博客服务器聊起》
+里面有一块内容，就是通过webhook实现，github上一旦有代码提交，就立即触发某个服务器上的功能，
+从github pull代码，然后在本地编译执行。

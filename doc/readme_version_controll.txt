@@ -31,3 +31,7 @@ bad part：
 我们自动化部署的时候一般是配置某个git 地址
 如果把很多工程塞在一个目录下，显然不适合自动化部署
 
+3.引入.gitignore避免无关文件上传github/gitee
+
+4.目前代码托管在github，因为github不太稳定，后续尝试把代码放到gitee，
+

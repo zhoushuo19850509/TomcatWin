@@ -56,7 +56,7 @@ run()</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1000</x>
+      <x>1010</x>
       <y>250</y>
       <w>150</w>
       <h>80</h>
@@ -108,7 +108,7 @@ implements</panel_attributes>
     </coordinates>
     <panel_attributes>lt=&lt;.
 implements</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+    <additional_attributes>20.0;10.0;10.0;50.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -238,7 +238,7 @@ Container map()</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1020</x>
+      <x>1010</x>
       <y>600</y>
       <w>170</w>
       <h>60</h>
@@ -258,7 +258,7 @@ Container map()</panel_attributes>
     </coordinates>
     <panel_attributes>lt=&lt;.
 implements</panel_attributes>
-    <additional_attributes>10.0;10.0;20.0;80.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -276,11 +276,11 @@ implements</panel_attributes>
     <coordinates>
       <x>790</x>
       <y>280</y>
-      <w>230</w>
+      <w>240</w>
       <h>370</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>210.0;10.0;10.0;350.0</additional_attributes>
+    <additional_attributes>220.0;10.0;10.0;350.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -288,10 +288,10 @@ implements</panel_attributes>
       <x>790</x>
       <y>660</y>
       <w>230</w>
-      <h>150</h>
+      <h>140</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>210.0;130.0;10.0;10.0</additional_attributes>
+    <additional_attributes>210.0;120.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -471,9 +471,9 @@ style=wordwrap</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1360</x>
+      <x>1380</x>
       <y>840</y>
-      <w>150</w>
+      <w>190</w>
       <h>60</h>
     </coordinates>
     <panel_attributes>WebappClassLoader
@@ -488,17 +488,17 @@ loadClass()
     <coordinates>
       <x>1150</x>
       <y>860</y>
-      <w>230</w>
+      <w>250</w>
       <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>210.0;10.0;10.0;20.0</additional_attributes>
+    <additional_attributes>230.0;10.0;10.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>1520</x>
-      <y>830</y>
+      <x>1580</x>
+      <y>840</y>
       <w>210</w>
       <h>50</h>
     </coordinates>
@@ -522,7 +522,7 @@ style=wordwrap</panel_attributes>
     <id>Text</id>
     <coordinates>
       <x>1180</x>
-      <y>930</y>
+      <y>950</y>
       <w>200</w>
       <h>30</h>
     </coordinates>
@@ -582,8 +582,8 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>1190</x>
-      <y>1130</y>
+      <x>1180</x>
+      <y>1140</y>
       <w>190</w>
       <h>50</h>
     </coordinates>

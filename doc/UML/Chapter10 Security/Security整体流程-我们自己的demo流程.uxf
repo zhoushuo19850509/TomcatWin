@@ -5,7 +5,7 @@
     <id>Text</id>
     <coordinates>
       <x>350</x>
-      <y>480</y>
+      <y>340</y>
       <w>480</w>
       <h>40</h>
     </coordinates>
@@ -18,7 +18,7 @@ style=wordwrap</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>160</x>
-      <y>790</y>
+      <y>650</y>
       <w>220</w>
       <h>60</h>
     </coordinates>
@@ -32,7 +32,7 @@ startAccessTomcat
     <id>Text</id>
     <coordinates>
       <x>0</x>
-      <y>650</y>
+      <y>510</y>
       <w>450</w>
       <h>120</h>
     </coordinates>
@@ -50,7 +50,7 @@ style=wordwrap</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>760</x>
-      <y>790</y>
+      <y>650</y>
       <w>140</w>
       <h>60</h>
     </coordinates>
@@ -63,7 +63,7 @@ parseHeaders()</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>370</x>
-      <y>790</y>
+      <y>650</y>
       <w>410</w>
       <h>50</h>
     </coordinates>
@@ -76,7 +76,7 @@ http header
     <id>UMLClass</id>
     <coordinates>
       <x>1070</x>
-      <y>790</y>
+      <y>650</y>
       <w>80</w>
       <h>60</h>
     </coordinates>
@@ -89,7 +89,7 @@ start()</panel_attributes>
     <id>Text</id>
     <coordinates>
       <x>730</x>
-      <y>680</y>
+      <y>540</y>
       <w>270</w>
       <h>60</h>
     </coordinates>
@@ -103,7 +103,7 @@ style=wordwrap</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>890</x>
-      <y>810</y>
+      <y>670</y>
       <w>200</w>
       <h>30</h>
     </coordinates>
@@ -114,7 +114,7 @@ style=wordwrap</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>510</x>
-      <y>610</y>
+      <y>470</y>
       <w>30</w>
       <h>530</h>
     </coordinates>
@@ -125,7 +125,7 @@ style=wordwrap</panel_attributes>
     <id>Text</id>
     <coordinates>
       <x>560</x>
-      <y>980</y>
+      <y>840</y>
       <w>70</w>
       <h>50</h>
     </coordinates>
@@ -139,7 +139,7 @@ style=wordwrap</panel_attributes>
     <id>Text</id>
     <coordinates>
       <x>390</x>
-      <y>990</y>
+      <y>850</y>
       <w>90</w>
       <h>50</h>
     </coordinates>
@@ -153,7 +153,7 @@ style=wordwrap</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>1380</x>
-      <y>1000</y>
+      <y>860</y>
       <w>80</w>
       <h>60</h>
     </coordinates>
@@ -166,7 +166,7 @@ start()</panel_attributes>
     <id>Text</id>
     <coordinates>
       <x>1040</x>
-      <y>740</y>
+      <y>600</y>
       <w>140</w>
       <h>30</h>
     </coordinates>
@@ -178,7 +178,7 @@ style=wordwrap</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1140</x>
-      <y>810</y>
+      <y>670</y>
       <w>260</w>
       <h>240</h>
     </coordinates>
@@ -189,11 +189,11 @@ style=wordwrap</panel_attributes>
     <id>Text</id>
     <coordinates>
       <x>1350</x>
-      <y>940</y>
+      <y>800</y>
       <w>170</w>
       <h>40</h>
     </coordinates>
-    <panel_attributes>context执行pipeline流水线
+    <panel_attributes>8.context执行pipeline流水线
 style=wordwrap</panel_attributes>
     <additional_attributes/>
   </element>
@@ -201,7 +201,7 @@ style=wordwrap</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>1610</x>
-      <y>880</y>
+      <y>740</y>
       <w>150</w>
       <h>60</h>
     </coordinates>
@@ -215,7 +215,7 @@ bg=red</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>1610</x>
-      <y>1080</y>
+      <y>940</y>
       <w>150</w>
       <h>60</h>
     </coordinates>
@@ -228,7 +228,7 @@ invoke()</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1450</x>
-      <y>900</y>
+      <y>760</y>
       <w>180</w>
       <h>140</h>
     </coordinates>
@@ -239,7 +239,7 @@ invoke()</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1450</x>
-      <y>1010</y>
+      <y>870</y>
       <w>180</w>
       <h>120</h>
     </coordinates>
@@ -249,15 +249,16 @@ invoke()</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>1530</x>
-      <y>770</y>
+      <x>1510</x>
+      <y>620</y>
       <w>320</w>
       <h>100</h>
     </coordinates>
-    <panel_attributes>pipeline流水线优先执行security相关的valve:
+    <panel_attributes>9.优先执行security相关的valve,比如BasicAuthenticator
+pipeline流水线优先执行security相关的valve:
 BasicAuthenticator对servlet请求进行认证.
 如果认证没通过,后续的valve就不执行了
-包括真正执行servlet的basic valve: 
+包括真正执行servlet的basic valve: SimpleContextValve
 如果认证通过,就继续执行.
 style=wordwrap</panel_attributes>
     <additional_attributes/>
@@ -266,7 +267,7 @@ style=wordwrap</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>1870</x>
-      <y>880</y>
+      <y>740</y>
       <w>150</w>
       <h>60</h>
     </coordinates>
@@ -280,11 +281,12 @@ bg=red</panel_attributes>
     <id>Text</id>
     <coordinates>
       <x>1850</x>
-      <y>770</y>
+      <y>630</y>
       <w>370</w>
       <h>90</h>
     </coordinates>
-    <panel_attributes>BasicAuthenticator如何执行认证逻辑呢?
+    <panel_attributes>10.BasicAuthenticator执行认证逻辑
+BasicAuthenticator如何执行认证逻辑呢?
 调用BasicAuthenticator.authenticate()方法认证
 authenticate()方法就是从servlet请求header中解析出
 authorization字段,并且从authorization中解析出
@@ -296,7 +298,7 @@ style=wordwrap</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1750</x>
-      <y>900</y>
+      <y>760</y>
       <w>140</w>
       <h>30</h>
     </coordinates>
@@ -307,7 +309,7 @@ style=wordwrap</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>2240</x>
-      <y>880</y>
+      <y>740</y>
       <w>200</w>
       <h>60</h>
     </coordinates>
@@ -321,7 +323,7 @@ bg=red</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>2010</x>
-      <y>900</y>
+      <y>760</y>
       <w>250</w>
       <h>30</h>
     </coordinates>
@@ -332,11 +334,12 @@ bg=red</panel_attributes>
     <id>Text</id>
     <coordinates>
       <x>2260</x>
-      <y>770</y>
+      <y>630</y>
       <w>460</w>
       <h>80</h>
     </coordinates>
-    <panel_attributes>BasicAuthenticator怎么知道username/password是合法的呢?
+    <panel_attributes>11.SimpleRealm验证用户合法性
+BasicAuthenticator怎么知道username/password是合法的呢?
 就调用SimpleRealm,从realm用户库中查询正常的username/password
 并进行校验,如果校验成功,就返回Principal对象(其实就是用户对象)
 style=wordwrap</panel_attributes>
@@ -346,11 +349,11 @@ style=wordwrap</panel_attributes>
     <id>Text</id>
     <coordinates>
       <x>1620</x>
-      <y>1030</y>
+      <y>890</y>
       <w>170</w>
       <h>40</h>
     </coordinates>
-    <panel_attributes>基础valve ,其实就是执行servlet
+    <panel_attributes>12.执行基础valve ,其实就是执行servlet
 style=wordwrap</panel_attributes>
     <additional_attributes/>
   </element>
@@ -358,7 +361,7 @@ style=wordwrap</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>1380</x>
-      <y>560</y>
+      <y>420</y>
       <w>140</w>
       <h>60</h>
     </coordinates>
@@ -371,7 +374,7 @@ start()</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1140</x>
-      <y>570</y>
+      <y>430</y>
       <w>260</w>
       <h>270</h>
     </coordinates>
@@ -382,7 +385,7 @@ start()</panel_attributes>
     <id>Text</id>
     <coordinates>
       <x>1320</x>
-      <y>470</y>
+      <y>330</y>
       <w>230</w>
       <h>70</h>
     </coordinates>
@@ -396,7 +399,7 @@ style=wordwrap</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>1650</x>
-      <y>560</y>
+      <y>420</y>
       <w>170</w>
       <h>60</h>
     </coordinates>
@@ -409,7 +412,7 @@ authenticatorConfig()</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1510</x>
-      <y>580</y>
+      <y>440</y>
       <w>160</w>
       <h>30</h>
     </coordinates>
@@ -420,7 +423,7 @@ authenticatorConfig()</panel_attributes>
     <id>Text</id>
     <coordinates>
       <x>1970</x>
-      <y>460</y>
+      <y>320</y>
       <w>210</w>
       <h>50</h>
     </coordinates>
@@ -433,7 +436,7 @@ style=wordwrap</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>1970</x>
-      <y>530</y>
+      <y>390</y>
       <w>170</w>
       <h>60</h>
     </coordinates>
@@ -446,7 +449,7 @@ setRealm()</panel_attributes>
     <id>Text</id>
     <coordinates>
       <x>1600</x>
-      <y>490</y>
+      <y>330</y>
       <w>270</w>
       <h>40</h>
     </coordinates>
@@ -459,7 +462,7 @@ style=wordwrap</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>1970</x>
-      <y>670</y>
+      <y>530</y>
       <w>220</w>
       <h>60</h>
     </coordinates>
@@ -472,7 +475,7 @@ addValve(BasicAuthenticator)</panel_attributes>
     <id>Text</id>
     <coordinates>
       <x>1970</x>
-      <y>600</y>
+      <y>460</y>
       <w>440</w>
       <h>60</h>
     </coordinates>
@@ -486,7 +489,7 @@ style=wordwrap</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1810</x>
-      <y>540</y>
+      <y>400</y>
       <w>180</w>
       <h>70</h>
     </coordinates>
@@ -497,11 +500,46 @@ style=wordwrap</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1810</x>
-      <y>580</y>
+      <y>440</y>
       <w>180</w>
       <h>140</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>160.0;120.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1980</x>
+      <y>210</y>
+      <w>130</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>LoginConfig</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1810</x>
+      <y>220</y>
+      <w>190</w>
+      <h>250</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>170.0;10.0;10.0;230.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>1970</x>
+      <y>130</y>
+      <w>320</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>从LoginConfig获取realm/authMethod信息
+备注:LoginConfig是在bootstrap中初始化的.
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>

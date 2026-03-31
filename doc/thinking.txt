@@ -157,6 +157,11 @@ Springboot中只要修改一下配置，甚至不用动代码，就能把Tomcat替换成其他java容器。
 
 
 
+18.tomcat的架构、演进，对于我们建设大型、高性能中间件，有什么参考借鉴意义？
+
+19.tomcat从一款独立的中间件软件，转型为embed中间件，是如何转型的？
+如果我们想要开发一个类似springboot的框架，需要embed tomcat，除了引入embed tomcat一来，还需要怎么做？
+
 
 
 

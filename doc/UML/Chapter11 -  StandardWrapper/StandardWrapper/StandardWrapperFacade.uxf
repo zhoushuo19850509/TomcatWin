@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1110</x>
+      <y>870</y>
+      <w>200</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>StandardWrapperFacade
+--
+
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>910</x>
+      <y>570</y>
+      <w>210</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+/ServletConfig/
+--
+// 顾名思义,获取servlet名称
+getServletName()
+// 获取wrapper挂载的context
+getServletContext()
+// 获取name配置servlet参数
+// 备注:servlet参数放在map中,以key/value形式保存
+getInitParameter()
+// 获取servlet配置参数的名称
+getInitParameterNames()
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1030</x>
+      <y>690</y>
+      <w>230</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+implements</panel_attributes>
+    <additional_attributes>10.0;10.0;210.0;180.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>770</x>
+      <y>870</y>
+      <w>160</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>StandardWrapper
+--
+
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>850</x>
+      <y>690</y>
+      <w>170</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+implements</panel_attributes>
+    <additional_attributes>140.0;10.0;10.0;180.0</additional_attributes>
+  </element>
+</diagram>

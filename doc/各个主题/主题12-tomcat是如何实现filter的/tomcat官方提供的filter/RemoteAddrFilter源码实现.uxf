@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>11</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>539</x>
+      <y>803</y>
+      <w>165</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>RemoteAddrFilter
+--
+doFilter()
+halign=left
+style=wordwrap
+bg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1254</x>
+      <y>440</y>
+      <w>209</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>继续执行filter chain
+halign=left
+style=wordwrap
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>539</x>
+      <y>594</y>
+      <w>165</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>RequestFilter
+--
+process()
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>605</x>
+      <y>671</y>
+      <w>88</w>
+      <h>154</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+extends</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>946</x>
+      <y>594</y>
+      <w>154</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>RequestFilter
+--
+isAllowed()
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>693</x>
+      <y>616</y>
+      <w>275</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+判断是否允许客户端访问</panel_attributes>
+    <additional_attributes>230.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1254</x>
+      <y>506</y>
+      <w>154</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>FilterChain
+--
+doFilter()
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1089</x>
+      <y>539</y>
+      <w>187</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+允许访问</panel_attributes>
+    <additional_attributes>150.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1254</x>
+      <y>693</y>
+      <w>154</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>FilterChain
+--
+doFilter()
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1089</x>
+      <y>616</y>
+      <w>187</w>
+      <h>143</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+不允许访问</panel_attributes>
+    <additional_attributes>150.0;110.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1265</x>
+      <y>627</y>
+      <w>209</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>直接deny,返回response
+halign=left
+style=wordwrap
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>539</x>
+      <y>418</y>
+      <w>165</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>FilterBase
+--
+
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>539</x>
+      <y>231</y>
+      <w>165</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+/Filter/
+--
+
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>605</x>
+      <y>495</y>
+      <w>88</w>
+      <h>121</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+extends</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>605</x>
+      <y>308</y>
+      <w>121</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+implements</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+</diagram>

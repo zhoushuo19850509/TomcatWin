@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>11</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1342</x>
+      <y>550</y>
+      <w>396</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>Map&lt;String, FilterDef&gt; filterDefs
+--
+从高配置文件读取到的filter定义保存在这个map中
+key: servletName
+value: FilterDef
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>275</x>
+      <y>528</y>
+      <w>242</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>从配置文件读取filter相关配置
+halign=left
+style=wordwrap
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>352</x>
+      <y>605</y>
+      <w>187</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>ContextConfig
+--
+configureContext()
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>935</x>
+      <y>847</y>
+      <w>319</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>StandardContext
+--
+addFilterMap(FilterMap filterMap)
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>946</x>
+      <y>671</y>
+      <w>187</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>WebXml
+--
+getFilterMappings()
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>946</x>
+      <y>561</y>
+      <w>242</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>StandardContext
+--
+addFilterDef(FilterDef filter)
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>946</x>
+      <y>407</y>
+      <w>121</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>WebXml
+--
+getFilters()
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>682</x>
+      <y>495</y>
+      <w>121</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>filter配置1
+--
+filter定义
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>682</x>
+      <y>715</y>
+      <w>121</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>filter配置2
+--
+filter映射关系
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>528</x>
+      <y>187</y>
+      <w>704</w>
+      <h>121</h>
+    </coordinates>
+    <panel_attributes>filter定义案例
+--
+&lt;filter&gt;
+  &lt;filter-name&gt;RemoteHostFilter&lt;/filter-name&gt;
+  &lt;filter-class&gt;com.nbcb.mytomcat.catalina.filter.filters.RemoteHostFilter&lt;/filter-class&gt;
+&lt;/filter&gt;
+halign=left
+style=wordwrap
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>594</x>
+      <y>946</y>
+      <w>407</w>
+      <h>121</h>
+    </coordinates>
+    <panel_attributes>filter映射关系案例
+--
+&lt;filter-mapping&gt;
+ &lt;filter-name&gt;httpHeaderSecurity&lt;/filter-name&gt;
+ &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
+ &lt;dispatcher&gt;REQUEST&lt;/dispatcher&gt;
+&lt;/filter-mapping&gt;
+halign=left
+style=wordwrap
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>528</x>
+      <y>506</y>
+      <w>176</w>
+      <h>154</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>140.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>528</x>
+      <y>627</y>
+      <w>176</w>
+      <h>154</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>140.0;120.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>792</x>
+      <y>418</y>
+      <w>176</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>140.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>803</x>
+      <y>517</y>
+      <w>165</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>130.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>792</x>
+      <y>693</y>
+      <w>176</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>140.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>792</x>
+      <y>737</y>
+      <w>165</w>
+      <h>165</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>130.0;130.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>946</x>
+      <y>352</y>
+      <w>242</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>从配置文件读取filter定义
+halign=left
+style=wordwrap
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>968</x>
+      <y>495</y>
+      <w>297</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>把filter定义添加到StandardConetxt
+halign=left
+style=wordwrap
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>946</x>
+      <y>781</y>
+      <w>308</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>把filter映射添加到StandardConetxt
+halign=left
+style=wordwrap
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1166</x>
+      <y>671</y>
+      <w>242</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>从配置文件读取filter映射
+halign=left
+style=wordwrap
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1177</x>
+      <y>572</y>
+      <w>187</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>150.0;10.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1364</x>
+      <y>814</y>
+      <w>396</w>
+      <h>121</h>
+    </coordinates>
+    <panel_attributes>FilterMap
+--
+从配置文件读取到的filter和Url pattern的映射关系
+保存在这个FilterMap对象中
+// filter name,比如: ExpiresFilter
+String filterName
+// filter能够匹配的url pattern,比如: /*
+String[] urlPatterns
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1243</x>
+      <y>858</y>
+      <w>143</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>110.0;10.0;10.0;20.0</additional_attributes>
+  </element>
+</diagram>

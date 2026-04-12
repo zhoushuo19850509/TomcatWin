@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>11</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>308</x>
+      <y>165</y>
+      <w>187</w>
+      <h>143</h>
+    </coordinates>
+    <panel_attributes>Catalina
+--
+// 
+process()
+// 解析各个参数
+arguments()
+// 执行启动/停止命令
+execute()
+// 启动tomcat server
+start()
+// 停止tomat 
+stop()
+// 启动Digester(读取配置)
+createStartDigester()
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>121</x>
+      <y>0</y>
+      <w>220</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>Catalina的重要方法
+halign=left
+style=wordwrap
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>451</y>
+      <w>220</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>Catalina的详细处理流程
+halign=left
+style=wordwrap
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>220</x>
+      <y>748</y>
+      <w>154</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>Catalina
+--
+process()
+--
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>528</x>
+      <y>594</y>
+      <w>187</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>Catalina
+--
+setCatalinaHome()
+setCatalinaBase()
+--
+设置两个系统变量
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>363</x>
+      <y>627</y>
+      <w>187</w>
+      <h>187</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>150.0;10.0;10.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>528</x>
+      <y>737</y>
+      <w>231</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>Catalina
+--
+arguments()
+--
+读取启动脚本各个参数变量
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>363</x>
+      <y>781</y>
+      <w>187</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>150.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>528</x>
+      <y>880</y>
+      <w>231</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>Catalina
+--
+execute()
+--
+执行(启动或者停止动作)
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>363</x>
+      <y>781</y>
+      <w>187</w>
+      <h>165</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>150.0;130.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>902</x>
+      <y>693</y>
+      <w>132</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>Catalina
+--
+start()
+--
+启动tomcat
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>891</x>
+      <y>1243</y>
+      <w>121</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>Catalina
+--
+stop()
+--
+停止tomcat
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>748</x>
+      <y>726</y>
+      <w>176</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>140.0;10.0;10.0;180.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>748</x>
+      <y>913</y>
+      <w>165</w>
+      <h>385</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>130.0;330.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1177</x>
+      <y>583</y>
+      <w>330</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>Catalina
+--
+createStartDigester()
+--
+创建Digester(读取启动tomat的相关配置)
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1221</x>
+      <y>737</y>
+      <w>99</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>Server
+--
+initialize()
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1221</x>
+      <y>814</y>
+      <w>99</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>Server
+--
+start()
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1221</x>
+      <y>1034</y>
+      <w>242</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>Server
+--
+await()
+--
+启动监听,比如shutdown命令
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1177</x>
+      <y>693</y>
+      <w>352</w>
+      <h>451</h>
+    </coordinates>
+    <panel_attributes>lt=.
+启动Server
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1023</x>
+      <y>627</y>
+      <w>176</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>140.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1023</x>
+      <y>726</y>
+      <w>176</w>
+      <h>121</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>140.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1221</x>
+      <y>891</y>
+      <w>253</w>
+      <h>121</h>
+    </coordinates>
+    <panel_attributes>Runtime.getRuntime()
+--
+addShutdownHook()
+--
+设置tomcat ShutdownHook,保障tomat能够优雅关闭
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1199</x>
+      <y>1375</y>
+      <w>352</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>访问tomcat Server启动的监听服务,关闭tomcat server
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1001</x>
+      <y>1276</y>
+      <w>220</w>
+      <h>143</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>180.0;110.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1188</x>
+      <y>1210</y>
+      <w>319</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>Catalina
+--
+createStopDigester()
+--
+创建Digester(读取关闭tomat的相关配置)
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1001</x>
+      <y>1243</y>
+      <w>209</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>170.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1738</x>
+      <y>1375</y>
+      <w>176</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>tomcat server
+--
+监听shutdown请求
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1540</x>
+      <y>1386</y>
+      <w>220</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>180.0;20.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>

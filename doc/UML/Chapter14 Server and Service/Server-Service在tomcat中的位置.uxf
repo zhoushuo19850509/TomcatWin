@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>11</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>330</x>
+      <y>693</y>
+      <w>110</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>BootStrap
+--
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>352</x>
+      <y>0</y>
+      <w>99</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>text
+halign=left
+style=wordwrap
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>660</x>
+      <y>506</y>
+      <w>110</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>Context
+--
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>660</x>
+      <y>429</y>
+      <w>110</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>Host
+--
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>660</x>
+      <y>352</y>
+      <w>110</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>Engine
+--
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>660</x>
+      <y>572</y>
+      <w>110</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>Wrapper
+--
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>649</x>
+      <y>682</y>
+      <w>110</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>Connector
+--
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>627</x>
+      <y>308</y>
+      <w>187</w>
+      <h>352</h>
+    </coordinates>
+    <panel_attributes>lt=.
+初始化一堆容器
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>858</x>
+      <y>748</y>
+      <w>88</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>ServiceA
+--
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>660</x>
+      <y>825</y>
+      <w>88</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>Server
+--
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>429</x>
+      <y>484</y>
+      <w>220</w>
+      <h>264</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>180.0;10.0;10.0;220.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>429</x>
+      <y>704</y>
+      <w>242</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>200.0;10.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>429</x>
+      <y>715</y>
+      <w>253</w>
+      <h>165</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>210.0;130.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>693</x>
+      <y>1078</y>
+      <w>99</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>Server
+--
+initialize()
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>858</x>
+      <y>836</y>
+      <w>88</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>ServiceB
+--
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>858</x>
+      <y>924</y>
+      <w>88</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>ServiceN
+--
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1133</x>
+      <y>583</y>
+      <w>88</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>Engine
+--
+容器
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1133</x>
+      <y>693</y>
+      <w>176</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>Connector1
+--
+HttpConnector
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1133</x>
+      <y>792</y>
+      <w>176</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>Connector2
+--
+HttpsConnector
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1133</x>
+      <y>891</y>
+      <w>176</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>ConnectorN
+--
+XxxConnector
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1089</x>
+      <y>550</y>
+      <w>308</w>
+      <h>440</h>
+    </coordinates>
+    <panel_attributes>lt=.
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>935</x>
+      <y>759</y>
+      <w>176</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>140.0;10.0;10.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>825</x>
+      <y>726</y>
+      <w>176</w>
+      <h>275</h>
+    </coordinates>
+    <panel_attributes>lt=.
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>737</x>
+      <y>847</y>
+      <w>110</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>80.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>693</x>
+      <y>1155</y>
+      <w>99</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>Server
+--
+start()
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>693</x>
+      <y>1232</y>
+      <w>242</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>Server
+--
+await()
+--
+启动监听,比如shutdown命令
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>649</x>
+      <y>1034</y>
+      <w>352</w>
+      <h>308</h>
+    </coordinates>
+    <panel_attributes>lt=.
+启动Server
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>429</x>
+      <y>715</y>
+      <w>242</w>
+      <h>407</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>200.0;350.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>

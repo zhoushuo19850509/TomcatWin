@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>33</x>
-      <y>429</y>
+      <x>11</x>
+      <y>451</y>
       <w>143</w>
       <h>66</h>
     </coordinates>
@@ -47,14 +47,14 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>165</x>
+      <x>143</x>
       <y>275</y>
-      <w>297</w>
-      <h>209</h>
+      <w>319</w>
+      <h>231</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 引用</panel_attributes>
-    <additional_attributes>250.0;10.0;10.0;170.0</additional_attributes>
+    <additional_attributes>270.0;10.0;10.0;190.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -62,10 +62,11 @@ style=wordwrap</panel_attributes>
       <x>418</x>
       <y>671</y>
       <w>176</w>
-      <h>66</h>
+      <h>77</h>
     </coordinates>
     <panel_attributes>StandardContext
 --
+
 halign=left
 style=wordwrap</panel_attributes>
     <additional_attributes/>
@@ -73,14 +74,14 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>165</x>
-      <y>462</y>
-      <w>275</w>
-      <h>264</h>
+      <x>143</x>
+      <y>484</y>
+      <w>297</w>
+      <h>242</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 引用</panel_attributes>
-    <additional_attributes>230.0;220.0;10.0;10.0</additional_attributes>
+    <additional_attributes>250.0;200.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -220,13 +221,13 @@ style=wordwrap</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>583</x>
-      <y>726</y>
+      <y>715</y>
       <w>275</w>
-      <h>198</h>
+      <h>209</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 引用</panel_attributes>
-    <additional_attributes>230.0;160.0;10.0;10.0</additional_attributes>
+    <additional_attributes>230.0;170.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -617,7 +618,7 @@ style=wordwrap</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>3399</x>
+      <x>3498</x>
       <y>803</y>
       <w>198</w>
       <h>77</h>
@@ -672,15 +673,15 @@ style=wordwrap</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>3784</x>
-      <y>726</y>
-      <w>198</w>
-      <h>77</h>
+      <y>682</y>
+      <w>231</w>
+      <h>88</h>
     </coordinates>
-    <panel_attributes>SimpleWrapperValve
+    <panel_attributes>SimpleWrapper
 --
 allocate()
 --
-实例化servlet对象
+调用loader实例化servlet对象
 halign=left
 style=wordwrap</panel_attributes>
     <additional_attributes/>
@@ -689,15 +690,15 @@ style=wordwrap</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>4070</x>
-      <y>726</y>
+      <y>682</y>
       <w>198</w>
       <h>77</h>
     </coordinates>
-    <panel_attributes>SimpleWrapperValve
+    <panel_attributes>SimpleWrapper
 --
 loadServlet()
 --
-loader不分的逻辑
+loader部分的逻辑
 halign=left
 style=wordwrap</panel_attributes>
     <additional_attributes/>
@@ -705,8 +706,8 @@ style=wordwrap</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>4345</x>
-      <y>726</y>
+      <x>4389</x>
+      <y>616</y>
       <w>154</w>
       <h>77</h>
     </coordinates>
@@ -722,41 +723,13 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>3586</x>
-      <y>748</y>
-      <w>220</w>
-      <h>121</h>
+      <x>3685</x>
+      <y>704</y>
+      <w>121</w>
+      <h>165</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>180.0;10.0;10.0;90.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>3784</x>
-      <y>913</y>
-      <w>198</w>
-      <h>77</h>
-    </coordinates>
-    <panel_attributes>Servlet
---
-service()
---
-执行servlet
-halign=left
-style=wordwrap</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>3586</x>
-      <y>836</y>
-      <w>220</w>
-      <h>143</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>180.0;110.0;10.0;10.0</additional_attributes>
+    <additional_attributes>90.0;10.0;10.0;130.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -790,10 +763,10 @@ SimpleContextValve是StandardContext
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2937</x>
+      <x>2926</x>
       <y>594</y>
-      <w>352</w>
-      <h>77</h>
+      <w>198</w>
+      <h>99</h>
     </coordinates>
     <panel_attributes>StandardContext
 --
@@ -807,7 +780,7 @@ style=wordwrap</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2937</x>
+      <x>2926</x>
       <y>770</y>
       <w>143</w>
       <h>77</h>
@@ -826,22 +799,22 @@ style=wordwrap</panel_attributes>
     <coordinates>
       <x>2783</x>
       <y>616</y>
-      <w>176</w>
+      <w>165</w>
       <h>132</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>140.0;10.0;10.0;100.0</additional_attributes>
+    <additional_attributes>130.0;10.0;10.0;100.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>2783</x>
       <y>715</y>
-      <w>176</w>
+      <w>165</w>
       <h>121</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>140.0;90.0;10.0;10.0</additional_attributes>
+    <additional_attributes>130.0;90.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -863,18 +836,18 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>3069</x>
+      <x>3058</x>
       <y>803</y>
-      <w>77</w>
+      <w>88</w>
       <h>33</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>50.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>60.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>3355</x>
+      <x>3454</x>
       <y>506</y>
       <w>264</w>
       <h>407</h>
@@ -887,7 +860,7 @@ valve
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>3399</x>
+      <x>3498</x>
       <y>561</y>
       <w>187</w>
       <h>55</h>
@@ -902,7 +875,7 @@ style=wordwrap</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>3399</x>
+      <x>3498</x>
       <y>649</y>
       <w>187</w>
       <h>55</h>
@@ -917,7 +890,7 @@ style=wordwrap</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>3399</x>
+      <x>3498</x>
       <y>737</y>
       <w>110</w>
       <h>44</h>
@@ -932,32 +905,426 @@ style=wordwrap</panel_attributes>
     <coordinates>
       <x>3300</x>
       <y>803</y>
-      <w>77</w>
+      <w>176</w>
       <h>33</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>50.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>140.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>3971</x>
-      <y>759</y>
-      <w>121</w>
+      <x>4004</x>
+      <y>715</y>
+      <w>88</w>
       <h>33</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>90.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>60.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>4257</x>
-      <y>748</y>
+      <y>638</y>
+      <w>154</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>120.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3201</x>
+      <y>594</y>
+      <w>187</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>SimpleContextMapper
+--
+map()
+--
+
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3113</x>
+      <y>638</y>
       <w>110</w>
       <h>33</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>80.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>429</x>
+      <y>1045</y>
+      <w>154</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>StandardContext
+--
+start()
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>143</x>
+      <y>495</y>
+      <w>308</w>
+      <h>594</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+启动</panel_attributes>
+    <additional_attributes>260.0;520.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>748</x>
+      <y>1089</y>
+      <w>231</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>childs
+--
+start()
+--
+启动StandardContext的子容器(比如各个wrapper)
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>759</x>
+      <y>990</y>
+      <w>176</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>WebappLoader
+--
+start()
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>737</x>
+      <y>1232</y>
+      <w>187</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>ContextConfig
+--
+start()
+--
+加载配置
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>572</x>
+      <y>1012</y>
+      <w>209</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+启动</panel_attributes>
+    <additional_attributes>170.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>572</x>
+      <y>1067</y>
+      <w>198</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+启动</panel_attributes>
+    <additional_attributes>160.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>572</x>
+      <y>1067</y>
+      <w>187</w>
+      <h>231</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+启动</panel_attributes>
+    <additional_attributes>150.0;190.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1045</x>
+      <y>990</y>
+      <w>231</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>Thread
+--
+threadStart()
+--
+启动异步线程,执行reload
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>924</x>
+      <y>1012</y>
+      <w>143</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+启动</panel_attributes>
+    <additional_attributes>110.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>4389</x>
+      <y>506</y>
+      <w>198</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>SimpleWrapper
+--
+getLoader()
+--
+获取class loader
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4257</x>
+      <y>528</y>
+      <w>154</w>
+      <h>209</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>120.0;10.0;10.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>4389</x>
+      <y>715</y>
+      <w>330</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>Loader
+--
+loadClass(servletName)
+--
+loader基于servlet name加载servlet class
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4257</x>
+      <y>704</y>
+      <w>154</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>120.0;40.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>4389</x>
+      <y>924</y>
+      <w>154</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>Servlet
+--
+init()
+--
+初始化servlet实例
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4257</x>
+      <y>704</y>
+      <w>154</w>
+      <h>286</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>120.0;240.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>4389</x>
+      <y>825</y>
+      <w>187</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>Class
+--
+newInstance()
+--
+创建servlet实例
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4257</x>
+      <y>704</y>
+      <w>154</w>
+      <h>176</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>120.0;140.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3795</x>
+      <y>902</y>
+      <w>264</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>ApplicationFilterFactory
+--
+createFilterChain()
+--
+从context获取各个filter定义
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3685</x>
+      <y>836</y>
+      <w>132</w>
+      <h>121</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+</panel_attributes>
+    <additional_attributes>100.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3795</x>
+      <y>1078</y>
+      <w>242</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>SimpleApplicationFilterChain
+--
+doFilter()
+--
+
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3685</x>
+      <y>836</y>
+      <w>132</w>
+      <h>286</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+</panel_attributes>
+    <additional_attributes>100.0;240.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>4213</x>
+      <y>1012</y>
+      <w>198</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>CorsFilter.java
+RemoteIpFilter.java
+RemoteHostFilter.java
+......
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>4224</x>
+      <y>1133</y>
+      <w>143</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>Servlet
+--
+service()
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4026</x>
+      <y>1045</y>
+      <w>209</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+执行各个filter</panel_attributes>
+    <additional_attributes>170.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4026</x>
+      <y>1100</y>
+      <w>220</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+执行servlet</panel_attributes>
+    <additional_attributes>180.0;60.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>

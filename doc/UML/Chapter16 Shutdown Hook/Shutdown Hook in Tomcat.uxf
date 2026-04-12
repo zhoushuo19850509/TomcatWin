@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>11</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>979</x>
+      <y>715</y>
+      <w>198</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>CatalinaShutdownHook
+--
+run()
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>891</x>
+      <y>231</y>
+      <w>121</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>text
+halign=left
+style=wordwrap
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1045</x>
+      <y>561</y>
+      <w>99</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>Thread
+--
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1067</x>
+      <y>605</y>
+      <w>88</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+extends</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>506</x>
+      <y>715</y>
+      <w>198</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>Runtime.getRuntime()
+--
+addShutdownHook()
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>693</x>
+      <y>726</y>
+      <w>308</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+JVM Runtime
+引入了tomcat ShutdownHook</panel_attributes>
+    <additional_attributes>260.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1408</x>
+      <y>715</y>
+      <w>132</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>Engine
+--
+shutdown()
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1166</x>
+      <y>726</y>
+      <w>253</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+在java进程关闭前
+优雅关闭tomcat</panel_attributes>
+    <additional_attributes>210.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+</diagram>

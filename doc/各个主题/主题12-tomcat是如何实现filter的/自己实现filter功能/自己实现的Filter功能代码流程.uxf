@@ -1,0 +1,581 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>11</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>880</x>
+      <y>231</y>
+      <w>110</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>BootStrap
+--
+
+halign=left
+style=wordwrap
+bg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>803</x>
+      <y>154</y>
+      <w>220</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>启动类,加载FilterDef定义
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1331</x>
+      <y>44</y>
+      <w>253</w>
+      <h>264</h>
+    </coordinates>
+    <panel_attributes>SimpleFilterDef
+--
+
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>979</x>
+      <y>66</y>
+      <w>374</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+1.创建filter实例</panel_attributes>
+    <additional_attributes>320.0;10.0;10.0;180.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1353</x>
+      <y>77</y>
+      <w>110</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>filter1
+--
+CorsFilter
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1353</x>
+      <y>154</y>
+      <w>154</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>filter1
+--
+RemoteHostFilter
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1353</x>
+      <y>231</y>
+      <w>154</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>filter1
+--
+RemoteIpFilter
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1342</x>
+      <y>330</y>
+      <w>176</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>StandardContext
+--
+addFilterDef()
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>979</x>
+      <y>253</y>
+      <w>385</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+2.把filter定义添加到Context</panel_attributes>
+    <additional_attributes>330.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>209</x>
+      <y>847</y>
+      <w>187</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>SimpleContextValve
+--
+invoke()
+halign=left
+style=wordwrap
+bg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>616</x>
+      <y>715</y>
+      <w>242</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>ApplicationFilterFactory
+--
+createFilterChain()
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>385</x>
+      <y>737</y>
+      <w>253</w>
+      <h>154</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+3.创建filter chain</panel_attributes>
+    <additional_attributes>210.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>583</x>
+      <y>1034</y>
+      <w>242</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>SimpleApplicationFilterChain
+--
+doFilter()
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>198</x>
+      <y>759</y>
+      <w>220</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>执行某个具体的servlet
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>616</x>
+      <y>660</y>
+      <w>154</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>创建filter chain
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>385</x>
+      <y>858</y>
+      <w>220</w>
+      <h>231</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+</panel_attributes>
+    <additional_attributes>180.0;190.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>539</x>
+      <y>924</y>
+      <w>286</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>1.执行filter chain下各个filter
+2.执行servlet
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1012</x>
+      <y>594</y>
+      <w>187</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>StandardContext
+--
+getFilterMaps()
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1012</x>
+      <y>682</y>
+      <w>253</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>SimpleApplicationFilterConfig
+--
+
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1012</x>
+      <y>748</y>
+      <w>253</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>SimpleApplicationFilterChain
+--
+addFilter()
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>847</x>
+      <y>616</y>
+      <w>187</w>
+      <h>154</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+</panel_attributes>
+    <additional_attributes>150.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>847</x>
+      <y>704</y>
+      <w>187</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+</panel_attributes>
+    <additional_attributes>150.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>847</x>
+      <y>737</y>
+      <w>187</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+</panel_attributes>
+    <additional_attributes>150.0;40.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1188</x>
+      <y>495</y>
+      <w>231</w>
+      <h>154</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+</panel_attributes>
+    <additional_attributes>190.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>1540</x>
+      <y>429</y>
+      <w>308</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>filter定义以map的形式保存在Context
+key: filterName
+value: FilterDef对象
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>1287</x>
+      <y>671</y>
+      <w>440</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>根据FilterDef创建SimpleApplicationFilterConfig对象
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>1287</x>
+      <y>748</y>
+      <w>440</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>把SimpleApplicationFilterConfig对象放到filter chain
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1034</x>
+      <y>869</y>
+      <w>297</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>按照责任链的模式遍历各个filter:
+CorsFilter.java
+RemoteIpFilter.java
+RemoteHostFilter.java
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1034</x>
+      <y>979</y>
+      <w>264</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>SimpleApplicationFilterConfig
+--
+getFilter()
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>1331</x>
+      <y>979</y>
+      <w>286</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>根据filter定义生成filter实例
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1034</x>
+      <y>1056</y>
+      <w>264</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>Filter
+--
+doFilter()
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>1331</x>
+      <y>1067</y>
+      <w>286</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>执行filter实例
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1034</x>
+      <y>1166</y>
+      <w>143</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>Servlet
+--
+service()
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>1210</x>
+      <y>1155</y>
+      <w>154</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>执行servlet
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1012</x>
+      <y>825</y>
+      <w>660</w>
+      <h>308</h>
+    </coordinates>
+    <panel_attributes>lt=.
+执行各个filter
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>814</x>
+      <y>935</y>
+      <w>220</w>
+      <h>165</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+4.执行各个filter</panel_attributes>
+    <additional_attributes>180.0;10.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>814</x>
+      <y>1067</y>
+      <w>242</w>
+      <h>154</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+5.执行servlet</panel_attributes>
+    <additional_attributes>200.0;120.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>781</x>
+      <y>0</y>
+      <w>1122</w>
+      <h>407</h>
+    </coordinates>
+    <panel_attributes>lt=.
+初始化的时候加载filter信息
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>143</x>
+      <y>550</y>
+      <w>1617</w>
+      <h>693</h>
+    </coordinates>
+    <panel_attributes>lt=.
+触发某个具体servlet的时候,执行各个filter
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1342</x>
+      <y>451</y>
+      <w>165</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>lt=.
+StandardContext
+--
+filterMaps
+halign=left
+style=wordwrap
+bg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1397</x>
+      <y>374</y>
+      <w>33</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+</panel_attributes>
+    <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>1287</x>
+      <y>594</y>
+      <w>220</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>从context获取Filter map
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

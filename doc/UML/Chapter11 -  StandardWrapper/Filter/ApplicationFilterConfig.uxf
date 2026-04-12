@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>11</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>748</x>
+      <y>814</y>
+      <w>473</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>ApplicationFilterConfig
+--
+ApplicationFilterConfig(Context context, FilterDef filterDef)
+Filter getFilter()
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>649</x>
+      <y>220</y>
+      <w>121</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>text
+halign=left
+style=wordwrap
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>803</x>
+      <y>539</y>
+      <w>341</w>
+      <h>143</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+/FilterConfig/
+--
+String getFilterName()
+ServletContext getServletContext()
+String getInitParameter(String var1)
+Enumeration getInitParameterNames()
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>957</x>
+      <y>671</y>
+      <w>121</w>
+      <h>165</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+implements</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;130.0</additional_attributes>
+  </element>
+</diagram>

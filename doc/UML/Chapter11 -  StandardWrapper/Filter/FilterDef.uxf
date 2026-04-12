@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>11</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>528</x>
+      <y>495</y>
+      <w>220</w>
+      <h>297</h>
+    </coordinates>
+    <panel_attributes>FilterDef
+--
+getDescription()
+setDescription()
+getDisplayName()
+setDisplayName()
+getFilterClass()
+setFilterClass()
+getFilterName()
+setFilterName()
+getLargeIcon()
+setLargeIcon()
+getSmallIcon()
+setSmallIcon()
+getParameterMap()
+addInitParameter()
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>484</x>
+      <y>297</y>
+      <w>121</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>FilterDef
+halign=left
+style=wordwrap
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

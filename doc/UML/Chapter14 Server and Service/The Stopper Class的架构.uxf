@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>11</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>770</x>
+      <y>759</y>
+      <w>242</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>Server
+--
+await()
+--
+启动监听,比如shutdown命令
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>726</x>
+      <y>693</y>
+      <w>319</w>
+      <h>198</h>
+    </coordinates>
+    <panel_attributes>lt=.
+tomcat服务端
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>363</x>
+      <y>759</y>
+      <w>132</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>Stopper
+--
+main()
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>484</x>
+      <y>770</y>
+      <w>308</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+发起shutdown指令,
+关闭Tomcat Server</panel_attributes>
+    <additional_attributes>260.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+</diagram>

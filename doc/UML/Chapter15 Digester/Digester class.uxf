@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>11</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>583</x>
+      <y>638</y>
+      <w>209</w>
+      <h>143</h>
+    </coordinates>
+    <panel_attributes>Digester
+--
+// 创建Digester对象
+addObjectCreate()
+// 设置属性
+addSetProperties()
+// 调用方法
+addCallMethod()
+// 设置对象之间的联系
+addSetNext()
+// 校验xml文件
+setValidating()
+halign=left
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>638</x>
+      <y>253</y>
+      <w>121</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>text
+halign=left
+style=wordwrap
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
